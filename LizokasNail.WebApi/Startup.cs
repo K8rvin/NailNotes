@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
 using LizokasNail.Core.BL;
 using LizokasNail.Core.BL.Implementation;
 using LizokasNail.Core.Dao;
@@ -11,14 +6,10 @@ using LizokasNail.Core.Dao.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-
 
 namespace LizokasNail.WebApi
 {
@@ -35,8 +26,8 @@ namespace LizokasNail.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             //подключение к БД
-            //var connection = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
-            var connection = ConfigurationManager.ConnectionStrings["Release"].ConnectionString;            
+            //var connection = ConfigurationManager.AppSetting["ConnectionStrings:Default"];
+            var connection = ConfigurationManager.AppSetting["ConnectionStrings:Mdf"];
             services.AddDbContext<EfContext>(opt => opt.UseSqlServer(connection));
 
             services.AddControllers();
@@ -56,6 +47,12 @@ namespace LizokasNail.WebApi
             #endregion
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            //Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "LizokasNails API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -75,6 +72,12 @@ namespace LizokasNail.WebApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("v1/swagger.json", "LizokasNails API V1");
             });
         }
     }

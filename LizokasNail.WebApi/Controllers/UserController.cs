@@ -1,8 +1,8 @@
 ﻿using LizokasNail.Contract.Dto;
-using Microsoft.AspNetCore.Mvc;
 using LizokasNail.Core.BL;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace LizokasNail.WebApi.Controllers
 {
@@ -17,14 +17,27 @@ namespace LizokasNail.WebApi.Controllers
             _bl = bl;
         }
 
-        // GET: api/User
         [HttpGet]
         public IEnumerable<UserDto> Get() => _bl.Get();
 
-        [HttpGet("GetById")]
+        [HttpGet("GetById", Name = "GetById")]
         public UserDto GetById([FromQuery] int Id)
         {
             return _bl.GetById(Id);
+        }
+
+        [HttpPost()]
+        public ActionResult<UserDto> Add([FromBody] UserDto dto)
+        {
+            try
+            {
+                var item = _bl.Add(dto);
+                return CreatedAtRoute("GetById", new { reportId = item.Id }, item);
+            }
+            catch (Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
         }
     }
 }

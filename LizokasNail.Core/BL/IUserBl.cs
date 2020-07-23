@@ -8,5 +8,6 @@ namespace LizokasNail.Core.BL
         IEnumerable<UserDto> Get();
 
         UserDto GetById(int id);
+        UserDto Add(UserDto dto);
     }
 }

@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LizokasNail.Contract\LizokasNail.Contract.csproj" />
     <ProjectReference Include="..\LizokasNail.Core\LizokasNail.Core.csproj" />
   </ItemGroup>
 

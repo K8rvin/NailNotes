@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.IO;
 
 namespace LizokasNail.WebApi
 {
@@ -27,7 +29,11 @@ namespace LizokasNail.WebApi
         {
             //подключение к БД
             //var connection = ConfigurationManager.AppSetting["ConnectionStrings:Default"];
-            var connection = ConfigurationManager.AppSetting["ConnectionStrings:Mdf"];
+            //var connection = ConfigurationManager.AppSetting["ConnectionStrings:Mdf"];
+            var connection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={0};Integrated Security=True";
+            var dbName = ConfigurationManager.AppSetting["ConnectionStrings:dbName"];
+            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), dbName);
+            connection = string.Format(connection, path);
             services.AddDbContext<EfContext>(opt => opt.UseSqlServer(connection));
 
             services.AddControllers();

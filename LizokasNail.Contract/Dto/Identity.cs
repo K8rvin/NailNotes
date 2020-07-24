@@ -3,7 +3,7 @@ namespace LizokasNail.Contract.Dto
 {
     public interface IIdentity
     {
-        public int Id { get; set; }
+        int Id { get; set; }
     }
 
     public abstract class Identity: IIdentity

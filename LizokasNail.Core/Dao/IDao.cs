@@ -6,8 +6,8 @@ namespace LizokasNail.Core.Dao
 {
     public interface IDao<TData> where TData : EntityData
     {
-        //TData Get(int id);
-        //TData Get_NoTracking(int id);
+        TData Get(int id);
+        TData Get_NoTracking(int id);
         List<TData> Get(Expression<Func<TData, bool>> condition = null);
         List<TData> Get_NoTracking(Expression<Func<TData, bool>> condition = null);
 

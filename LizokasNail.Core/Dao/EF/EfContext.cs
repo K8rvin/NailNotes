@@ -25,6 +25,7 @@ namespace LizokasNail.Core.Dao.EF
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new RecordConfiguration());
 
             //...
         }

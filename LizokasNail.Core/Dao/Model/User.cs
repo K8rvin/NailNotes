@@ -1,6 +1,6 @@
 ﻿using LizokasNail.Contract.Dto;
-using System;
-using System.ComponentModel.DataAnnotations;
+using LizokasNail.Contract.Enum;
+using System.Collections.Generic;
 
 namespace LizokasNail.Core.Dao.Model
 {
@@ -8,5 +8,7 @@ namespace LizokasNail.Core.Dao.Model
     {
         public string Name { get; set; }
         public string Phone { get; set; }
+        public CommunicationType CommunicationType { get; set; }
+        public ICollection<Record> Records { get; set; }
     }
 }

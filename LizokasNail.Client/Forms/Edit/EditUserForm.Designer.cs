@@ -28,14 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUserForm));
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.textEditName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEditPhone = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.imageComboBoxEditCommunication = new DevExpress.XtraEditors.ImageComboBoxEdit();
+            this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPhone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageComboBoxEditCommunication.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -88,11 +95,46 @@
             this.textEditPhone.Size = new System.Drawing.Size(265, 20);
             this.textEditPhone.TabIndex = 4;
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(12, 67);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(30, 13);
+            this.labelControl3.TabIndex = 7;
+            this.labelControl3.Text = "Связь";
+            // 
+            // imageComboBoxEditCommunication
+            // 
+            this.imageComboBoxEditCommunication.Location = new System.Drawing.Point(103, 64);
+            this.imageComboBoxEditCommunication.Name = "imageComboBoxEditCommunication";
+            this.imageComboBoxEditCommunication.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.imageComboBoxEditCommunication.Properties.DropDownRows = 8;
+            this.imageComboBoxEditCommunication.Properties.LargeImages = this.imageCollectionCommunicationTypes;
+            this.imageComboBoxEditCommunication.Size = new System.Drawing.Size(265, 20);
+            this.imageComboBoxEditCommunication.TabIndex = 8;
+            // 
+            // imageCollectionCommunicationTypes
+            // 
+            this.imageCollectionCommunicationTypes.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollectionCommunicationTypes.ImageStream")));
+            this.imageCollectionCommunicationTypes.InsertGalleryImage("mobilephone_16x16.png", "devav/contacts/mobilephone_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("devav/contacts/mobilephone_16x16.png"), 0);
+            this.imageCollectionCommunicationTypes.Images.SetKeyName(0, "mobilephone_16x16.png");
+            this.imageCollectionCommunicationTypes.Images.SetKeyName(1, "icons8-whatsapp-48.png");
+            this.imageCollectionCommunicationTypes.Images.SetKeyName(2, "icons8-viber-48.png");
+            this.imageCollectionCommunicationTypes.Images.SetKeyName(3, "instagram.png");
+            this.imageCollectionCommunicationTypes.Images.SetKeyName(4, "icons8-телеграмма-app-48.png");
+            this.imageCollectionCommunicationTypes.Images.SetKeyName(5, "vk.png");
+            this.imageCollectionCommunicationTypes.Images.SetKeyName(6, "210908_logo.png");
+            this.imageCollectionCommunicationTypes.InsertGalleryImage("question_16x16.png", "images/support/question_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/support/question_16x16.png"), 7);
+            this.imageCollectionCommunicationTypes.Images.SetKeyName(7, "question_16x16.png");
+            // 
             // EditUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 156);
+            this.Controls.Add(this.imageComboBoxEditCommunication);
+            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.textEditPhone);
             this.Controls.Add(this.labelControl1);
@@ -103,6 +145,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPhone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageComboBoxEditCommunication.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +160,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textEditPhone;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.ImageComboBoxEdit imageComboBoxEditCommunication;
+        private DevExpress.Utils.ImageCollection imageCollectionCommunicationTypes;
     }
 }

@@ -32,7 +32,24 @@ namespace LizokasNail.WebApi.Controllers
             try
             {
                 var item = _bl.Add(dto);
-                return CreatedAtRoute("GetById", new { reportId = item.Id }, item);
+                return CreatedAtRoute("GetById", new { Id = item.Id }, item);
+            }
+            catch (Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
+        }
+
+        [HttpPut()]
+        public ActionResult<UserDto> Update([FromBody] UserDto dto)
+        {
+            try
+            {
+                return _bl.Update(dto);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
             }
             catch (Exception ex)
             {

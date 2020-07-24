@@ -12,6 +12,16 @@ namespace LizokasNail.Core.Dao
         public EntityDao(IDataSource dataSource) : base(dataSource)
         { }
 
+        public TData Get(int id)
+        {
+            return ReadContext(db => { return db.Set<TData>().FirstOrDefault(x => x.Id.Equals(id)); });
+        }
+
+        public TData Get_NoTracking(int id)
+        {
+            return ReadContext(db => { return db.Set<TData>().AsNoTracking().FirstOrDefault(x => x.Id.Equals(id)); });
+        }
+
         public virtual List<TData> Get(Expression<Func<TData, bool>> condition = null)
         {
             return ReadContext(db =>
@@ -76,6 +86,5 @@ namespace LizokasNail.Core.Dao
             if (entities == null) return;
             UpdateContext(x => x.RemoveRange(entities));
         }
-
     }
 }

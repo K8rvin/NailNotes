@@ -7,7 +7,7 @@ namespace LizokasNail.Contract.Dto
         string Phone { get; set; }
     }
 
-    public class UserDto: Identity
+    public class UserDto: Identity, IUserDto
     {
         public UserDto()
         {

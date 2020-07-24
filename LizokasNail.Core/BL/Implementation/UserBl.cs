@@ -1,7 +1,6 @@
 ﻿using LizokasNail.Contract.Dto;
 using LizokasNail.Core.Dao;
 using LizokasNail.Core.Dao.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -29,6 +28,19 @@ namespace LizokasNail.Core.BL.Implementation
             };
 
             _dao.Create(item);
+            return _map(item);
+        }
+
+        public UserDto Update(UserDto dto)
+        {
+            var item = _dao.Get(dto.Id);
+            if (item == null)
+                throw new KeyNotFoundException();
+
+            item.Name = dto.Name;
+            item.Phone = dto.Phone;
+            _dao.Update(item);
+
             return _map(item);
         }
 

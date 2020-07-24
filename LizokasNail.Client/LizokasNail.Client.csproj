@@ -37,6 +37,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Data.v15.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Images.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Utils.v15.2.dll</HintPath>
@@ -151,6 +152,24 @@
       <Project>{E46F65B8-FD29-4D4C-86BD-0B3AB252ABB4}</Project>
       <Name>LizokasNail.Http</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-viber-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\210908_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-whatsapp-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-телеграмма-app-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vk.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

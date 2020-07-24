@@ -1,5 +1,7 @@
-﻿using LisokasNail.Models;
+﻿using DevExpress.Utils.Extensions;
+using LisokasNail.Models;
 using LizokasNail.Client.Di;
+using LizokasNail.Contract.Enum;
 using System;
 using System.Windows.Forms;
 
@@ -28,6 +30,14 @@ namespace LizokasNail.Client.Forms.Edit
 
             textEditName.DataBindings.Add("EditValue", _user, nameof(_user.Name));
             textEditPhone.DataBindings.Add("EditValue", _user, nameof(_user.Phone));
+
+            imageComboBoxEditCommunication.Properties.Items.AddEnum<CommunicationType>();
+            imageComboBoxEditCommunication.DataBindings.Add("EditValue", _user, nameof(_user.CommunicationType));
+            //imageComboBoxEditCommunication.Properties.SmallImages = imageCollectionCommunicationTypes;
+            //gridLookUpEditCommunication.Properties.DataSource = _tanks;
+            //gridLookUpEditCommunication.Properties.ValueMember = "IdTank";
+            //gridLookUpEditCommunication.Properties.DisplayMember = "TankName";
+            //gridLookUpEditCommunication.EditValue = _user.CommunicationType;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

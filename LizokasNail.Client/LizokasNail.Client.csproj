@@ -38,6 +38,7 @@
       <HintPath>G:\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Data.v15.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Images.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Utils.v15.2.dll</HintPath>
@@ -54,6 +55,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.XtraGrid.v15.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -77,12 +81,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Di\Container.cs" />
+    <Compile Include="Di\IRecordRepo.cs" />
     <Compile Include="Di\IUserRepo.cs" />
+    <Compile Include="Forms\Edit\EditRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit\EditRecordForm.Designer.cs">
+      <DependentUpon>EditRecordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Edit\EditUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Edit\EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RecordForm.Designer.cs">
+      <DependentUpon>RecordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
@@ -97,10 +114,11 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Identity.cs" />
-    <Compile Include="Models\RegistrationBl.cs" />
+    <Compile Include="Models\RecordBl.cs" />
     <Compile Include="Models\UserBl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RecordRepo.cs" />
     <Compile Include="Repository\UserRepo.cs" />
     <Compile Include="UserControls\UCLoading.cs">
       <SubType>UserControl</SubType>
@@ -109,8 +127,14 @@
       <DependentUpon>UCLoading.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\LoadingBar.cs" />
+    <EmbeddedResource Include="Forms\Edit\EditRecordForm.resx">
+      <DependentUpon>EditRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Edit\EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RecordForm.resx">
+      <DependentUpon>RecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>

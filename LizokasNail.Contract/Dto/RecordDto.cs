@@ -26,5 +26,6 @@ namespace LizokasNail.Contract.Dto
 
         public int UserId { get; set; }
         public DateTime RecordDate { get; set; }
+        public UserDto User { get; set; }
     }
 }

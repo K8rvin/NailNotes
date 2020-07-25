@@ -8,15 +8,15 @@ using Unity;
 
 namespace LizokasNail.Client.Forms
 {
-    public partial class UserForm : Form
+    public partial class RecordForm : Form
     {
-        private readonly IUserRepo _repo;
-        private List<UserBl> _items = new List<UserBl>();
+        private readonly IRecordRepo _repo;
+        private List<RecordBl> _items = new List<RecordBl>();
 
-        public UserForm()
+        public RecordForm()
         {
             InitializeComponent();
-            _repo = Di.Container.Instance.Resolve<IUserRepo>();
+            _repo = Di.Container.Instance.Resolve<IRecordRepo>();
             RefreshGrid();
         }
 
@@ -29,8 +29,8 @@ namespace LizokasNail.Client.Forms
 
         private void SettingsData()
         {
-            gridControlUser.DataSource = _items;
-            gridViewUser.BestFitColumns();
+            gridControlRecord.DataSource = _items;
+            gridViewRecord.BestFitColumns();
         }
 
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -40,12 +40,12 @@ namespace LizokasNail.Client.Forms
 
         private void barButtonItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            EditUserForm form = new EditUserForm(_repo);
+            var form = new EditRecordForm(_repo);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 RefreshGrid();
                 form.Dispose();
-                gridViewUser.FocusedRowHandle = _items.Count - 1;
+                gridViewRecord.FocusedRowHandle = _items.Count - 1;
             }
         }
 
@@ -61,9 +61,9 @@ namespace LizokasNail.Client.Forms
 
         private void ShowEditForm()
         {
-            if (gridViewUser.GetFocusedRow() is UserBl selected)
+            if (gridViewRecord.GetFocusedRow() is RecordBl selected)
             {
-                var form = new EditUserForm(_repo, selected);
+                var form = new EditRecordForm(_repo, selected);
                 form.ShowDialog();
                 form.Dispose();
             }

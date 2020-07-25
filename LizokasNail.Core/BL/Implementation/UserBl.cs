@@ -15,9 +15,9 @@ namespace LizokasNail.Core.BL.Implementation
             _dao = dao;
         }
 
-        public IEnumerable<UserDto> Get() => _dao.Get().Select(x => toDto(x));
+        public IEnumerable<UserDto> Get() => _dao.Get().Select(x => _map(x));
 
-        public UserDto GetById(int id) => toDto(_dao.Get(x => x.Id == id)?.FirstOrDefault());
+        public UserDto GetById(int id) => _map(_dao.Get(x => x.Id == id)?.FirstOrDefault());
 
         public UserDto Add(UserDto dto)
         {
@@ -26,6 +26,7 @@ namespace LizokasNail.Core.BL.Implementation
                 Name = dto.Name,
                 Phone = dto.Phone,
                 CommunicationType = dto.CommunicationType,
+                Comment = dto.Comment,
             };
 
             _dao.Create(item);
@@ -41,6 +42,7 @@ namespace LizokasNail.Core.BL.Implementation
             item.Name = dto.Name;
             item.Phone = dto.Phone;
             item.CommunicationType = dto.CommunicationType;
+            item.Comment = dto.Comment;
             _dao.Update(item);
 
             return _map(item);
@@ -49,18 +51,6 @@ namespace LizokasNail.Core.BL.Implementation
         private UserDto _map(IUserDto item)
         {
             return new UserDto(item);
-        }
-
-        private UserDto toDto(User item)
-        {
-            if (item == null) return null;
-            return new UserDto()
-            {
-                Id = item.Id,
-                Name = item.Name,
-                Phone = item.Phone,
-                CommunicationType = item.CommunicationType,
-            };
         }
     }
 }

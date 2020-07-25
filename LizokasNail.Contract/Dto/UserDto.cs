@@ -7,6 +7,7 @@ namespace LizokasNail.Contract.Dto
         string Name { get; set; }
         string Phone { get; set; }
         CommunicationType CommunicationType { get; set; }
+        string Comment { get; set; }
     }
 
     public class UserDto: Identity, IUserDto
@@ -23,11 +24,13 @@ namespace LizokasNail.Contract.Dto
                 Name = item.Name;
                 Phone = item.Phone;
                 CommunicationType = item.CommunicationType;
+                Comment = item.Comment;
             }
         }
 
         public string Name { get; set; }
         public string Phone { get; set; }
         public CommunicationType CommunicationType { get; set; }
+        public string Comment { get; set; }
     }
 }

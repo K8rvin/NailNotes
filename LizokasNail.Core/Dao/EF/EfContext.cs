@@ -16,6 +16,11 @@ namespace LizokasNail.Core.Dao.EF
             this._hcontext = hcontext;
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+        }
+
         /// <summary>
         /// Fluent API конфигурация БД 
         /// </summary>

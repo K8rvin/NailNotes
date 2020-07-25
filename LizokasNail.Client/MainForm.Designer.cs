@@ -38,6 +38,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItemRecords = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +54,10 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barSubItem1,
-            this.barButtonItemUsers});
+            this.barButtonItemUsers,
+            this.barButtonItemRecords});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 3;
+            this.barManager1.MaxItemId = 4;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -75,7 +77,8 @@
             this.barSubItem1.Caption = "Меню";
             this.barSubItem1.Id = 1;
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords)});
             this.barSubItem1.Name = "barSubItem1";
             // 
             // barButtonItemUsers
@@ -125,6 +128,13 @@
             this.barDockControlRight.Location = new System.Drawing.Point(800, 22);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 405);
             // 
+            // barButtonItemRecords
+            // 
+            this.barButtonItemRecords.Caption = "Записи на прием";
+            this.barButtonItemRecords.Id = 3;
+            this.barButtonItemRecords.Name = "barButtonItemRecords";
+            this.barButtonItemRecords.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemRecords_ItemClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +164,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItemUsers;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemRecords;
     }
 }
 

@@ -9,6 +9,7 @@ namespace LizokasNail.Core.Dao.EF.Configuration
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("User").HasKey(d => d.Id);
+            builder.HasMany(x => x.Records).WithOne(x => x.User).IsRequired();
         }
     }
 }

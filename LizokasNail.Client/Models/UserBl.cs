@@ -17,12 +17,14 @@ namespace LisokasNail.Models
                 Name = dto.Name;
                 Phone = dto.Phone;
                 CommunicationType = dto.CommunicationType;
+                Comment = dto.Comment;
             }
         }
 
         public string Name { get; set; }
         public string Phone { get; set; }
         public CommunicationType CommunicationType { get; set; }
+        public string Comment { get; set; }
 
         public UserDto ToDto() => new UserDto()
         {
@@ -30,6 +32,7 @@ namespace LisokasNail.Models
             Name = Name,
             Phone = Phone,
             CommunicationType = CommunicationType,
+            Comment = Comment,
         };
     }
 }

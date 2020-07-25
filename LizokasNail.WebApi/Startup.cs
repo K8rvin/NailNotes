@@ -43,12 +43,14 @@ namespace LizokasNail.WebApi
             #region Dao 
 
             services.AddScoped<IDao<User>, EntityDao<User>>();
+            services.AddScoped<IDao<Record>, EntityDao<Record>>();
 
             #endregion
 
             #region Bl
 
             services.AddScoped<IUserBl, UserBl>();
+            services.AddScoped<IRecordBl, RecordBl>();
 
             #endregion
 

@@ -8,31 +8,31 @@ namespace LizokasNail.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class RecordController : ControllerBase
     {
-        private readonly IUserBl _bl;
+        private readonly IRecordBl _bl;
 
-        public UserController(IUserBl bl)
+        public RecordController(IRecordBl bl)
         {
             _bl = bl;
         }
 
         [HttpGet]
-        public IEnumerable<UserDto> Get() => _bl.Get();
+        public IEnumerable<RecordDto> Get() => _bl.Get();
 
-        [HttpGet("GetById", Name = "GetUserById")]
-        public UserDto GetById([FromQuery] int Id)
+        [HttpGet("GetById", Name = "GetRecordById")]
+        public RecordDto GetById([FromQuery] int Id)
         {
             return _bl.GetById(Id);
         }
 
         [HttpPost()]
-        public ActionResult<UserDto> Add([FromBody] UserDto dto)
+        public ActionResult<RecordDto> Add([FromBody] RecordDto dto)
         {
             try
             {
                 var item = _bl.Add(dto);
-                return CreatedAtRoute("GetUserById", new { Id = item.Id }, item);
+                return CreatedAtRoute("GetRecordById", new { Id = item.Id }, item);
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace LizokasNail.WebApi.Controllers
         }
 
         [HttpPut()]
-        public ActionResult<UserDto> Update([FromBody] UserDto dto)
+        public ActionResult<RecordDto> Update([FromBody] RecordDto dto)
         {
             try
             {

@@ -8,39 +8,39 @@ using Unity.Resolution;
 
 namespace LizokasNail.Client.Repository
 {
-    public class UserRepo : IUserRepo
+    public class RecordRepo : IRecordRepo
     {
         private readonly IUnityContainer _uc;
-        private readonly IUserService _service;
+        private readonly IRecordService _service;
 
-        public UserRepo(IUnityContainer uc, IUserService service)
+        public RecordRepo(IUnityContainer uc, IRecordService service)
         {
             _uc = uc;
             _service = service;
         }
 
-        public UserBl Get(int id)
+        public RecordBl Get(int id)
         {
             var dto = _service.Get(id);
-            return dto != null ? new UserBl(dto) : null;
+            return dto != null ? new RecordBl(dto) : null;
         }
 
-        public virtual List<UserBl> Get()
+        public virtual List<RecordBl> Get()
         {
             var dtos = _service.Get();
-            return dtos?.Select(x => _uc.Resolve<UserBl>(new ParameterOverride("dto", x))).ToList();
+            return dtos?.Select(x => _uc.Resolve<RecordBl>(new ParameterOverride("dto", x))).ToList();
         }
 
-        public UserBl Add(UserBl item)
+        public RecordBl Add(RecordBl item)
         {
             var dto = _service.Add(item?.ToDto());
-            return dto != null ? new UserBl(dto) : null;
+            return dto != null ? new RecordBl(dto) : null;
         }
 
-        public UserBl Update(UserBl item)
+        public RecordBl Update(RecordBl item)
         {
             var dto = _service.Update(item?.ToDto());
-            return dto != null ? new UserBl(dto) : null;
+            return dto != null ? new RecordBl(dto) : null;
         }
     }
 }

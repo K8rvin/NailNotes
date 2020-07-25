@@ -1,5 +1,4 @@
-﻿using DevExpress.Utils.Extensions;
-using LisokasNail.Models;
+﻿using LisokasNail.Models;
 using LizokasNail.Client.Di;
 using LizokasNail.Contract.Enum;
 using System;
@@ -10,45 +9,41 @@ namespace LizokasNail.Client.Forms.Edit
     public partial class EditUserForm : Form
     {
         private readonly IUserRepo _repo;
-        private UserBl _user;
+        private UserBl _item;
 
-        public EditUserForm(IUserRepo repo, UserBl user = null)
+        public EditUserForm(IUserRepo repo, UserBl item = null)
         {
             InitializeComponent();
             _repo = repo;
-            _user = user;
+            _item = item;
 
-            if (user != null)
+            if (item != null)
             {
                 Text = "Редактирование клиента";
             }
             else
             {
                 Text = "Новый клиент";
-                _user = new UserBl();
+                _item = new UserBl();
             }
 
-            textEditName.DataBindings.Add("EditValue", _user, nameof(_user.Name));
-            textEditPhone.DataBindings.Add("EditValue", _user, nameof(_user.Phone));
+            textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name));
+            textEditPhone.DataBindings.Add("EditValue", _item, nameof(_item.Phone));
+            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
 
             imageComboBoxEditCommunication.Properties.Items.AddEnum<CommunicationType>();
-            imageComboBoxEditCommunication.DataBindings.Add("EditValue", _user, nameof(_user.CommunicationType));
-            //imageComboBoxEditCommunication.Properties.SmallImages = imageCollectionCommunicationTypes;
-            //gridLookUpEditCommunication.Properties.DataSource = _tanks;
-            //gridLookUpEditCommunication.Properties.ValueMember = "IdTank";
-            //gridLookUpEditCommunication.Properties.DisplayMember = "TankName";
-            //gridLookUpEditCommunication.EditValue = _user.CommunicationType;
+            imageComboBoxEditCommunication.DataBindings.Add("EditValue", _item, nameof(_item.CommunicationType));
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (_user.Id == 0)
+            if (_item.Id == 0)
             {
-                _repo.Add(_user);
+                _repo.Add(_item);
             }
             else
             {
-                _repo.Update(_user);
+                _repo.Update(_item);
             }
 
             DialogResult = DialogResult.OK;

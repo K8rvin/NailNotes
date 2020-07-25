@@ -9,6 +9,7 @@ namespace LizokasNail.Core.Dao.Model
         public string Name { get; set; }
         public string Phone { get; set; }
         public CommunicationType CommunicationType { get; set; }
+        public string Comment { get; set; }
         public ICollection<Record> Records { get; set; }
     }
 }

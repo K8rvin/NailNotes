@@ -1,31 +1,36 @@
-﻿using System;
-using System.Configuration;
+﻿using Flurl;
+using Flurl.Http;
+using LizokasNail.Contract.Dto;
+using LizokasNail.Contract.Service;
+using System.Collections.Generic;
 
 namespace LizokasNail.Http
 {
-    public abstract class BaseService
+    public class BaseService : ServiceBase, IBaseService
     {
-        protected BaseService()
+        public BaseDto Get(int Id)
         {
-            Url = GetUrl();
-            //FlurlHttp.Configure(s => s.OnErrorAsync = HandleFlurlErrorAsync);
+            return Url.AppendPathSegment("base/GetById")
+                .SetQueryParam("Id", Id)
+                .GetJsonAsync<BaseDto>().Result;
         }
 
-        private const string DefaultUrl = "http://localhost:44357/api/";
-
-        protected string Url { get; }
-
-        private static string GetUrl()
+        public IEnumerable<BaseDto> Get()
         {
-            try
-            {
-                return ConfigurationManager.AppSettings.Get("apiUrl");
-            }
-            catch
-            {
-                return DefaultUrl;
-            }
+            return Url.AppendPathSegment("base")
+                .GetJsonAsync<IEnumerable<BaseDto>>().Result;
+        }
 
+        public BaseDto Add(BaseDto item)
+        {
+            return Url.AppendPathSegment("base")
+                .PostJsonAsync(item).ReceiveJson<BaseDto>().Result;
+        }
+
+        public BaseDto Update(BaseDto item)
+        {
+            return Url.AppendPathSegment("base")
+                .PutJsonAsync(item).ReceiveJson<BaseDto>().Result;
         }
     }
 }

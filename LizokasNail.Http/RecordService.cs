@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace LizokasNail.Http
 {
-    public class RecordService : BaseService, IRecordService
+    public class RecordService : ServiceBase, IRecordService
     {
         public RecordDto Get(int Id)
         {

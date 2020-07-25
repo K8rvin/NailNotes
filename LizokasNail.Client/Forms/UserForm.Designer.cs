@@ -41,6 +41,9 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnCommunicationType = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -59,9 +62,14 @@
             // 
             // gridViewUser
             // 
+            this.gridViewUser.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumnName,
+            this.gridColumnPhone,
+            this.gridColumnCommunicationType});
             this.gridViewUser.GridControl = this.gridControlUser;
             this.gridViewUser.Name = "gridViewUser";
             this.gridViewUser.OptionsBehavior.Editable = false;
+            this.gridViewUser.OptionsView.ShowFooter = true;
             this.gridViewUser.DoubleClick += new System.EventHandler(this.gridViewUser_DoubleClick);
             // 
             // barManager1
@@ -149,6 +157,32 @@
             this.barDockControlRight.Location = new System.Drawing.Point(800, 29);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 421);
             // 
+            // gridColumnName
+            // 
+            this.gridColumnName.Caption = "Имя";
+            this.gridColumnName.FieldName = "Name";
+            this.gridColumnName.Name = "gridColumnName";
+            this.gridColumnName.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Name", "Всего: {0}")});
+            this.gridColumnName.Visible = true;
+            this.gridColumnName.VisibleIndex = 0;
+            // 
+            // gridColumnPhone
+            // 
+            this.gridColumnPhone.Caption = "Телефон";
+            this.gridColumnPhone.FieldName = "Phone";
+            this.gridColumnPhone.Name = "gridColumnPhone";
+            this.gridColumnPhone.Visible = true;
+            this.gridColumnPhone.VisibleIndex = 1;
+            // 
+            // gridColumnCommunicationType
+            // 
+            this.gridColumnCommunicationType.Caption = "Вид связи";
+            this.gridColumnCommunicationType.FieldName = "CommunicationType";
+            this.gridColumnCommunicationType.Name = "gridColumnCommunicationType";
+            this.gridColumnCommunicationType.Visible = true;
+            this.gridColumnCommunicationType.VisibleIndex = 2;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +218,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem barButtonItemEdit;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnName;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnPhone;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnCommunicationType;
     }
 }

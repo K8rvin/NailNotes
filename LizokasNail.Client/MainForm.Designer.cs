@@ -33,12 +33,13 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItemUsers = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemRecords = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barButtonItemRecords = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemBase = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +56,10 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barSubItem1,
             this.barButtonItemUsers,
-            this.barButtonItemRecords});
+            this.barButtonItemRecords,
+            this.barButtonItemBase});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 4;
+            this.barManager1.MaxItemId = 5;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -78,7 +80,8 @@
             this.barSubItem1.Id = 1;
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemBase)});
             this.barSubItem1.Name = "barSubItem1";
             // 
             // barButtonItemUsers
@@ -87,6 +90,13 @@
             this.barButtonItemUsers.Id = 2;
             this.barButtonItemUsers.Name = "barButtonItemUsers";
             this.barButtonItemUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemUsers_ItemClick);
+            // 
+            // barButtonItemRecords
+            // 
+            this.barButtonItemRecords.Caption = "Записи на прием";
+            this.barButtonItemRecords.Id = 3;
+            this.barButtonItemRecords.Name = "barButtonItemRecords";
+            this.barButtonItemRecords.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemRecords_ItemClick);
             // 
             // bar3
             // 
@@ -128,12 +138,12 @@
             this.barDockControlRight.Location = new System.Drawing.Point(800, 22);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 405);
             // 
-            // barButtonItemRecords
+            // barButtonItemBase
             // 
-            this.barButtonItemRecords.Caption = "Записи на прием";
-            this.barButtonItemRecords.Id = 3;
-            this.barButtonItemRecords.Name = "barButtonItemRecords";
-            this.barButtonItemRecords.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemRecords_ItemClick);
+            this.barButtonItemBase.Caption = "Базы";
+            this.barButtonItemBase.Id = 4;
+            this.barButtonItemBase.Name = "barButtonItemBase";
+            this.barButtonItemBase.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemBase_ItemClick);
             // 
             // MainForm
             // 
@@ -165,6 +175,7 @@
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItemUsers;
         private DevExpress.XtraBars.BarButtonItem barButtonItemRecords;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemBase;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace LizokasNail.Http
 {
-    public class UserService : BaseService, IUserService
+    public class UserService : ServiceBase, IUserService
     {
         public UserDto Get(int Id)
         {

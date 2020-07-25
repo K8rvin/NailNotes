@@ -22,12 +22,14 @@ namespace LizokasNail.Client.Di
              */
             AsSingleton<IUserService, UserService>();
             AsSingleton<IRecordService, RecordService>();
+            AsSingleton<IBaseService, BaseService>();
 
             /**
              * Репозитории
              */
             AsTransient<IUserRepo, UserRepo>();
             AsTransient<IRecordRepo, RecordRepo>();
+            AsTransient<IBaseRepo, BaseRepo>();
 
         }
 

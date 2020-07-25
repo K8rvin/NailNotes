@@ -42,6 +42,14 @@ namespace LizokasNail.Client
             form.Show();
         }
 
+        private void barButtonItemBase_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new BaseForm();
+            form.Show();
+        }
+
         #endregion Menu
+
+
     }
 }

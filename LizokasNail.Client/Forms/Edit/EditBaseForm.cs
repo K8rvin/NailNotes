@@ -28,6 +28,7 @@ namespace LizokasNail.Client.Forms.Edit
             }
 
             textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name));
+            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
         }
 
         private bool Validation()

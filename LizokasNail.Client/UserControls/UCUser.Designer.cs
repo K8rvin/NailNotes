@@ -71,6 +71,7 @@
             this.gridViewUser.GridControl = this.gridControlUser;
             this.gridViewUser.Name = "gridViewUser";
             this.gridViewUser.OptionsBehavior.Editable = false;
+            this.gridViewUser.OptionsView.ShowAutoFilterRow = true;
             this.gridViewUser.OptionsView.ShowFooter = true;
             // 
             // gridColumnName

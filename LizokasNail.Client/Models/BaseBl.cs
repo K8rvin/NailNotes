@@ -2,7 +2,7 @@
 
 namespace LisokasNail.Models
 {   
-    public class BaseBl : Identity
+    public class BaseBl : Identity, IBaseDto
     {
         public BaseBl()
         {
@@ -14,15 +14,18 @@ namespace LisokasNail.Models
             {
                 Id = dto.Id;
                 Name = dto.Name;
+                Comment = dto.Comment;
             }
         }
 
         public string Name { get; set; }
+        public string Comment { get; set; }
 
         public BaseDto ToDto() => new BaseDto()
         {
             Id = Id,
             Name = Name,
+            Comment = Comment,
         };
     }
 }

@@ -41,6 +41,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -61,15 +62,17 @@
             // gridViewBase
             // 
             this.gridViewBase.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumnName});
+            this.gridColumnName,
+            this.gridColumnComment});
             this.gridViewBase.GridControl = this.gridControlBase;
             this.gridViewBase.Name = "gridViewBase";
             this.gridViewBase.OptionsBehavior.Editable = false;
+            this.gridViewBase.OptionsView.ShowAutoFilterRow = true;
             this.gridViewBase.OptionsView.ShowFooter = true;
             // 
             // gridColumnName
             // 
-            this.gridColumnName.Caption = "Название";
+            this.gridColumnName.Caption = "Марка";
             this.gridColumnName.FieldName = "Name";
             this.gridColumnName.Name = "gridColumnName";
             this.gridColumnName.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -162,6 +165,14 @@
             this.barDockControlRight.Location = new System.Drawing.Point(893, 29);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 623);
             // 
+            // gridColumnComment
+            // 
+            this.gridColumnComment.Caption = "Примечание";
+            this.gridColumnComment.FieldName = "Comment";
+            this.gridColumnComment.Name = "gridColumnComment";
+            this.gridColumnComment.Visible = true;
+            this.gridColumnComment.VisibleIndex = 1;
+            // 
             // UCBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,5 +207,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnComment;
     }
 }

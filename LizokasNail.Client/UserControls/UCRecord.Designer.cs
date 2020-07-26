@@ -67,6 +67,7 @@
             this.gridViewRecord.GridControl = this.gridControlRecord;
             this.gridViewRecord.Name = "gridViewRecord";
             this.gridViewRecord.OptionsBehavior.Editable = false;
+            this.gridViewRecord.OptionsView.ShowAutoFilterRow = true;
             this.gridViewRecord.OptionsView.ShowFooter = true;
             // 
             // gridColumnRecordDate

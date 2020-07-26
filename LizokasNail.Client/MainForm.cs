@@ -48,6 +48,13 @@ namespace LizokasNail.Client
             form.Show();
         }
 
+        private void barButtonItemColor_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new ColorForm();
+            form.Show();
+        }
+
+
         #endregion Menu
 
 

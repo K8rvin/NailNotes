@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace LizokasNail.Core.Dao.EF.Configuration
 {
-    internal class BaseConfiguration : IEntityTypeConfiguration<Base>
+    internal class ColorConfiguration : IEntityTypeConfiguration<Color>
     {
-        public void Configure(EntityTypeBuilder<Base> builder)
+        public void Configure(EntityTypeBuilder<Color> builder)
         {
-            builder.ToTable("Base").HasKey(d => d.Id);
+            builder.ToTable("Color").HasKey(d => d.Id);
             builder.HasIndex(p => p.Name).IsUnique();
         }
     }

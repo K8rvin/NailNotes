@@ -10,5 +10,6 @@ namespace LizokasNail.Core.BL
         BaseDto GetById(int id);
         BaseDto Add(BaseDto dto);
         BaseDto Update(BaseDto dto);
+        void Delete(int id);
     }
 }

@@ -9,5 +9,6 @@ namespace LizokasNail.Contract.Service
         IEnumerable<ColorDto> Get();
         ColorDto Add(ColorDto item);
         ColorDto Update(ColorDto item);
+        void Delete(int id);
     }
 }

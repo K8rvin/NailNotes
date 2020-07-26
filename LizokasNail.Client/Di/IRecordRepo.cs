@@ -9,5 +9,6 @@ namespace LizokasNail.Client.Di
         List<RecordBl> Get();
         RecordBl Add(RecordBl item);
         RecordBl Update(RecordBl item);
+        void Delete(int id);
     }
 }

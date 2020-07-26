@@ -9,5 +9,6 @@ namespace LizokasNail.Contract.Service
         IEnumerable<UserDto> Get();
         UserDto Add(UserDto item);
         UserDto Update(UserDto item);
+        void Delete(int id);
     }
 }

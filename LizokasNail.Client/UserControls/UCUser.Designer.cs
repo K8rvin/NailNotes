@@ -162,7 +162,7 @@
             this.barButtonItemDelete.Caption = "Удалить";
             this.barButtonItemDelete.Id = 2;
             this.barButtonItemDelete.Name = "barButtonItemDelete";
-            this.barButtonItemDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barButtonItemDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemDelete_ItemClick);
             // 
             // barDockControlTop
             // 

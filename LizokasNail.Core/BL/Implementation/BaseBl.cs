@@ -42,6 +42,19 @@ namespace LizokasNail.Core.BL.Implementation
             return _map(item);
         }
 
+        public void Delete(int id)
+        {
+            var entity = _dao.Get(id);
+            if (entity == null)
+            {
+                throw new KeyNotFoundException();
+            }
+            else
+            {
+                _dao.Delete(id);
+            }
+        }
+
         private BaseDto _map(IBaseDto item)
         {
             return new BaseDto(item);

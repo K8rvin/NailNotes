@@ -3,7 +3,7 @@ using LizokasNail.Contract.Enum;
 
 namespace LisokasNail.Models
 {   
-    public class UserBl : Identity
+    public class UserBl : Identity, IUserDto
     {
         public UserBl()
         {

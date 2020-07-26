@@ -2,7 +2,7 @@
 
 namespace LisokasNail.Models
 {   
-    public class ColorBl : Identity
+    public class ColorBl : Identity, IColorDto
     {
         public ColorBl()
         {
@@ -14,15 +14,18 @@ namespace LisokasNail.Models
             {
                 Id = dto.Id;
                 Name = dto.Name;
+                Comment = dto.Comment;
             }
         }
 
         public string Name { get; set; }
+        public string Comment { get; set; }
 
         public ColorDto ToDto() => new ColorDto()
         {
             Id = Id,
             Name = Name,
+            Comment = Comment,
         };
     }
 }

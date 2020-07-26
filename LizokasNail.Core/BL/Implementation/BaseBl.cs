@@ -24,6 +24,7 @@ namespace LizokasNail.Core.BL.Implementation
             var item = new Base()
             {
                 Name = dto.Name,
+                Comment = dto.Comment,
             };
 
             _dao.Create(item);
@@ -37,6 +38,7 @@ namespace LizokasNail.Core.BL.Implementation
                 throw new KeyNotFoundException();
 
             item.Name = dto.Name;
+            item.Comment = dto.Comment;
             _dao.Update(item);
 
             return _map(item);

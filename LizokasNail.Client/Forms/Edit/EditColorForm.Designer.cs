@@ -34,8 +34,11 @@
             this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection();
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditComment = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // textEditName
@@ -49,9 +52,9 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(12, 15);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 13);
+            this.labelControl1.Size = new System.Drawing.Size(32, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Название";
+            this.labelControl1.Text = "Марка";
             // 
             // imageCollectionCommunicationTypes
             // 
@@ -85,6 +88,21 @@
             this.simpleButtonCancel.TabIndex = 99;
             this.simpleButtonCancel.Text = "Отмена";
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(12, 41);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(61, 13);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "Примечание";
+            // 
+            // textEditComment
+            // 
+            this.textEditComment.Location = new System.Drawing.Point(103, 38);
+            this.textEditComment.Name = "textEditComment";
+            this.textEditComment.Size = new System.Drawing.Size(265, 20);
+            this.textEditComment.TabIndex = 2;
+            // 
             // EditColorForm
             // 
             this.AcceptButton = this.simpleButtonSave;
@@ -92,6 +110,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.simpleButtonCancel;
             this.ClientSize = new System.Drawing.Size(380, 156);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.textEditComment);
             this.Controls.Add(this.simpleButtonCancel);
             this.Controls.Add(this.simpleButtonSave);
             this.Controls.Add(this.labelControl1);
@@ -103,6 +123,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,5 +135,7 @@
         private DevExpress.Utils.ImageCollection imageCollectionCommunicationTypes;
         private DevExpress.XtraEditors.SimpleButton simpleButtonSave;
         private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit textEditComment;
     }
 }

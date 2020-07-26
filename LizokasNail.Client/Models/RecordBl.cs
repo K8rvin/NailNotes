@@ -6,7 +6,7 @@ namespace LisokasNail.Models
     /// <summary>
     /// Запись на прием
     /// </summary>
-    public class RecordBl : Identity
+    public class RecordBl : Identity, IRecordDto
     {
         public RecordBl()
         {

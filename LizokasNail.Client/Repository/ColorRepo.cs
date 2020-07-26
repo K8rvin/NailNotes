@@ -42,5 +42,10 @@ namespace LizokasNail.Client.Repository
             var dto = _service.Update(item?.ToDto());
             return dto != null ? new ColorBl(dto) : null;
         }
+
+        public void Delete(int id)
+        {
+            _service.Delete(id);
+        }
     }
 }

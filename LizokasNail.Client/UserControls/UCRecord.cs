@@ -72,5 +72,19 @@ namespace LizokasNail.Client.UserControls
                 form.Dispose();
             }
         }
+
+        private void barButtonItemDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var selected = gridViewRecord.GetFocusedRow() as RecordBl;
+            if (selected != null)
+            {
+                if (MessageBox.Show($"Удалить запись {selected.User.Name} на {selected.RecordDate} ?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    _repo.Delete(selected.Id);
+                    _items.Remove(selected);
+                    gridViewRecord.RefreshData();
+                }
+            }
+        }
     }
 }

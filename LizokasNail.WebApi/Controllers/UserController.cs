@@ -56,5 +56,24 @@ namespace LizokasNail.WebApi.Controllers
                 return Conflict(ex.Message);
             }
         }
+
+        [HttpDelete()]
+        public ActionResult Delete(int Id)
+        {
+            try
+            {
+                _bl.Delete(Id);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
+
+            return Ok();
+        }
     }
 }

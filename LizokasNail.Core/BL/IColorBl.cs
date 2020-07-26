@@ -10,5 +10,6 @@ namespace LizokasNail.Core.BL
         ColorDto GetById(int id);
         ColorDto Add(ColorDto dto);
         ColorDto Update(ColorDto dto);
+        void Delete(int id);
     }
 }

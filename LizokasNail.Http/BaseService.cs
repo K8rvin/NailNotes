@@ -32,5 +32,11 @@ namespace LizokasNail.Http
             return Url.AppendPathSegment("base")
                 .PutJsonAsync(item).ReceiveJson<BaseDto>().Result;
         }
+
+        public void Delete(int Id)
+        {
+            Url.AppendPathSegment("base")
+                .SetQueryParam("Id", Id).DeleteAsync();
+        }
     }
 }

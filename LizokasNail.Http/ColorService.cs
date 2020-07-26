@@ -34,5 +34,11 @@ namespace LizokasNail.Http
             return Url.AppendPathSegment("Color")
                 .PutJsonAsync(item).ReceiveJson<ColorDto>().Result;
         }
+
+        public void Delete(int Id)
+        {
+            Url.AppendPathSegment("Color")
+                .SetQueryParam("Id", Id).DeleteAsync();
+        }
     }
 }

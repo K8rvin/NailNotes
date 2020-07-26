@@ -9,5 +9,6 @@ namespace LizokasNail.Client.Di
         List<UserBl> Get();
         UserBl Add(UserBl item);
         UserBl Update(UserBl item);
+        void Delete(int id);
     }
 }

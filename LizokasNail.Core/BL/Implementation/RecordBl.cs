@@ -48,6 +48,19 @@ namespace LizokasNail.Core.BL.Implementation
             return toDto(item);
         }
 
+        public void Delete(int id)
+        {
+            var entity = _dao.Get(id);
+            if (entity == null)
+            {
+                throw new KeyNotFoundException();
+            }
+            else
+            {
+                _dao.Delete(id);
+            }
+        }
+
         private RecordDto toDto(Record item)
         {
             if (item == null) return null;

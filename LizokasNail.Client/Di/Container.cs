@@ -23,6 +23,7 @@ namespace LizokasNail.Client.Di
             AsSingleton<IUserService, UserService>();
             AsSingleton<IRecordService, RecordService>();
             AsSingleton<IBaseService, BaseService>();
+            AsSingleton<IColorService, ColorService>();
 
             /**
              * Репозитории
@@ -30,6 +31,7 @@ namespace LizokasNail.Client.Di
             AsTransient<IUserRepo, UserRepo>();
             AsTransient<IRecordRepo, RecordRepo>();
             AsTransient<IBaseRepo, BaseRepo>();
+            AsTransient<IColorRepo, ColorRepo>();
 
         }
 

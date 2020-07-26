@@ -34,12 +34,13 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItemUsers = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRecords = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemBase = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barButtonItemBase = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemColor = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,9 +58,10 @@
             this.barSubItem1,
             this.barButtonItemUsers,
             this.barButtonItemRecords,
-            this.barButtonItemBase});
+            this.barButtonItemBase,
+            this.barButtonItemColor});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 5;
+            this.barManager1.MaxItemId = 6;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -81,7 +83,8 @@
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemBase)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemBase),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemColor)});
             this.barSubItem1.Name = "barSubItem1";
             // 
             // barButtonItemUsers
@@ -97,6 +100,13 @@
             this.barButtonItemRecords.Id = 3;
             this.barButtonItemRecords.Name = "barButtonItemRecords";
             this.barButtonItemRecords.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemRecords_ItemClick);
+            // 
+            // barButtonItemBase
+            // 
+            this.barButtonItemBase.Caption = "Базы";
+            this.barButtonItemBase.Id = 4;
+            this.barButtonItemBase.Name = "barButtonItemBase";
+            this.barButtonItemBase.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemBase_ItemClick);
             // 
             // bar3
             // 
@@ -138,12 +148,12 @@
             this.barDockControlRight.Location = new System.Drawing.Point(800, 22);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 405);
             // 
-            // barButtonItemBase
+            // barButtonItemColor
             // 
-            this.barButtonItemBase.Caption = "Базы";
-            this.barButtonItemBase.Id = 4;
-            this.barButtonItemBase.Name = "barButtonItemBase";
-            this.barButtonItemBase.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemBase_ItemClick);
+            this.barButtonItemColor.Caption = "Цвета";
+            this.barButtonItemColor.Id = 5;
+            this.barButtonItemColor.Name = "barButtonItemColor";
+            this.barButtonItemColor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemColor_ItemClick);
             // 
             // MainForm
             // 
@@ -176,6 +186,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemUsers;
         private DevExpress.XtraBars.BarButtonItem barButtonItemRecords;
         private DevExpress.XtraBars.BarButtonItem barButtonItemBase;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemColor;
     }
 }
 

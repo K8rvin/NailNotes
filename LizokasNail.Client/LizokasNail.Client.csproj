@@ -85,12 +85,6 @@
     <Compile Include="Di\IRecordRepo.cs" />
     <Compile Include="Di\IBaseRepo.cs" />
     <Compile Include="Di\IUserRepo.cs" />
-    <Compile Include="Forms\ColorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ColorForm.Designer.cs">
-      <DependentUpon>ColorForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Edit\EditColorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,18 +109,6 @@
     <Compile Include="Forms\Edit\EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RecordForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RecordForm.Designer.cs">
-      <DependentUpon>RecordForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\BaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\BaseForm.Designer.cs">
-      <DependentUpon>BaseForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,16 +132,37 @@
     <Compile Include="Repository\RecordRepo.cs" />
     <Compile Include="Repository\BaseRepo.cs" />
     <Compile Include="Repository\UserRepo.cs" />
+    <Compile Include="UserControls\UCBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBase.Designer.cs">
+      <DependentUpon>UCBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCColor.Designer.cs">
+      <DependentUpon>UCColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCLoading.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCLoading.Designer.cs">
       <DependentUpon>UCLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCRecord.Designer.cs">
+      <DependentUpon>UCRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCUser.Designer.cs">
+      <DependentUpon>UCUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\LoadingBar.cs" />
-    <EmbeddedResource Include="Forms\ColorForm.resx">
-      <DependentUpon>ColorForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Edit\EditColorForm.resx">
       <DependentUpon>EditColorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,12 +174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Edit\EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RecordForm.resx">
-      <DependentUpon>RecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BaseForm.resx">
-      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
@@ -195,6 +192,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\UCBase.resx">
+      <DependentUpon>UCBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCColor.resx">
+      <DependentUpon>UCColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCRecord.resx">
+      <DependentUpon>UCRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCUser.resx">
+      <DependentUpon>UCUser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

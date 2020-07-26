@@ -139,10 +139,15 @@ namespace LizokasNail.Client
             uc.Init();
         }
 
+        private void barButtonItemTop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var uc = TryOpenTabSheet<UCTop>("TabPageTop", "Топы");
+            uc.Init();
+        }
 
 
         #endregion Menu
 
-        
+
     }
 }

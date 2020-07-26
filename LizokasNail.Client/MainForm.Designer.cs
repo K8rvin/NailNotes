@@ -30,19 +30,22 @@
         {
             this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItemMenu = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItemUsers = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRecords = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemBase = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemColor = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.bar1 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bar1 = new DevExpress.XtraBars.Bar();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageMain = new DevExpress.XtraTab.XtraTabPage();
+            this.barButtonItemTop = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItemDictionaries = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItemMaterials = new DevExpress.XtraBars.BarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
@@ -60,13 +63,16 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barSubItem1,
+            this.barSubItemMenu,
             this.barButtonItemUsers,
             this.barButtonItemRecords,
             this.barButtonItemBase,
-            this.barButtonItemColor});
+            this.barButtonItemColor,
+            this.barButtonItemTop,
+            this.barSubItemDictionaries,
+            this.barSubItemMaterials});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 6;
+            this.barManager1.MaxItemId = 9;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -76,7 +82,8 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemMenu),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemDictionaries)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.DisableClose = true;
             this.bar2.OptionsBar.DisableCustomization = true;
@@ -86,16 +93,11 @@
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // barSubItem1
+            // barSubItemMenu
             // 
-            this.barSubItem1.Caption = "Меню";
-            this.barSubItem1.Id = 1;
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemBase),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemColor)});
-            this.barSubItem1.Name = "barSubItem1";
+            this.barSubItemMenu.Caption = "Меню";
+            this.barSubItemMenu.Id = 1;
+            this.barSubItemMenu.Name = "barSubItemMenu";
             // 
             // barButtonItemUsers
             // 
@@ -140,6 +142,20 @@
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 1;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.OptionsBar.AllowQuickCustomization = false;
+            this.bar1.OptionsBar.DisableClose = true;
+            this.bar1.OptionsBar.DisableCustomization = true;
+            this.bar1.OptionsBar.DrawDragBorder = false;
+            this.bar1.OptionsBar.MinHeight = 50;
+            this.bar1.OptionsBar.UseWholeRow = true;
+            this.bar1.Text = "Tools";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -168,20 +184,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(800, 72);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 442);
             // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.OptionsBar.AllowQuickCustomization = false;
-            this.bar1.OptionsBar.DisableClose = true;
-            this.bar1.OptionsBar.DisableCustomization = true;
-            this.bar1.OptionsBar.DrawDragBorder = false;
-            this.bar1.OptionsBar.MinHeight = 50;
-            this.bar1.OptionsBar.UseWholeRow = true;
-            this.bar1.Text = "Tools";
-            // 
             // xtraTabControl
             // 
             this.xtraTabControl.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
@@ -200,6 +202,33 @@
             this.xtraTabPageMain.Name = "xtraTabPageMain";
             this.xtraTabPageMain.Size = new System.Drawing.Size(794, 414);
             this.xtraTabPageMain.Text = "Информация";
+            // 
+            // barButtonItemTop
+            // 
+            this.barButtonItemTop.Caption = "Топы";
+            this.barButtonItemTop.Id = 6;
+            this.barButtonItemTop.Name = "barButtonItemTop";
+            this.barButtonItemTop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemTop_ItemClick);
+            // 
+            // barSubItemDictionaries
+            // 
+            this.barSubItemDictionaries.Caption = "Справочники";
+            this.barSubItemDictionaries.Id = 7;
+            this.barSubItemDictionaries.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemMaterials)});
+            this.barSubItemDictionaries.Name = "barSubItemDictionaries";
+            // 
+            // barSubItemMaterials
+            // 
+            this.barSubItemMaterials.Caption = "Материалы";
+            this.barSubItemMaterials.Id = 8;
+            this.barSubItemMaterials.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemBase),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemColor),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemTop)});
+            this.barSubItemMaterials.Name = "barSubItemMaterials";
             // 
             // MainForm
             // 
@@ -231,7 +260,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarSubItem barSubItemMenu;
         private DevExpress.XtraBars.BarButtonItem barButtonItemUsers;
         private DevExpress.XtraBars.BarButtonItem barButtonItemRecords;
         private DevExpress.XtraBars.BarButtonItem barButtonItemBase;
@@ -239,6 +268,9 @@
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageMain;
+        private DevExpress.XtraBars.BarSubItem barSubItemDictionaries;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemTop;
+        private DevExpress.XtraBars.BarSubItem barSubItemMaterials;
     }
 }
 

@@ -28,6 +28,7 @@ namespace LizokasNail.Core.Dao.EF
             modelBuilder.ApplyConfiguration(new RecordConfiguration());
             modelBuilder.ApplyConfiguration(new BaseConfiguration());
             modelBuilder.ApplyConfiguration(new ColorConfiguration());
+            modelBuilder.ApplyConfiguration(new TopConfiguration());
 
             //...
         }

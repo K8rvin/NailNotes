@@ -28,47 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUserForm));
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.textEditName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEditPhone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.imageComboBoxEditCommunication = new DevExpress.XtraEditors.ImageComboBoxEdit();
-            this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.textEditComment = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageComboBoxEditCommunication.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(212, 123);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 0;
-            this.buttonSave.Tag = "5";
-            this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Location = new System.Drawing.Point(293, 123);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 1;
-            this.buttonCancel.Tag = "6";
-            this.buttonCancel.Text = "Отмена";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // textEditName
             // 
@@ -149,11 +126,33 @@
             this.textEditComment.Size = new System.Drawing.Size(265, 20);
             this.textEditComment.TabIndex = 4;
             // 
+            // simpleButtonSave
+            // 
+            this.simpleButtonSave.Location = new System.Drawing.Point(212, 123);
+            this.simpleButtonSave.Name = "simpleButtonSave";
+            this.simpleButtonSave.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonSave.TabIndex = 98;
+            this.simpleButtonSave.Text = "Сохранить";
+            this.simpleButtonSave.Click += new System.EventHandler(this.simpleButtonSave_Click);
+            // 
+            // simpleButtonCancel
+            // 
+            this.simpleButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.simpleButtonCancel.Location = new System.Drawing.Point(293, 123);
+            this.simpleButtonCancel.Name = "simpleButtonCancel";
+            this.simpleButtonCancel.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonCancel.TabIndex = 99;
+            this.simpleButtonCancel.Text = "Отмена";
+            // 
             // EditUserForm
             // 
+            this.AcceptButton = this.simpleButtonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.simpleButtonCancel;
             this.ClientSize = new System.Drawing.Size(380, 156);
+            this.Controls.Add(this.simpleButtonCancel);
+            this.Controls.Add(this.simpleButtonSave);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.textEditComment);
             this.Controls.Add(this.imageComboBoxEditCommunication);
@@ -162,8 +161,9 @@
             this.Controls.Add(this.textEditPhone);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.textEditName);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EditUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
@@ -177,9 +177,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonCancel;
         private DevExpress.XtraEditors.TextEdit textEditName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -189,5 +186,7 @@
         private DevExpress.Utils.ImageCollection imageCollectionCommunicationTypes;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit textEditComment;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonSave;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
     }
 }

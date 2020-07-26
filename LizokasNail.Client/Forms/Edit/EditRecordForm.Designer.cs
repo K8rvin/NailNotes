@@ -28,42 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditRecordForm));
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection();
             this.searchLookUpEditUser = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(212, 123);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 3;
-            this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Location = new System.Drawing.Point(293, 123);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 4;
-            this.buttonCancel.Text = "Отмена";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelControl1
             // 
@@ -127,6 +106,7 @@
             this.dateEdit.Properties.CalendarTimeProperties.Mask.UseMaskAsDisplayFormat = true;
             this.dateEdit.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Classic;
             this.dateEdit.Properties.DisplayFormat.FormatString = "";
+            this.dateEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit.Properties.EditFormat.FormatString = "";
             this.dateEdit.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit.Properties.Mask.EditMask = "g";
@@ -135,17 +115,40 @@
             this.dateEdit.Size = new System.Drawing.Size(265, 20);
             this.dateEdit.TabIndex = 2;
             // 
+            // simpleButtonSave
+            // 
+            this.simpleButtonSave.Location = new System.Drawing.Point(212, 123);
+            this.simpleButtonSave.Name = "simpleButtonSave";
+            this.simpleButtonSave.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonSave.TabIndex = 98;
+            this.simpleButtonSave.Text = "Сохранить";
+            this.simpleButtonSave.Click += new System.EventHandler(this.simpleButtonSave_Click);
+            // 
+            // simpleButtonCancel
+            // 
+            this.simpleButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.simpleButtonCancel.Location = new System.Drawing.Point(293, 123);
+            this.simpleButtonCancel.Name = "simpleButtonCancel";
+            this.simpleButtonCancel.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonCancel.TabIndex = 100;
+            this.simpleButtonCancel.Text = "Отмена";
+            // 
             // EditRecordForm
             // 
+            this.AcceptButton = this.simpleButtonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.simpleButtonCancel;
             this.ClientSize = new System.Drawing.Size(380, 156);
+            this.Controls.Add(this.simpleButtonCancel);
+            this.Controls.Add(this.simpleButtonSave);
             this.Controls.Add(this.searchLookUpEditUser);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.dateEdit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EditRecordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).EndInit();
@@ -159,14 +162,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonCancel;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.Utils.ImageCollection imageCollectionCommunicationTypes;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEditUser;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.DateEdit dateEdit;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonSave;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
     }
 }

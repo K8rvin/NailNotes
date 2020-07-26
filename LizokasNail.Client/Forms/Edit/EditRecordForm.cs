@@ -39,7 +39,7 @@ namespace LizokasNail.Client.Forms.Edit
             searchLookUpEditUser.DataBindings.Add("EditValue", _item, nameof(_item.UserId));
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void simpleButtonSave_Click(object sender, EventArgs e)
         {
             if (_item.Id == 0)
             {
@@ -51,11 +51,6 @@ namespace LizokasNail.Client.Forms.Edit
             }
 
             DialogResult = DialogResult.OK;
-        }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
         }
     }
 }

@@ -30,7 +30,19 @@ namespace LizokasNail.Client.Forms.Edit
             textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name));
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private bool Validation()
+        {
+            var items = _repo.Get();
+            if (items.Any(x => x.Name.Trim().ToLower() == _item.Name.Trim().ToLower() && x.Id != _item.Id))
+            {
+                MessageBox.Show("Цвет с таким названием уже существует");
+                return false;
+            }
+
+            return true;
+        }
+
+        private void simpleButtonSave_Click(object sender, EventArgs e)
         {
             if (Validation() == false)
                 return;
@@ -45,23 +57,6 @@ namespace LizokasNail.Client.Forms.Edit
             }
 
             DialogResult = DialogResult.OK;
-        }
-
-        private bool Validation()
-        {
-            var items = _repo.Get();
-            if (items.Any(x => x.Name.Trim().ToLower() == _item.Name.Trim().ToLower() && x.Id != _item.Id))
-            {
-                MessageBox.Show("Цвет с таким названием уже существует");
-                return false;
-            }
-
-            return true;
-        }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
         }
     }
 }

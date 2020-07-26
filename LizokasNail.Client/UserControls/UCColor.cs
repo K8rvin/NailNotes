@@ -6,21 +6,25 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Unity;
 
-namespace LizokasNail.Client.Forms
+namespace LizokasNail.Client.UserControls
 {
-    public partial class RecordForm : Form
+    public partial class UCColor : UserControl
     {
-        private readonly IRecordRepo _repo;
-        private List<RecordBl> _items = new List<RecordBl>();
-
-        public RecordForm()
+        public UCColor()
         {
             InitializeComponent();
-            _repo = Di.Container.Instance.Resolve<IRecordRepo>();
+            _repo = Di.Container.Instance.Resolve<IColorRepo>();
+        }
+
+        private readonly IColorRepo _repo;
+        private List<ColorBl> _items = new List<ColorBl>();
+
+        public void Init()
+        {
             RefreshGrid();
         }
 
-        private void RefreshGrid() => LoadingBar.Instance.ShowLoading(this, GetData, SettingsData);
+        private void RefreshGrid() => LoadingBar.Instance.ShowLoading(MainForm.Instance, GetData, SettingsData);
 
         private void GetData()
         {
@@ -29,8 +33,8 @@ namespace LizokasNail.Client.Forms
 
         private void SettingsData()
         {
-            gridControlRecord.DataSource = _items;
-            gridViewRecord.BestFitColumns();
+            gridControlColor.DataSource = _items;
+            gridViewColor.BestFitColumns();
         }
 
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -40,12 +44,12 @@ namespace LizokasNail.Client.Forms
 
         private void barButtonItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new EditRecordForm(_repo);
+            var form = new EditColorForm(_repo);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 RefreshGrid();
                 form.Dispose();
-                gridViewRecord.FocusedRowHandle = _items.Count - 1;
+                gridViewColor.FocusedRowHandle = _items.Count - 1;
             }
         }
 
@@ -61,9 +65,9 @@ namespace LizokasNail.Client.Forms
 
         private void ShowEditForm()
         {
-            if (gridViewRecord.GetFocusedRow() is RecordBl selected)
+            if (gridViewColor.GetFocusedRow() is ColorBl selected)
             {
-                var form = new EditRecordForm(_repo, selected);
+                var form = new EditColorForm(_repo, selected);
                 form.ShowDialog();
                 form.Dispose();
             }

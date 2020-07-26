@@ -28,38 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBaseForm));
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditColorForm));
             this.textEditName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection();
+            this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(212, 123);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 0;
-            this.buttonSave.Tag = "5";
-            this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Location = new System.Drawing.Point(293, 123);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 1;
-            this.buttonCancel.Tag = "6";
-            this.buttonCancel.Text = "Отмена";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // textEditName
             // 
@@ -90,16 +67,39 @@
             this.imageCollectionCommunicationTypes.InsertGalleryImage("question_16x16.png", "images/support/question_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/support/question_16x16.png"), 7);
             this.imageCollectionCommunicationTypes.Images.SetKeyName(7, "question_16x16.png");
             // 
-            // EditBaseForm
+            // simpleButtonSave
             // 
+            this.simpleButtonSave.Location = new System.Drawing.Point(212, 123);
+            this.simpleButtonSave.Name = "simpleButtonSave";
+            this.simpleButtonSave.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonSave.TabIndex = 98;
+            this.simpleButtonSave.Text = "Сохранить";
+            this.simpleButtonSave.Click += new System.EventHandler(this.simpleButtonSave_Click);
+            // 
+            // simpleButtonCancel
+            // 
+            this.simpleButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.simpleButtonCancel.Location = new System.Drawing.Point(293, 123);
+            this.simpleButtonCancel.Name = "simpleButtonCancel";
+            this.simpleButtonCancel.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonCancel.TabIndex = 99;
+            this.simpleButtonCancel.Text = "Отмена";
+            // 
+            // EditColorForm
+            // 
+            this.AcceptButton = this.simpleButtonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.simpleButtonCancel;
             this.ClientSize = new System.Drawing.Size(380, 156);
+            this.Controls.Add(this.simpleButtonCancel);
+            this.Controls.Add(this.simpleButtonSave);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.textEditName);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonSave);
-            this.Name = "EditBaseForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "EditColorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).EndInit();
@@ -109,11 +109,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonCancel;
         private DevExpress.XtraEditors.TextEdit textEditName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.Utils.ImageCollection imageCollectionCommunicationTypes;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonSave;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
     }
 }

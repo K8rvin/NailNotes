@@ -6,21 +6,25 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Unity;
 
-namespace LizokasNail.Client.Forms
+namespace LizokasNail.Client.UserControls
 {
-    public partial class BaseForm : Form
+    public partial class UCUser : UserControl
     {
-        private readonly IBaseRepo _repo;
-        private List<BaseBl> _items = new List<BaseBl>();
+        private readonly IUserRepo _repo;
+        private List<UserBl> _items = new List<UserBl>();
 
-        public BaseForm()
+        public UCUser()
         {
             InitializeComponent();
-            _repo = Di.Container.Instance.Resolve<IBaseRepo>();
+            _repo = Di.Container.Instance.Resolve<IUserRepo>();
+        }
+
+        public void Init()
+        {
             RefreshGrid();
         }
 
-        private void RefreshGrid() => LoadingBar.Instance.ShowLoading(this, GetData, SettingsData);
+        private void RefreshGrid() => LoadingBar.Instance.ShowLoading(MainForm.Instance, GetData, SettingsData);
 
         private void GetData()
         {
@@ -29,8 +33,8 @@ namespace LizokasNail.Client.Forms
 
         private void SettingsData()
         {
-            gridControlBase.DataSource = _items;
-            gridViewBase.BestFitColumns();
+            gridControlUser.DataSource = _items;
+            gridViewUser.BestFitColumns();
         }
 
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -40,12 +44,12 @@ namespace LizokasNail.Client.Forms
 
         private void barButtonItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new EditBaseForm(_repo);
+            var form = new EditUserForm(_repo);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 RefreshGrid();
                 form.Dispose();
-                gridViewBase.FocusedRowHandle = _items.Count - 1;
+                gridViewUser.FocusedRowHandle = _items.Count - 1;
             }
         }
 
@@ -61,9 +65,9 @@ namespace LizokasNail.Client.Forms
 
         private void ShowEditForm()
         {
-            if (gridViewBase.GetFocusedRow() is BaseBl selected)
+            if (gridViewUser.GetFocusedRow() is UserBl selected)
             {
-                var form = new EditBaseForm(_repo, selected);
+                var form = new EditUserForm(_repo, selected);
                 form.ShowDialog();
                 form.Dispose();
             }

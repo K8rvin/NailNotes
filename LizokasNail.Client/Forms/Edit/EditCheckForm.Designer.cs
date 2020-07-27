@@ -37,29 +37,34 @@
             this.textEditComment = new DevExpress.XtraEditors.TextEdit();
             this.searchLookUpEditBase = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridViewBase = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumnBaseName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnBaseComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.searchLookUpEditRecord = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridViewRecord = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumnRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnUserName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.searchLookUpEditColor = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridViewColor = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumnColorName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnColorComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.searchLookUpEditTop = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridViewTop = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumnTopName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTopComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.gridControlDesign = new DevExpress.XtraGrid.GridControl();
             this.gridViewDesign = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnUserName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnBaseName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnBaseComment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnColorName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnColorComment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnTopName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnTopComment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSearchLookUpEditDesign = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnDesignComment = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditBase.Properties)).BeginInit();
@@ -73,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDesign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEditDesign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // imageCollectionCommunicationTypes
@@ -142,6 +149,22 @@
             this.gridViewBase.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridViewBase.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumnBaseName
+            // 
+            this.gridColumnBaseName.Caption = "Марка";
+            this.gridColumnBaseName.FieldName = "Name";
+            this.gridColumnBaseName.Name = "gridColumnBaseName";
+            this.gridColumnBaseName.Visible = true;
+            this.gridColumnBaseName.VisibleIndex = 0;
+            // 
+            // gridColumnBaseComment
+            // 
+            this.gridColumnBaseComment.Caption = "Примечание";
+            this.gridColumnBaseComment.FieldName = "Comment";
+            this.gridColumnBaseComment.Name = "gridColumnBaseComment";
+            this.gridColumnBaseComment.Visible = true;
+            this.gridColumnBaseComment.VisibleIndex = 1;
+            // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(12, 41);
@@ -169,6 +192,22 @@
             this.gridViewRecord.Name = "gridViewRecord";
             this.gridViewRecord.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridViewRecord.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumnRecordDate
+            // 
+            this.gridColumnRecordDate.Caption = "Дата";
+            this.gridColumnRecordDate.FieldName = "RecordDate";
+            this.gridColumnRecordDate.Name = "gridColumnRecordDate";
+            this.gridColumnRecordDate.Visible = true;
+            this.gridColumnRecordDate.VisibleIndex = 0;
+            // 
+            // gridColumnUserName
+            // 
+            this.gridColumnUserName.Caption = "Клиент";
+            this.gridColumnUserName.FieldName = "UserName";
+            this.gridColumnUserName.Name = "gridColumnUserName";
+            this.gridColumnUserName.Visible = true;
+            this.gridColumnUserName.VisibleIndex = 1;
             // 
             // labelControl1
             // 
@@ -198,6 +237,22 @@
             this.gridViewColor.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridViewColor.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumnColorName
+            // 
+            this.gridColumnColorName.Caption = "Марка";
+            this.gridColumnColorName.FieldName = "Name";
+            this.gridColumnColorName.Name = "gridColumnColorName";
+            this.gridColumnColorName.Visible = true;
+            this.gridColumnColorName.VisibleIndex = 0;
+            // 
+            // gridColumnColorComment
+            // 
+            this.gridColumnColorComment.Caption = "Примечание";
+            this.gridColumnColorComment.FieldName = "Comment";
+            this.gridColumnColorComment.Name = "gridColumnColorComment";
+            this.gridColumnColorComment.Visible = true;
+            this.gridColumnColorComment.VisibleIndex = 1;
+            // 
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(12, 67);
@@ -225,6 +280,22 @@
             this.gridViewTop.Name = "gridViewTop";
             this.gridViewTop.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridViewTop.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumnTopName
+            // 
+            this.gridColumnTopName.Caption = "Марка";
+            this.gridColumnTopName.FieldName = "Name";
+            this.gridColumnTopName.Name = "gridColumnTopName";
+            this.gridColumnTopName.Visible = true;
+            this.gridColumnTopName.VisibleIndex = 0;
+            // 
+            // gridColumnTopComment
+            // 
+            this.gridColumnTopComment.Caption = "Примечание";
+            this.gridColumnTopComment.FieldName = "Comment";
+            this.gridColumnTopComment.Name = "gridColumnTopComment";
+            this.gridColumnTopComment.Visible = true;
+            this.gridColumnTopComment.VisibleIndex = 1;
             // 
             // labelControl5
             // 
@@ -254,6 +325,8 @@
             this.gridControlDesign.Location = new System.Drawing.Point(12, 116);
             this.gridControlDesign.MainView = this.gridViewDesign;
             this.gridControlDesign.Name = "gridControlDesign";
+            this.gridControlDesign.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemSearchLookUpEditDesign});
             this.gridControlDesign.Size = new System.Drawing.Size(356, 172);
             this.gridControlDesign.TabIndex = 100;
             this.gridControlDesign.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -262,84 +335,68 @@
             // gridViewDesign
             // 
             this.gridViewDesign.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumnName});
+            this.gridColumnName,
+            this.gridColumnDesignComment});
             this.gridViewDesign.GridControl = this.gridControlDesign;
             this.gridViewDesign.Name = "gridViewDesign";
             this.gridViewDesign.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridViewDesign.OptionsView.ShowGroupExpandCollapseButtons = false;
+            this.gridViewDesign.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridViewDesign.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumnName
             // 
             this.gridColumnName.Caption = "Дизайны";
+            this.gridColumnName.ColumnEdit = this.repositoryItemSearchLookUpEditDesign;
             this.gridColumnName.FieldName = "Name";
             this.gridColumnName.Name = "gridColumnName";
             this.gridColumnName.Visible = true;
             this.gridColumnName.VisibleIndex = 0;
             // 
-            // gridColumnRecordDate
+            // repositoryItemSearchLookUpEditDesign
             // 
-            this.gridColumnRecordDate.Caption = "Дата";
-            this.gridColumnRecordDate.FieldName = "RecordDate";
-            this.gridColumnRecordDate.Name = "gridColumnRecordDate";
-            this.gridColumnRecordDate.Visible = true;
-            this.gridColumnRecordDate.VisibleIndex = 0;
+            this.repositoryItemSearchLookUpEditDesign.AutoHeight = false;
+            this.repositoryItemSearchLookUpEditDesign.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSearchLookUpEditDesign.DisplayMember = "Name";
+            this.repositoryItemSearchLookUpEditDesign.Name = "repositoryItemSearchLookUpEditDesign";
+            this.repositoryItemSearchLookUpEditDesign.ValueMember = "Id";
+            this.repositoryItemSearchLookUpEditDesign.View = this.repositoryItemSearchLookUpEdit1View;
             // 
-            // gridColumnUserName
+            // repositoryItemSearchLookUpEdit1View
             // 
-            this.gridColumnUserName.Caption = "Клиент";
-            this.gridColumnUserName.FieldName = "UserName";
-            this.gridColumnUserName.Name = "gridColumnUserName";
-            this.gridColumnUserName.Visible = true;
-            this.gridColumnUserName.VisibleIndex = 1;
+            this.repositoryItemSearchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
+            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumnBaseName
+            // gridColumn1
             // 
-            this.gridColumnBaseName.Caption = "Марка";
-            this.gridColumnBaseName.FieldName = "Name";
-            this.gridColumnBaseName.Name = "gridColumnBaseName";
-            this.gridColumnBaseName.Visible = true;
-            this.gridColumnBaseName.VisibleIndex = 0;
+            this.gridColumn1.Caption = "Марка";
+            this.gridColumn1.FieldName = "Name";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
-            // gridColumnBaseComment
+            // gridColumn2
             // 
-            this.gridColumnBaseComment.Caption = "Примечание";
-            this.gridColumnBaseComment.FieldName = "Comment";
-            this.gridColumnBaseComment.Name = "gridColumnBaseComment";
-            this.gridColumnBaseComment.Visible = true;
-            this.gridColumnBaseComment.VisibleIndex = 1;
+            this.gridColumn2.Caption = "Примечание";
+            this.gridColumn2.FieldName = "Comment";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
-            // gridColumnColorName
+            // gridColumnDesignComment
             // 
-            this.gridColumnColorName.Caption = "Марка";
-            this.gridColumnColorName.FieldName = "Name";
-            this.gridColumnColorName.Name = "gridColumnColorName";
-            this.gridColumnColorName.Visible = true;
-            this.gridColumnColorName.VisibleIndex = 0;
-            // 
-            // gridColumnColorComment
-            // 
-            this.gridColumnColorComment.Caption = "Примечание";
-            this.gridColumnColorComment.FieldName = "Comment";
-            this.gridColumnColorComment.Name = "gridColumnColorComment";
-            this.gridColumnColorComment.Visible = true;
-            this.gridColumnColorComment.VisibleIndex = 1;
-            // 
-            // gridColumnTopName
-            // 
-            this.gridColumnTopName.Caption = "Марка";
-            this.gridColumnTopName.FieldName = "Name";
-            this.gridColumnTopName.Name = "gridColumnTopName";
-            this.gridColumnTopName.Visible = true;
-            this.gridColumnTopName.VisibleIndex = 0;
-            // 
-            // gridColumnTopComment
-            // 
-            this.gridColumnTopComment.Caption = "Примечание";
-            this.gridColumnTopComment.FieldName = "Comment";
-            this.gridColumnTopComment.Name = "gridColumnTopComment";
-            this.gridColumnTopComment.Visible = true;
-            this.gridColumnTopComment.VisibleIndex = 1;
+            this.gridColumnDesignComment.Caption = "Примечание";
+            this.gridColumnDesignComment.FieldName = "Comment";
+            this.gridColumnDesignComment.Name = "gridColumnDesignComment";
+            this.gridColumnDesignComment.Visible = true;
+            this.gridColumnDesignComment.VisibleIndex = 1;
             // 
             // EditCheckForm
             // 
@@ -381,6 +438,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDesign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDesign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEditDesign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,5 +476,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnColorComment;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnTopName;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnTopComment;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEditDesign;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnDesignComment;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

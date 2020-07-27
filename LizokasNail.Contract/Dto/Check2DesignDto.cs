@@ -6,6 +6,7 @@ namespace LizokasNail.Contract.Dto
     {
         int IdCheck { get; set; }
         int IdDesign { get; set; }
+        string Comment { get; set; }
     }
 
     public class Check2DesignDto : Identity, ICheck2DesignDto
@@ -21,10 +22,20 @@ namespace LizokasNail.Contract.Dto
                 Id = item.Id;
                 IdCheck = item.IdCheck;
                 IdDesign = item.IdDesign;
+                Comment = item.Comment;
             }
+        }
+
+        public Check2DesignDto(IDesignDto design, int checkId)
+        {
+            IdCheck = checkId;
+            IdDesign = design.Id;
+            Comment = design.Comment;
         }
 
         public int IdCheck { get; set; }
         public int IdDesign { get; set; }
+        public string Comment { get; set; }
+        public DesignDto Design { get; set; }
     }
 }

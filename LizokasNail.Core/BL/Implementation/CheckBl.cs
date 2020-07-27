@@ -81,7 +81,7 @@ namespace LizokasNail.Core.BL.Implementation
                 Base = new BaseDto(item.Base),
                 Color = new ColorDto(item.Color),
                 Top = new TopDto(item.Top),
-                Check2Design = item.Check2Design.Select(x => new Check2DesignDto(x)),
+                Check2Design = item.Check2Design.Select(x => new Check2DesignDto(x) { Design = new DesignDto(x.Design) }),
             };
         }
     }

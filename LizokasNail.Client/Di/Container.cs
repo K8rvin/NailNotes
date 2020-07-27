@@ -36,6 +36,7 @@ namespace LizokasNail.Client.Di
             AsTransient<IBaseRepo, BaseRepo>();
             AsTransient<IColorRepo, ColorRepo>();
             AsTransient<ITopRepo, TopRepo>();
+            AsTransient<IDesignRepo, DesignRepo>();
             AsTransient<ICheckRepo, CheckRepo>();
 
         }

@@ -6,6 +6,7 @@ namespace LizokasNail.Core.Dao.Model
     {
         public int IdCheck { get; set; }
         public int IdDesign { get; set; }
+        public string Comment { get; set; }
 
         public virtual Check Check { get; set; }
         public virtual Design Design { get; set; }

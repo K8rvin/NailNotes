@@ -1,5 +1,7 @@
 ﻿using LizokasNail.Contract.Dto;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 
 namespace LisokasNail.Models
 {
@@ -25,6 +27,7 @@ namespace LisokasNail.Models
                 Color = new ColorBl(dto.Color);
                 Top = new TopBl(dto.Top);
                 Check2Design = dto.Check2Design;
+                Designs = new BindingList<DesignBl>(dto.Check2Design.Select(x => new DesignBl(x.Design)).ToList());
             }
         }
 
@@ -45,6 +48,7 @@ namespace LisokasNail.Models
         public string BaseName => Base?.Name;
         public string ColorName => Color?.Name;
         public string TopName => Top?.Name;
+        public BindingList<DesignBl> Designs { get; set; }
 
         public CheckDto ToDto() => new CheckDto()
         {
@@ -55,6 +59,9 @@ namespace LisokasNail.Models
             TopId = TopId,
             Price = Price,
             Comment = Comment,
+            Check2Design = Designs.Select(x => new Check2DesignDto(x, Id)),
         };
+
+
     }
 }

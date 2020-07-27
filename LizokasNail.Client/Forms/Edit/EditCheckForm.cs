@@ -13,6 +13,7 @@ namespace LizokasNail.Client.Forms.Edit
         private readonly IBaseRepo _baseRepo;
         private readonly IColorRepo _colorRepo;
         private readonly ITopRepo _topRepo;
+        private readonly IDesignRepo _designRepo;
         private CheckBl _item;
 
         public EditCheckForm(ICheckRepo repo, CheckBl item = null)
@@ -23,6 +24,7 @@ namespace LizokasNail.Client.Forms.Edit
             _baseRepo = Di.Container.Instance.Resolve<IBaseRepo>();
             _colorRepo = Di.Container.Instance.Resolve<IColorRepo>();
             _topRepo = Di.Container.Instance.Resolve<ITopRepo>();
+            _designRepo = Di.Container.Instance.Resolve<IDesignRepo>();
             _item = item;
 
             if (item != null)
@@ -58,7 +60,8 @@ namespace LizokasNail.Client.Forms.Edit
             searchLookUpEditTop.Properties.DisplayMember = "Name";
             searchLookUpEditTop.DataBindings.Add("EditValue", _item, nameof(_item.TopId), true, DataSourceUpdateMode.OnPropertyChanged);
 
-            gridControlDesign.DataSource = _item.Check2Design;
+            gridControlDesign.DataSource = _item.Designs; //_designRepo.Get();//
+            repositoryItemSearchLookUpEditDesign.DataSource = _designRepo.Get();
         }
 
         private bool Validation()

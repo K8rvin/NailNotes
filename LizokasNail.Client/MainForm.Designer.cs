@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.components = new System.ComponentModel.Container();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItemMenu = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItemDictionaries = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItemUsers = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRecords = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItemMaterials = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItemBase = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemColor = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemTop = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -43,9 +47,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageMain = new DevExpress.XtraTab.XtraTabPage();
-            this.barButtonItemTop = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItemDictionaries = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItemMaterials = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItemDesign = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
@@ -70,9 +72,10 @@
             this.barButtonItemColor,
             this.barButtonItemTop,
             this.barSubItemDictionaries,
-            this.barSubItemMaterials});
+            this.barSubItemMaterials,
+            this.barButtonItemDesign});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 9;
+            this.barManager1.MaxItemId = 10;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -99,6 +102,16 @@
             this.barSubItemMenu.Id = 1;
             this.barSubItemMenu.Name = "barSubItemMenu";
             // 
+            // barSubItemDictionaries
+            // 
+            this.barSubItemDictionaries.Caption = "Справочники";
+            this.barSubItemDictionaries.Id = 7;
+            this.barSubItemDictionaries.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemMaterials)});
+            this.barSubItemDictionaries.Name = "barSubItemDictionaries";
+            // 
             // barButtonItemUsers
             // 
             this.barButtonItemUsers.Caption = "Клиенты";
@@ -113,6 +126,17 @@
             this.barButtonItemRecords.Name = "barButtonItemRecords";
             this.barButtonItemRecords.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemRecords_ItemClick);
             // 
+            // barSubItemMaterials
+            // 
+            this.barSubItemMaterials.Caption = "Материалы";
+            this.barSubItemMaterials.Id = 8;
+            this.barSubItemMaterials.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemBase),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemColor),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemTop),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemDesign)});
+            this.barSubItemMaterials.Name = "barSubItemMaterials";
+            // 
             // barButtonItemBase
             // 
             this.barButtonItemBase.Caption = "Базы";
@@ -126,6 +150,13 @@
             this.barButtonItemColor.Id = 5;
             this.barButtonItemColor.Name = "barButtonItemColor";
             this.barButtonItemColor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemColor_ItemClick);
+            // 
+            // barButtonItemTop
+            // 
+            this.barButtonItemTop.Caption = "Топы";
+            this.barButtonItemTop.Id = 6;
+            this.barButtonItemTop.Name = "barButtonItemTop";
+            this.barButtonItemTop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemTop_ItemClick);
             // 
             // bar3
             // 
@@ -203,32 +234,12 @@
             this.xtraTabPageMain.Size = new System.Drawing.Size(794, 414);
             this.xtraTabPageMain.Text = "Информация";
             // 
-            // barButtonItemTop
+            // barButtonItemDesign
             // 
-            this.barButtonItemTop.Caption = "Топы";
-            this.barButtonItemTop.Id = 6;
-            this.barButtonItemTop.Name = "barButtonItemTop";
-            this.barButtonItemTop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemTop_ItemClick);
-            // 
-            // barSubItemDictionaries
-            // 
-            this.barSubItemDictionaries.Caption = "Справочники";
-            this.barSubItemDictionaries.Id = 7;
-            this.barSubItemDictionaries.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemMaterials)});
-            this.barSubItemDictionaries.Name = "barSubItemDictionaries";
-            // 
-            // barSubItemMaterials
-            // 
-            this.barSubItemMaterials.Caption = "Материалы";
-            this.barSubItemMaterials.Id = 8;
-            this.barSubItemMaterials.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemBase),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemColor),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemTop)});
-            this.barSubItemMaterials.Name = "barSubItemMaterials";
+            this.barButtonItemDesign.Caption = "Дизайны";
+            this.barButtonItemDesign.Id = 9;
+            this.barButtonItemDesign.Name = "barButtonItemDesign";
+            this.barButtonItemDesign.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemDesign_ItemClick);
             // 
             // MainForm
             // 
@@ -271,6 +282,7 @@
         private DevExpress.XtraBars.BarSubItem barSubItemDictionaries;
         private DevExpress.XtraBars.BarButtonItem barButtonItemTop;
         private DevExpress.XtraBars.BarSubItem barSubItemMaterials;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemDesign;
     }
 }
 

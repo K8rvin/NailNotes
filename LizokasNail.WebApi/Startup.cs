@@ -47,6 +47,7 @@ namespace LizokasNail.WebApi
             services.AddScoped<IDao<Base>, EntityDao<Base>>();
             services.AddScoped<IDao<Color>, EntityDao<Color>>();
             services.AddScoped<IDao<Top>, EntityDao<Top>>();
+            services.AddScoped<IDao<Design>, EntityDao<Design>>();
 
             #endregion
 
@@ -57,6 +58,7 @@ namespace LizokasNail.WebApi
             services.AddScoped<IBaseBl, BaseBl>();
             services.AddScoped<IColorBl, ColorBl>();
             services.AddScoped<ITopBl, TopBl>();
+            services.AddScoped<IDesignBl, DesignBl>();
 
             #endregion
 

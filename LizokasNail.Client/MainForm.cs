@@ -127,36 +127,17 @@ namespace LizokasNail.Client
             uc.Init();
         }
 
-        private void barButtonItemBase_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            var uc = TryOpenTabSheet<UCBase>("TabPageBase", "Базы");
-            uc.Init();
-        }
-
-        private void barButtonItemColor_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            var uc = TryOpenTabSheet<UCColor>("TabPageColor", "Цвета");
-            uc.Init();
-        }
-
-        private void barButtonItemTop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            var uc = TryOpenTabSheet<UCTop>("TabPageTop", "Топы");
-            uc.Init();
-        }
-
-        private void barButtonItemDesign_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            var uc = TryOpenTabSheet<UCDesign>("TabPageDesign", "Дизайны");
-            uc.Init();
-        }
-
         private void barButtonItemCheck_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var uc = TryOpenTabSheet<UCCheck>("TabPageCheck", "Расчеты");
             uc.Init();
         }
 
+        private void barButtonItemMaterials_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new MaterialForm();
+            form.Show();
+        }
 
         #endregion Menu
 

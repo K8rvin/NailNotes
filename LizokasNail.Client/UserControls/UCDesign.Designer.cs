@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControlDesign = new DevExpress.XtraGrid.GridControl();
             this.gridViewDesign = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -70,6 +69,7 @@
             this.gridViewDesign.OptionsBehavior.Editable = false;
             this.gridViewDesign.OptionsView.ShowAutoFilterRow = true;
             this.gridViewDesign.OptionsView.ShowFooter = true;
+            this.gridViewDesign.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumnName
             // 
@@ -185,6 +185,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UCDesign";
             this.Size = new System.Drawing.Size(705, 514);
+            this.Load += new System.EventHandler(this.UCDesign_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDesign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDesign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

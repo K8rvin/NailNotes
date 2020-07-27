@@ -24,7 +24,7 @@ namespace LizokasNail.Client.UserControls
             RefreshGrid();
         }
 
-        private void RefreshGrid() => LoadingBar.Instance.ShowLoading(MainForm.Instance, GetData, SettingsData);
+        private void RefreshGrid() => LoadingBar.Instance.ShowLoading(ParentForm, GetData, SettingsData);
 
         private void GetData()
         {
@@ -85,6 +85,11 @@ namespace LizokasNail.Client.UserControls
                     gridViewDesign.RefreshData();
                 }
             }
+        }
+
+        private void UCDesign_Load(object sender, System.EventArgs e)
+        {
+            RefreshGrid();
         }
     }
 }

@@ -31,6 +31,7 @@
             this.gridControlColor = new DevExpress.XtraGrid.GridControl();
             this.gridViewColor = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -41,7 +42,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -69,6 +69,7 @@
             this.gridViewColor.OptionsBehavior.Editable = false;
             this.gridViewColor.OptionsView.ShowAutoFilterRow = true;
             this.gridViewColor.OptionsView.ShowFooter = true;
+            this.gridViewColor.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumnName
             // 
@@ -79,6 +80,14 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Name", "Всего: {0}")});
             this.gridColumnName.Visible = true;
             this.gridColumnName.VisibleIndex = 0;
+            // 
+            // gridColumnComment
+            // 
+            this.gridColumnComment.Caption = "Примечание";
+            this.gridColumnComment.FieldName = "Comment";
+            this.gridColumnComment.Name = "gridColumnComment";
+            this.gridColumnComment.Visible = true;
+            this.gridColumnComment.VisibleIndex = 1;
             // 
             // barManager1
             // 
@@ -165,14 +174,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(705, 29);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 485);
             // 
-            // gridColumnComment
-            // 
-            this.gridColumnComment.Caption = "Примечание";
-            this.gridColumnComment.FieldName = "Comment";
-            this.gridColumnComment.Name = "gridColumnComment";
-            this.gridColumnComment.Visible = true;
-            this.gridColumnComment.VisibleIndex = 1;
-            // 
             // UCColor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,6 +185,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UCColor";
             this.Size = new System.Drawing.Size(705, 514);
+            this.Load += new System.EventHandler(this.UCColor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

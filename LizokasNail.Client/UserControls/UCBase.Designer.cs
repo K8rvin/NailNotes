@@ -31,6 +31,7 @@
             this.gridControlBase = new DevExpress.XtraGrid.GridControl();
             this.gridViewBase = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -41,7 +42,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -53,7 +53,7 @@
             this.gridControlBase.Location = new System.Drawing.Point(0, 29);
             this.gridControlBase.MainView = this.gridViewBase;
             this.gridControlBase.Name = "gridControlBase";
-            this.gridControlBase.Size = new System.Drawing.Size(893, 623);
+            this.gridControlBase.Size = new System.Drawing.Size(738, 429);
             this.gridControlBase.TabIndex = 4;
             this.gridControlBase.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewBase});
@@ -69,6 +69,7 @@
             this.gridViewBase.OptionsBehavior.Editable = false;
             this.gridViewBase.OptionsView.ShowAutoFilterRow = true;
             this.gridViewBase.OptionsView.ShowFooter = true;
+            this.gridViewBase.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumnName
             // 
@@ -79,6 +80,14 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Name", "Всего: {0}")});
             this.gridColumnName.Visible = true;
             this.gridColumnName.VisibleIndex = 0;
+            // 
+            // gridColumnComment
+            // 
+            this.gridColumnComment.Caption = "Примечание";
+            this.gridColumnComment.FieldName = "Comment";
+            this.gridColumnComment.Name = "gridColumnComment";
+            this.gridColumnComment.Visible = true;
+            this.gridColumnComment.VisibleIndex = 1;
             // 
             // barManager1
             // 
@@ -142,36 +151,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(893, 29);
+            this.barDockControlTop.Size = new System.Drawing.Size(738, 29);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 652);
-            this.barDockControlBottom.Size = new System.Drawing.Size(893, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 458);
+            this.barDockControlBottom.Size = new System.Drawing.Size(738, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 623);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 429);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(893, 29);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 623);
-            // 
-            // gridColumnComment
-            // 
-            this.gridColumnComment.Caption = "Примечание";
-            this.gridColumnComment.FieldName = "Comment";
-            this.gridColumnComment.Name = "gridColumnComment";
-            this.gridColumnComment.Visible = true;
-            this.gridColumnComment.VisibleIndex = 1;
+            this.barDockControlRight.Location = new System.Drawing.Point(738, 29);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 429);
             // 
             // UCBase
             // 
@@ -183,7 +184,8 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UCBase";
-            this.Size = new System.Drawing.Size(893, 652);
+            this.Size = new System.Drawing.Size(738, 458);
+            this.Load += new System.EventHandler(this.UCBase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

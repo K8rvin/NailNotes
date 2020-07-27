@@ -145,6 +145,18 @@ namespace LizokasNail.Client
             uc.Init();
         }
 
+        private void barButtonItemDesign_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var uc = TryOpenTabSheet<UCDesign>("TabPageDesign", "Дизайны");
+            uc.Init();
+        }
+
+        private void barButtonItemCheck_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var uc = TryOpenTabSheet<UCCheck>("TabPageCheck", "Расчеты");
+            uc.Init();
+        }
+
 
         #endregion Menu
 

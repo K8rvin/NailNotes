@@ -8,16 +8,16 @@ using Unity;
 
 namespace LizokasNail.Client.UserControls
 {
-    public partial class UCTop : UserControl
+    public partial class UCCheck : UserControl
     {
-        private readonly ITopRepo _repo;
-        private List<TopBl> _items = new List<TopBl>();
-
-        public UCTop()
+        public UCCheck()
         {
             InitializeComponent();
-            _repo = Di.Container.Instance.Resolve<ITopRepo>();
+            _repo = Di.Container.Instance.Resolve<ICheckRepo>();
         }
+
+        private readonly ICheckRepo _repo;
+        private List<CheckBl> _items = new List<CheckBl>();
 
         public void Init()
         {
@@ -33,8 +33,8 @@ namespace LizokasNail.Client.UserControls
 
         private void SettingsData()
         {
-            gridControlTop.DataSource = _items;
-            gridViewTop.BestFitColumns();
+            gridControlCheck.DataSource = _items;
+            gridViewCheck.BestFitColumns();
         }
 
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -44,12 +44,12 @@ namespace LizokasNail.Client.UserControls
 
         private void barButtonItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new EditTopForm(_repo);
+            var form = new EditCheckForm(_repo);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 RefreshGrid();
                 form.Dispose();
-                gridViewTop.FocusedRowHandle = _items.Count - 1;
+                gridViewCheck.FocusedRowHandle = _items.Count - 1;
             }
         }
 
@@ -65,24 +65,27 @@ namespace LizokasNail.Client.UserControls
 
         private void ShowEditForm()
         {
-            if (gridViewTop.GetFocusedRow() is TopBl selected)
+            if (gridViewCheck.GetFocusedRow() is CheckBl selected)
             {
-                var form = new EditTopForm(_repo, selected);
-                form.ShowDialog();
-                form.Dispose();
+                var form = new EditCheckForm(_repo, selected);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshGrid();
+                    form.Dispose();
+                }
             }
         }
 
         private void barButtonItemDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var selected = gridViewTop.GetFocusedRow() as TopBl;
+            var selected = gridViewCheck.GetFocusedRow() as CheckBl;
             if (selected != null)
             {
-                if (MessageBox.Show($"Удалить топ {selected.Name} ?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($"Удалить расчет по {selected.Record.DisplayName} ?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     _repo.Delete(selected.Id);
                     _items.Remove(selected);
-                    gridViewTop.RefreshData();
+                    gridViewCheck.RefreshData();
                 }
             }
         }

@@ -8,5 +8,6 @@ namespace LizokasNail.Core.Dao.Model
         public int UserId { get; set; }
         public DateTime RecordDate { get; set; }
         public virtual User User { get; set; }
+        public virtual Check Check { get; set; }
     }
 }

@@ -8,43 +8,40 @@ namespace LizokasNail.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RecordController : ControllerBase
+    public class DesignController : ControllerBase
     {
-        private readonly IRecordBl _bl;
+        private readonly IDesignBl _bl;
 
-        public RecordController(IRecordBl bl)
+        public DesignController(IDesignBl bl)
         {
             _bl = bl;
         }
 
         [HttpGet]
-        public IEnumerable<RecordDto> Get() => _bl.Get();
+        public IEnumerable<DesignDto> Get() => _bl.Get();
 
-        [HttpGet("GetWithoutCheck")]
-        public IEnumerable<RecordDto> GetWithoutCheck() => _bl.GetWithoutCheck();
-
-        [HttpGet("GetById", Name = "GetRecordById")]
-        public RecordDto GetById([FromQuery] int Id)
+        [HttpGet("GetById", Name = "GetDesignById")]
+        public DesignDto GetById([FromQuery] int Id)
         {
             return _bl.GetById(Id);
         }
 
         [HttpPost()]
-        public ActionResult<RecordDto> Add([FromBody] RecordDto dto)
+        public ActionResult<DesignDto> Add([FromBody] DesignDto dto)
         {
             try
             {
                 var item = _bl.Add(dto);
-                return CreatedAtRoute("GetRecordById", new { Id = item.Id }, item);
+                return CreatedAtRoute("GetDesignById", new { Id = item.Id }, item);
             }
             catch (Exception ex)
             {
-                return Conflict(ex.Message);
+                return Conflict($"{ex.Message}: {ex?.InnerException}");
             }
         }
 
         [HttpPut()]
-        public ActionResult<RecordDto> Update([FromBody] RecordDto dto)
+        public ActionResult<DesignDto> Update([FromBody] DesignDto dto)
         {
             try
             {

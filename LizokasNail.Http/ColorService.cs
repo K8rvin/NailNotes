@@ -2,9 +2,7 @@
 using Flurl.Http;
 using LizokasNail.Contract.Dto;
 using LizokasNail.Contract.Service;
-using System;
 using System.Collections.Generic;
-using System.Net;
 
 namespace LizokasNail.Http
 {

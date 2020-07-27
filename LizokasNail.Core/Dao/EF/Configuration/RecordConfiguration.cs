@@ -10,6 +10,7 @@ namespace LizokasNail.Core.Dao.EF.Configuration
         {
             builder.ToTable("Record").HasKey(d => d.Id);
             builder.HasOne(x => x.User).WithMany(x => x.Records).HasForeignKey(p => p.UserId);
+            builder.HasOne(x => x.Check).WithOne(x => x.Record).HasForeignKey<Check>(p => p.RecordId);
         }
     }
 }

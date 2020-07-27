@@ -8,16 +8,16 @@ using Unity;
 
 namespace LizokasNail.Client.UserControls
 {
-    public partial class UCTop : UserControl
+    public partial class UCDesign : UserControl
     {
-        private readonly ITopRepo _repo;
-        private List<TopBl> _items = new List<TopBl>();
-
-        public UCTop()
+        public UCDesign()
         {
             InitializeComponent();
-            _repo = Di.Container.Instance.Resolve<ITopRepo>();
+            _repo = Di.Container.Instance.Resolve<IDesignRepo>();
         }
+
+        private readonly IDesignRepo _repo;
+        private List<DesignBl> _items = new List<DesignBl>();
 
         public void Init()
         {
@@ -33,8 +33,8 @@ namespace LizokasNail.Client.UserControls
 
         private void SettingsData()
         {
-            gridControlTop.DataSource = _items;
-            gridViewTop.BestFitColumns();
+            gridControlDesign.DataSource = _items;
+            gridViewDesign.BestFitColumns();
         }
 
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -44,12 +44,12 @@ namespace LizokasNail.Client.UserControls
 
         private void barButtonItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new EditTopForm(_repo);
+            var form = new EditDesignForm(_repo);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 RefreshGrid();
                 form.Dispose();
-                gridViewTop.FocusedRowHandle = _items.Count - 1;
+                gridViewDesign.FocusedRowHandle = _items.Count - 1;
             }
         }
 
@@ -65,9 +65,9 @@ namespace LizokasNail.Client.UserControls
 
         private void ShowEditForm()
         {
-            if (gridViewTop.GetFocusedRow() is TopBl selected)
+            if (gridViewDesign.GetFocusedRow() is DesignBl selected)
             {
-                var form = new EditTopForm(_repo, selected);
+                var form = new EditDesignForm(_repo, selected);
                 form.ShowDialog();
                 form.Dispose();
             }
@@ -75,14 +75,14 @@ namespace LizokasNail.Client.UserControls
 
         private void barButtonItemDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var selected = gridViewTop.GetFocusedRow() as TopBl;
+            var selected = gridViewDesign.GetFocusedRow() as DesignBl;
             if (selected != null)
             {
-                if (MessageBox.Show($"Удалить топ {selected.Name} ?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($"Удалить дизайн {selected.Name} ?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     _repo.Delete(selected.Id);
                     _items.Remove(selected);
-                    gridViewTop.RefreshData();
+                    gridViewDesign.RefreshData();
                 }
             }
         }

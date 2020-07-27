@@ -15,9 +15,11 @@ namespace LizokasNail.Core.BL.Implementation
             _dao = dao;
         }
 
-        public IEnumerable<RecordDto> Get() => _dao.Get().Select(x => toDto(x));
+        public IEnumerable<RecordDto> Get() => _dao.Get().Select(x => _map(x));
 
-        public RecordDto GetById(int id) => toDto(_dao.Get(x => x.Id == id)?.FirstOrDefault());
+        public IEnumerable<RecordDto> GetWithoutCheck() => _dao.Get(x=>x.Check == null).Select(x => _map(x));
+
+        public RecordDto GetById(int id) => _map(_dao.Get(x => x.Id == id)?.FirstOrDefault());
 
         public RecordDto Add(RecordDto dto)
         {
@@ -28,7 +30,7 @@ namespace LizokasNail.Core.BL.Implementation
             };
 
             _dao.Create(item);
-            return toDto(item);
+            return _map(item);
         }
 
         public RecordDto Update(RecordDto dto)
@@ -41,7 +43,7 @@ namespace LizokasNail.Core.BL.Implementation
             item.RecordDate = dto.RecordDate;
             _dao.Update(item);
 
-            return toDto(item);
+            return _map(item);
         }
 
         public void Delete(int id)
@@ -57,7 +59,7 @@ namespace LizokasNail.Core.BL.Implementation
             }
         }
 
-        private RecordDto toDto(Record item)
+        private RecordDto _map(Record item)
         {
             if (item == null) return null;
             return new RecordDto()

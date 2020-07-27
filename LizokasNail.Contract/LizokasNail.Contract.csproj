@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\CheckDto.cs" />
+    <Compile Include="Dto\Check2DesignDto.cs" />
+    <Compile Include="Dto\DesignDto.cs" />
     <Compile Include="Dto\TopDto.cs" />
     <Compile Include="Dto\ColorDto.cs" />
     <Compile Include="Dto\Identity.cs" />
@@ -49,6 +52,8 @@
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Enum\CommunicationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ICheckService.cs" />
+    <Compile Include="Service\IDesignService.cs" />
     <Compile Include="Service\ITopService.cs" />
     <Compile Include="Service\IColorService.cs" />
     <Compile Include="Service\IRecordService.cs" />

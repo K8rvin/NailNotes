@@ -9,12 +9,10 @@ namespace LizokasNail.Core.BL.Implementation
     public class RecordBl : IRecordBl
     {
         private readonly IDao<Record> _dao;
-        private readonly IDao<User> _userDao;
 
-        public RecordBl(IDao<Record> dao, IDao<User> userDao)
+        public RecordBl(IDao<Record> dao)
         {
             _dao = dao;
-            _userDao = userDao;
         }
 
         public IEnumerable<RecordDto> Get() => _dao.Get().Select(x => toDto(x));
@@ -27,7 +25,6 @@ namespace LizokasNail.Core.BL.Implementation
             {
                 UserId = dto.UserId,
                 RecordDate = dto.RecordDate,
-                User = _userDao.Get(dto.UserId),
             };
 
             _dao.Create(item);
@@ -42,7 +39,6 @@ namespace LizokasNail.Core.BL.Implementation
 
             item.UserId = dto.UserId;
             item.RecordDate = dto.RecordDate;
-            item.User = _userDao.Get(dto.UserId);
             _dao.Update(item);
 
             return toDto(item);
@@ -69,7 +65,7 @@ namespace LizokasNail.Core.BL.Implementation
                 Id = item.Id,
                 UserId = item.UserId,
                 RecordDate = item.RecordDate,
-                User = new UserDto(_userDao.Get(item.UserId)),
+                User = new UserDto(item.User),
             };
         }
     }

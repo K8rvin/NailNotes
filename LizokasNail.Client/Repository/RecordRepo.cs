@@ -31,6 +31,12 @@ namespace LizokasNail.Client.Repository
             return dtos?.Select(x => _uc.Resolve<RecordBl>(new ParameterOverride("dto", x))).ToList();
         }
 
+        public virtual List<RecordBl> GetWithoutCheck()
+        {
+            var dtos = _service.GetWithoutCheck();
+            return dtos?.Select(x => _uc.Resolve<RecordBl>(new ParameterOverride("dto", x))).ToList();
+        }
+
         public RecordBl Add(RecordBl item)
         {
             var dto = _service.Add(item?.ToDto());

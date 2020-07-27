@@ -7,6 +7,7 @@ namespace LizokasNail.Core.BL
     {
         IEnumerable<RecordDto> Get();
 
+        IEnumerable<RecordDto> GetWithoutCheck();
         RecordDto GetById(int id);
         RecordDto Add(RecordDto dto);
         RecordDto Update(RecordDto dto);

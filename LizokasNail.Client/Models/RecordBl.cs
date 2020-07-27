@@ -27,6 +27,7 @@ namespace LisokasNail.Models
         public DateTime RecordDate { get; set; }
         public UserBl User { get; set; }
         public string UserName => User?.Name;
+        public string DisplayName => $"{RecordDate} ({UserName})";
 
         public RecordDto ToDto() => new RecordDto()
         {

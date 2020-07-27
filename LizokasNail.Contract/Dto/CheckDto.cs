@@ -38,6 +38,10 @@ namespace LizokasNail.Contract.Dto
         public int? TopId { get; set; }
         public double Price { get; set; }
         public string Comment { get; set; }
+        public RecordDto Record { get; set; }
+        public BaseDto Base { get; set; }
+        public ColorDto Color { get; set; }
+        public TopDto Top { get; set; }
         public IEnumerable<Check2DesignDto> Check2Design { get; set; }
     }
 }

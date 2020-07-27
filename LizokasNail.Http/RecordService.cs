@@ -21,6 +21,12 @@ namespace LizokasNail.Http
                 .GetJsonAsync<IEnumerable<RecordDto>>().Result;
         }
 
+        public IEnumerable<RecordDto> GetWithoutCheck()
+        {
+            return Url.AppendPathSegment("record/GetWithoutCheck")
+                .GetJsonAsync<IEnumerable<RecordDto>>().Result;
+        }
+
         public RecordDto Add(RecordDto item)
         {
             return Url.AppendPathSegment("record")

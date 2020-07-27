@@ -7,6 +7,7 @@ namespace LizokasNail.Client.Di
     {
         RecordBl Get(int id);
         List<RecordBl> Get();
+        List<RecordBl> GetWithoutCheck();
         RecordBl Add(RecordBl item);
         RecordBl Update(RecordBl item);
         void Delete(int id);

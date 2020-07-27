@@ -39,6 +39,7 @@
             this.barButtonItemBase = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemColor = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemTop = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemDesign = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -47,7 +48,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageMain = new DevExpress.XtraTab.XtraTabPage();
-            this.barButtonItemDesign = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemCheck = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
@@ -73,9 +74,10 @@
             this.barButtonItemTop,
             this.barSubItemDictionaries,
             this.barSubItemMaterials,
-            this.barButtonItemDesign});
+            this.barButtonItemDesign,
+            this.barButtonItemCheck});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 10;
+            this.barManager1.MaxItemId = 11;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -109,7 +111,8 @@
             this.barSubItemDictionaries.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemMaterials)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemMaterials),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCheck)});
             this.barSubItemDictionaries.Name = "barSubItemDictionaries";
             // 
             // barButtonItemUsers
@@ -157,6 +160,13 @@
             this.barButtonItemTop.Id = 6;
             this.barButtonItemTop.Name = "barButtonItemTop";
             this.barButtonItemTop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemTop_ItemClick);
+            // 
+            // barButtonItemDesign
+            // 
+            this.barButtonItemDesign.Caption = "Дизайны";
+            this.barButtonItemDesign.Id = 9;
+            this.barButtonItemDesign.Name = "barButtonItemDesign";
+            this.barButtonItemDesign.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemDesign_ItemClick);
             // 
             // bar3
             // 
@@ -234,12 +244,12 @@
             this.xtraTabPageMain.Size = new System.Drawing.Size(794, 414);
             this.xtraTabPageMain.Text = "Информация";
             // 
-            // barButtonItemDesign
+            // barButtonItemCheck
             // 
-            this.barButtonItemDesign.Caption = "Дизайны";
-            this.barButtonItemDesign.Id = 9;
-            this.barButtonItemDesign.Name = "barButtonItemDesign";
-            this.barButtonItemDesign.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemDesign_ItemClick);
+            this.barButtonItemCheck.Caption = "Расчеты";
+            this.barButtonItemCheck.Id = 10;
+            this.barButtonItemCheck.Name = "barButtonItemCheck";
+            this.barButtonItemCheck.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCheck_ItemClick);
             // 
             // MainForm
             // 
@@ -283,6 +293,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemTop;
         private DevExpress.XtraBars.BarSubItem barSubItemMaterials;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDesign;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemCheck;
     }
 }
 

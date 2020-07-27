@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckService.cs" />
     <Compile Include="DesignService.cs" />
     <Compile Include="TopService.cs" />
     <Compile Include="ColorService.cs" />

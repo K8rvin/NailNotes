@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItemMenu = new DevExpress.XtraBars.BarSubItem();
             this.barSubItemDictionaries = new DevExpress.XtraBars.BarSubItem();
@@ -48,9 +50,14 @@
             this.barButtonItemDesign = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageMain = new DevExpress.XtraTab.XtraTabPage();
+            this.splitContainerControlMain = new DevExpress.XtraEditors.SplitContainerControl();
+            this.ucCalendar1 = new LizokasNail.Client.UserControls.UCCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
+            this.xtraTabPageMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlMain)).BeginInit();
+            this.splitContainerControlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // barManager1
@@ -225,9 +232,30 @@
             // 
             // xtraTabPageMain
             // 
+            this.xtraTabPageMain.Controls.Add(this.splitContainerControlMain);
             this.xtraTabPageMain.Name = "xtraTabPageMain";
             this.xtraTabPageMain.Size = new System.Drawing.Size(794, 464);
             this.xtraTabPageMain.Text = "Информация";
+            // 
+            // splitContainerControlMain
+            // 
+            this.splitContainerControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControlMain.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControlMain.Name = "splitContainerControlMain";
+            this.splitContainerControlMain.Panel1.Controls.Add(this.ucCalendar1);
+            this.splitContainerControlMain.Panel1.Text = "Panel1";
+            this.splitContainerControlMain.Panel2.Text = "Panel2";
+            this.splitContainerControlMain.Size = new System.Drawing.Size(794, 464);
+            this.splitContainerControlMain.SplitterPosition = 405;
+            this.splitContainerControlMain.TabIndex = 0;
+            // 
+            // ucCalendar1
+            // 
+            this.ucCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCalendar1.Location = new System.Drawing.Point(0, 0);
+            this.ucCalendar1.Name = "ucCalendar1";
+            this.ucCalendar1.Size = new System.Drawing.Size(405, 464);
+            this.ucCalendar1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -239,12 +267,17 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Главная форма";
+            this.Text = "LizokasNail";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).EndInit();
             this.xtraTabControl.ResumeLayout(false);
+            this.xtraTabPageMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlMain)).EndInit();
+            this.splitContainerControlMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,6 +305,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemDesign;
         private DevExpress.XtraBars.BarButtonItem barButtonItemCheck;
         private DevExpress.XtraBars.BarButtonItem barButtonItemMaterials;
+        private DevExpress.XtraScheduler.UI.WeekDaysEdit weekDaysEdit1;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControlMain;
+        private UserControls.UCCalendar ucCalendar1;
     }
 }
 

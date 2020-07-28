@@ -139,6 +139,14 @@ namespace LizokasNail.Client
             form.Show();
         }
 
+        //Buttons
+        private void simpleButtonMaterials_Click(object sender, EventArgs e)
+        {
+            var form = new MaterialForm();
+            form.Show();
+        }
+
+
         #endregion Menu
 
 

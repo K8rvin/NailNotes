@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItemMenu = new DevExpress.XtraBars.BarSubItem();
             this.barSubItemDictionaries = new DevExpress.XtraBars.BarSubItem();
@@ -48,9 +50,25 @@
             this.barButtonItemDesign = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageMain = new DevExpress.XtraTab.XtraTabPage();
+            this.splitContainerControlMain = new DevExpress.XtraEditors.SplitContainerControl();
+            this.ucCalendar1 = new LizokasNail.Client.UserControls.UCCalendar();
+            this.layoutControlButtons = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonMaterials = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonRecording = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItemRecording = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemMaterials = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
+            this.xtraTabPageMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlMain)).BeginInit();
+            this.splitContainerControlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlButtons)).BeginInit();
+            this.layoutControlButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRecording)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -225,9 +243,100 @@
             // 
             // xtraTabPageMain
             // 
+            this.xtraTabPageMain.Controls.Add(this.splitContainerControlMain);
             this.xtraTabPageMain.Name = "xtraTabPageMain";
             this.xtraTabPageMain.Size = new System.Drawing.Size(794, 464);
             this.xtraTabPageMain.Text = "Информация";
+            // 
+            // splitContainerControlMain
+            // 
+            this.splitContainerControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControlMain.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControlMain.Name = "splitContainerControlMain";
+            this.splitContainerControlMain.Panel1.Controls.Add(this.ucCalendar1);
+            this.splitContainerControlMain.Panel1.Text = "Panel1";
+            this.splitContainerControlMain.Panel2.Controls.Add(this.layoutControlButtons);
+            this.splitContainerControlMain.Panel2.Text = "Panel2";
+            this.splitContainerControlMain.Size = new System.Drawing.Size(794, 464);
+            this.splitContainerControlMain.SplitterPosition = 405;
+            this.splitContainerControlMain.TabIndex = 0;
+            // 
+            // ucCalendar1
+            // 
+            this.ucCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCalendar1.Location = new System.Drawing.Point(0, 0);
+            this.ucCalendar1.Name = "ucCalendar1";
+            this.ucCalendar1.Size = new System.Drawing.Size(405, 464);
+            this.ucCalendar1.TabIndex = 0;
+            // 
+            // layoutControlButtons
+            // 
+            this.layoutControlButtons.Controls.Add(this.simpleButtonMaterials);
+            this.layoutControlButtons.Controls.Add(this.simpleButtonRecording);
+            this.layoutControlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControlButtons.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlButtons.Name = "layoutControlButtons";
+            this.layoutControlButtons.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1072, 297, 725, 350);
+            this.layoutControlButtons.Root = this.layoutControlGroup;
+            this.layoutControlButtons.Size = new System.Drawing.Size(384, 464);
+            this.layoutControlButtons.TabIndex = 0;
+            // 
+            // simpleButtonMaterials
+            // 
+            this.simpleButtonMaterials.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.simpleButtonMaterials.Appearance.Options.UseFont = true;
+            this.simpleButtonMaterials.Location = new System.Drawing.Point(30, 84);
+            this.simpleButtonMaterials.MinimumSize = new System.Drawing.Size(0, 50);
+            this.simpleButtonMaterials.Name = "simpleButtonMaterials";
+            this.simpleButtonMaterials.Size = new System.Drawing.Size(324, 50);
+            this.simpleButtonMaterials.StyleController = this.layoutControlButtons;
+            this.simpleButtonMaterials.TabIndex = 5;
+            this.simpleButtonMaterials.Text = "Материалы";
+            this.simpleButtonMaterials.Click += new System.EventHandler(this.simpleButtonMaterials_Click);
+            // 
+            // simpleButtonRecording
+            // 
+            this.simpleButtonRecording.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.simpleButtonRecording.Appearance.Options.UseFont = true;
+            this.simpleButtonRecording.Location = new System.Drawing.Point(30, 12);
+            this.simpleButtonRecording.MinimumSize = new System.Drawing.Size(0, 50);
+            this.simpleButtonRecording.Name = "simpleButtonRecording";
+            this.simpleButtonRecording.Size = new System.Drawing.Size(324, 50);
+            this.simpleButtonRecording.StyleController = this.layoutControlButtons;
+            this.simpleButtonRecording.TabIndex = 4;
+            this.simpleButtonRecording.Text = "Запись";
+            // 
+            // layoutControlGroup
+            // 
+            this.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup.GroupBordersVisible = false;
+            this.layoutControlGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItemRecording,
+            this.layoutControlItemMaterials});
+            this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup.Name = "Root";
+            this.layoutControlGroup.Size = new System.Drawing.Size(384, 464);
+            this.layoutControlGroup.TextVisible = false;
+            // 
+            // layoutControlItemRecording
+            // 
+            this.layoutControlItemRecording.Control = this.simpleButtonRecording;
+            this.layoutControlItemRecording.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItemRecording.Name = "layoutControlItemRecording";
+            this.layoutControlItemRecording.Padding = new DevExpress.XtraLayout.Utils.Padding(20, 20, 2, 20);
+            this.layoutControlItemRecording.Size = new System.Drawing.Size(364, 72);
+            this.layoutControlItemRecording.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItemRecording.TextVisible = false;
+            // 
+            // layoutControlItemMaterials
+            // 
+            this.layoutControlItemMaterials.Control = this.simpleButtonMaterials;
+            this.layoutControlItemMaterials.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItemMaterials.Name = "layoutControlItemMaterials";
+            this.layoutControlItemMaterials.Padding = new DevExpress.XtraLayout.Utils.Padding(20, 20, 2, 20);
+            this.layoutControlItemMaterials.Size = new System.Drawing.Size(364, 372);
+            this.layoutControlItemMaterials.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItemMaterials.TextVisible = false;
             // 
             // MainForm
             // 
@@ -239,12 +348,22 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Главная форма";
+            this.Text = "LizokasNail";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).EndInit();
             this.xtraTabControl.ResumeLayout(false);
+            this.xtraTabPageMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlMain)).EndInit();
+            this.splitContainerControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlButtons)).EndInit();
+            this.layoutControlButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRecording)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,6 +391,15 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemDesign;
         private DevExpress.XtraBars.BarButtonItem barButtonItemCheck;
         private DevExpress.XtraBars.BarButtonItem barButtonItemMaterials;
+        private DevExpress.XtraScheduler.UI.WeekDaysEdit weekDaysEdit1;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControlMain;
+        private UserControls.UCCalendar ucCalendar1;
+        private DevExpress.XtraLayout.LayoutControl layoutControlButtons;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonMaterials;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonRecording;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemRecording;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemMaterials;
     }
 }
 

@@ -55,6 +55,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.XtraGrid.v15.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -165,6 +166,12 @@
     <Compile Include="Repository\RecordRepo.cs" />
     <Compile Include="Repository\BaseRepo.cs" />
     <Compile Include="Repository\UserRepo.cs" />
+    <Compile Include="UserControls\UCCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCCalendar.Designer.cs">
+      <DependentUpon>UCCalendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCCheck.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -255,6 +262,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\UCCalendar.resx">
+      <DependentUpon>UCCalendar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCCheck.resx">
       <DependentUpon>UCCheck.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +327,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\vk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nail_64_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

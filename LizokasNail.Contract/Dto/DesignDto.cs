@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace LizokasNail.Contract.Dto
 {
     public interface IDesignDto : IIdentity

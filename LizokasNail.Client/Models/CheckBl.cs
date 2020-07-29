@@ -24,7 +24,7 @@ namespace LisokasNail.Models
                 Check2Color = dto.Check2Color;
                 Check2Top = dto.Check2Top;
                 Check2Design = dto.Check2Design;
-                Designs = new BindingList<DesignBl>(dto.Check2Design.Select(x => new DesignBl(x.Design)).ToList());
+                Designs = new BindingList<DesignBl>(dto.Check2Design.Select(x => new DesignBl(x)).ToList());
             }
         }
 
@@ -39,7 +39,11 @@ namespace LisokasNail.Models
 
         public string RecordDate => Record?.RecordDate.ToString();
         public string UserName => Record?.UserName;
-        public BindingList<DesignBl> Designs { get; set; }
+        public string BaseNames => string.Join(", ", Check2Base.Select(x => $"{x?.Base?.Name}({x.Comment})"));
+        public string ColorNames => string.Join(", ", Check2Color.Select(x => $"{x?.Color?.Name}({x.Comment})"));
+        public string TopNames => string.Join(", ", Check2Top.Select(x => $"{x?.Top?.Name}({x.Comment})"));
+        public string DesignNames => string.Join(", ", Check2Design.Select(x => $"{x?.Design?.Name}({x.Count} шт)"));
+        public BindingList<DesignBl> Designs { get; set; } = new BindingList<DesignBl>();
 
         public CheckDto ToDto() => new CheckDto()
         {
@@ -50,7 +54,7 @@ namespace LisokasNail.Models
             Check2Base = Check2Base,
             Check2Color = Check2Color,
             Check2Top = Check2Top,
-            Check2Design = Designs?.Select(x => new Check2DesignDto(x, Id)),
+            Check2Design = Designs?.Select(x => new Check2DesignDto(x, Id, x.Count)),
         };
 
 

@@ -65,6 +65,7 @@ namespace LizokasNail.Client.Forms.Edit
             searchLookUpEditTop.Properties.DisplayMember = "Name";
             //searchLookUpEditTop.DataBindings.Add("EditValue", _item, nameof(_item.TopId), true, DataSourceUpdateMode.OnPropertyChanged);
 
+
             gridControlDesign.DataSource = _item.Designs;
             repositoryItemSearchLookUpEditDesign.DataSource = _designRepo.Get();
 

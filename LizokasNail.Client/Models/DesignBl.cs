@@ -18,8 +18,20 @@ namespace LisokasNail.Models
             }
         }
 
+        public DesignBl(Check2DesignDto dto)
+        {
+            if (dto != null)
+            {
+                Id = dto.Design.Id;
+                Name = dto.Design.Name;
+                Comment = dto.Comment;
+                Count = dto.Count;
+            }
+        }
+
         public string Name { get; set; }
         public string Comment { get; set; }
+        public int Count { get; set; }
 
         public DesignDto ToDto() => new DesignDto()
         {

@@ -5,6 +5,14 @@ namespace LizokasNail.Core.Dao.Model
 {
     public class Check : EntityData, ICheckDto
     {
+        public Check()
+        {
+            Check2Base = new HashSet<Check2Base>();
+            Check2Color = new HashSet<Check2Color>();
+            Check2Top = new HashSet<Check2Top>();
+            Check2Design = new HashSet<Check2Design>();
+        }
+
         public int RecordId { get; set; }
         public double Price { get; set; }
         public string Comment { get; set; }

@@ -18,6 +18,13 @@ namespace LisokasNail.Models
             }
         }
 
+        public BaseBl(Check2BaseDto item)
+        {
+            Id = item.IdBase;
+            Name = item.Base?.Name;
+            Comment = item.Comment;
+        }
+
         public string Name { get; set; }
         public string Comment { get; set; }
 

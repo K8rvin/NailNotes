@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditRecordForm));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection();
             this.searchLookUpEditUser = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -59,20 +56,6 @@
             this.labelControl2.Size = new System.Drawing.Size(26, 13);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Дата";
-            // 
-            // imageCollectionCommunicationTypes
-            // 
-            this.imageCollectionCommunicationTypes.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollectionCommunicationTypes.ImageStream")));
-            this.imageCollectionCommunicationTypes.InsertGalleryImage("mobilephone_16x16.png", "devav/contacts/mobilephone_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("devav/contacts/mobilephone_16x16.png"), 0);
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(0, "mobilephone_16x16.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(1, "icons8-whatsapp-48.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(2, "icons8-viber-48.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(3, "instagram.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(4, "icons8-телеграмма-app-48.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(5, "vk.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(6, "210908_logo.png");
-            this.imageCollectionCommunicationTypes.InsertGalleryImage("question_16x16.png", "images/support/question_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/support/question_16x16.png"), 7);
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(7, "question_16x16.png");
             // 
             // searchLookUpEditUser
             // 
@@ -151,7 +134,6 @@
             this.MinimizeBox = false;
             this.Name = "EditRecordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).EndInit();
@@ -164,7 +146,6 @@
         #endregion
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.Utils.ImageCollection imageCollectionCommunicationTypes;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEditUser;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.DateEdit dateEdit;

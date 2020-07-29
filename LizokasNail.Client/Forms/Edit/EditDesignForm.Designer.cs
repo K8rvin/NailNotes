@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditDesignForm));
             this.textEditName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.imageCollectionCommunicationTypes = new DevExpress.Utils.ImageCollection(this.components);
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEditComment = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,20 +52,6 @@
             this.labelControl1.Size = new System.Drawing.Size(48, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Название";
-            // 
-            // imageCollectionCommunicationTypes
-            // 
-            this.imageCollectionCommunicationTypes.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollectionCommunicationTypes.ImageStream")));
-            this.imageCollectionCommunicationTypes.InsertGalleryImage("mobilephone_16x16.png", "devav/contacts/mobilephone_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("devav/contacts/mobilephone_16x16.png"), 0);
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(0, "mobilephone_16x16.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(1, "icons8-whatsapp-48.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(2, "icons8-viber-48.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(3, "instagram.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(4, "icons8-телеграмма-app-48.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(5, "vk.png");
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(6, "210908_logo.png");
-            this.imageCollectionCommunicationTypes.InsertGalleryImage("question_16x16.png", "images/support/question_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/support/question_16x16.png"), 7);
-            this.imageCollectionCommunicationTypes.Images.SetKeyName(7, "question_16x16.png");
             // 
             // simpleButtonSave
             // 
@@ -123,7 +105,6 @@
             this.Name = "EditDesignForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,7 +114,6 @@
         #endregion
         private DevExpress.XtraEditors.TextEdit textEditName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.Utils.ImageCollection imageCollectionCommunicationTypes;
         private DevExpress.XtraEditors.SimpleButton simpleButtonSave;
         private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
         private DevExpress.XtraEditors.LabelControl labelControl2;

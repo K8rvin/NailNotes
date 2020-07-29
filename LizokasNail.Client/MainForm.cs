@@ -115,8 +115,6 @@ namespace LizokasNail.Client
 
         private void barButtonItemUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //var form = new UserForm();
-            //form.Show();
             var uc = TryOpenTabSheet<UCUser>("TabPageUser", "Клиенты");
             uc.Init();
         }

@@ -137,17 +137,23 @@
     <Compile Include="Forms\MaterialForm.Designer.cs">
       <DependentUpon>MaterialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Select\SelectTopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Select\SelectTopForm.Designer.cs">
+      <DependentUpon>SelectTopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Select\SelectColorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Select\SelectColorForm.Designer.cs">
+      <DependentUpon>SelectColorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Select\SelectBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Select\SelectBaseForm.Designer.cs">
       <DependentUpon>SelectBaseForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserForm.Designer.cs">
-      <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -252,11 +258,14 @@
     <EmbeddedResource Include="Forms\MaterialForm.resx">
       <DependentUpon>MaterialForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Select\SelectTopForm.resx">
+      <DependentUpon>SelectTopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Select\SelectColorForm.resx">
+      <DependentUpon>SelectColorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Select\SelectBaseForm.resx">
       <DependentUpon>SelectBaseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserForm.resx">
-      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

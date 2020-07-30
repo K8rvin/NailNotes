@@ -18,6 +18,13 @@ namespace LisokasNail.Models
             }
         }
 
+        public TopBl(Check2TopDto item)
+        {
+            Id = item.IdTop;
+            Name = item.Top?.Name;
+            Comment = item.Comment;
+        }
+
         public string Name { get; set; }
         public string Comment { get; set; }
 

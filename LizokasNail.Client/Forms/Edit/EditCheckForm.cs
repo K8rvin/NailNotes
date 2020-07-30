@@ -54,33 +54,11 @@ namespace LizokasNail.Client.Forms.Edit
             searchLookUpEditRecord.Properties.ValueMember = "Id";
             searchLookUpEditRecord.Properties.DisplayMember = "DisplayName";
             searchLookUpEditRecord.DataBindings.Add("EditValue", _item, nameof(_item.RecordId));
-
-            searchLookUpEditColor.Properties.DataSource = _colorRepo.Get();
-            searchLookUpEditColor.Properties.ValueMember = "Id";
-            searchLookUpEditColor.Properties.DisplayMember = "Name";
-            //searchLookUpEditColor.DataBindings.Add("EditValue", _item, nameof(_item.ColorId), true, DataSourceUpdateMode.OnPropertyChanged);
-
-            searchLookUpEditTop.Properties.DataSource = _topRepo.Get();
-            searchLookUpEditTop.Properties.ValueMember = "Id";
-            searchLookUpEditTop.Properties.DisplayMember = "Name";
-            //searchLookUpEditTop.DataBindings.Add("EditValue", _item, nameof(_item.TopId), true, DataSourceUpdateMode.OnPropertyChanged);
-
-
+            
             gridControlDesign.DataSource = _item.Designs;
             repositoryItemSearchLookUpEditDesign.DataSource = _designRepo.Get();
 
-            SetBases();
-        }
-
-        private void SetBases()
-        {
-            if (_item.Check2Base?.Any() == true)
-            {
-                foreach (var item in _item.Check2Base)
-                {
-                    CreateBaseLabel(new BaseBl(item));
-                }
-            }
+            SetData();
         }
 
         private bool Validation()
@@ -92,7 +70,7 @@ namespace LizokasNail.Client.Forms.Edit
 
         private void simpleButtonSave_Click(object sender, EventArgs e)
         {
-            GetBases();
+            GetData();
 
             if (Validation() == false)
             {
@@ -112,11 +90,44 @@ namespace LizokasNail.Client.Forms.Edit
             DialogResult = DialogResult.OK;
         }
 
-        private void GetBases()
+        private void GetData()
         {
             var baseLabels = layoutControlGroup1.Items.Where(x => x.Name.Contains("simpleLabelBase"));
             List<BaseBl>items = baseLabels.Select(x => (BaseBl)x.Tag).ToList();
             _item.Check2Base = items.Select(x => new Check2BaseDto(x, _item.Id));
+
+            var colorLabels = layoutControlGroup1.Items.Where(x => x.Name.Contains("simpleLabelColor"));
+            List<ColorBl> colors = colorLabels.Select(x => (ColorBl)x.Tag).ToList();
+            _item.Check2Color = colors.Select(x => new Check2ColorDto(x, _item.Id));
+
+            var topLabels = layoutControlGroup1.Items.Where(x => x.Name.Contains("simpleLabelTop"));
+            List<TopBl> tops = topLabels.Select(x => (TopBl)x.Tag).ToList();
+            _item.Check2Top = tops.Select(x => new Check2TopDto(x, _item.Id));
+        }
+
+        private void SetData()
+        {
+            if (_item.Check2Base?.Any() == true)
+            {
+                foreach (var item in _item.Check2Base)
+                {
+                    CreateBaseLabel(new BaseBl(item));
+                }
+            }
+            if (_item.Check2Color?.Any() == true)
+            {
+                foreach (var item in _item.Check2Color)
+                {
+                    CreateColorLabel(new ColorBl(item));
+                }
+            }
+            if (_item.Check2Top?.Any() == true)
+            {
+                foreach (var item in _item.Check2Top)
+                {
+                    CreateTopLabel(new TopBl(item));
+                }
+            }
         }
 
         private void simpleButtonAddBase_Click(object sender, EventArgs e)
@@ -125,6 +136,24 @@ namespace LizokasNail.Client.Forms.Edit
             if (selectBaseForm.ShowDialog() == DialogResult.OK)
             {
                 CreateBaseLabel(selectBaseForm._item);
+            }
+        }
+
+        private void simpleButtonAddColor_Click(object sender, EventArgs e)
+        {
+            var selectColorForm = new SelectColorForm(_colorRepo);
+            if (selectColorForm.ShowDialog() == DialogResult.OK)
+            {
+                CreateColorLabel(selectColorForm._item);
+            }
+        }
+
+        private void simpleButtonAddTop_Click(object sender, EventArgs e)
+        {
+            var selectTopForm = new SelectTopForm(_topRepo);
+            if (selectTopForm.ShowDialog() == DialogResult.OK)
+            {
+                CreateTopLabel(selectTopForm._item);
             }
         }
 
@@ -141,7 +170,7 @@ namespace LizokasNail.Client.Forms.Edit
                 simpleLabel.Tag = item;
                 //simpleLabel.OptionsToolTip.ToolTip = $"{item.Name} ({item.Comment})";
                 //simpleLabel.OptionsToolTip.ImmediateToolTip = true;
-                simpleLabel.DoubleClick += new System.EventHandler(this.baseLable_DoubleClick);
+                simpleLabel.DoubleClick += new System.EventHandler(this.lable_DoubleClick);
                 simpleLabel.Move(layoutControlItemButtonBase, InsertType.Top);
             }
             finally
@@ -151,7 +180,53 @@ namespace LizokasNail.Client.Forms.Edit
             }
         }
 
-        private void baseLable_DoubleClick(object sender, EventArgs e)
+        private void CreateColorLabel(ColorBl item)
+        {
+            layoutControl1.BeginUpdate();
+            try
+            {
+                // Create a layout item that will display a new base                
+                SimpleLabelItem simpleLabel = new SimpleLabelItem();
+                simpleLabel.Parent = layoutControlGroup1;
+                simpleLabel.Name = "simpleLabelColor" + item.Id;
+                simpleLabel.Text = $"{item.Name} ({item.Comment})";
+                simpleLabel.Tag = item;
+                //simpleLabel.OptionsToolTip.ToolTip = $"{item.Name} ({item.Comment})";
+                //simpleLabel.OptionsToolTip.ImmediateToolTip = true;
+                simpleLabel.DoubleClick += new System.EventHandler(this.lable_DoubleClick);
+                simpleLabel.Move(layoutControlItemButtonColor, InsertType.Top);
+            }
+            finally
+            {
+                // Unlock and update the layout control.
+                layoutControl1.EndUpdate();
+            }
+        }
+
+        private void CreateTopLabel(TopBl item)
+        {
+            layoutControl1.BeginUpdate();
+            try
+            {
+                // Create a layout item that will display a new base                
+                SimpleLabelItem simpleLabel = new SimpleLabelItem();
+                simpleLabel.Parent = layoutControlGroup1;
+                simpleLabel.Name = "simpleLabelTop" + item.Id;
+                simpleLabel.Text = $"{item.Name} ({item.Comment})";
+                simpleLabel.Tag = item;
+                //simpleLabel.OptionsToolTip.ToolTip = $"{item.Name} ({item.Comment})";
+                //simpleLabel.OptionsToolTip.ImmediateToolTip = true;
+                simpleLabel.DoubleClick += new System.EventHandler(this.lable_DoubleClick);
+                simpleLabel.Move(layoutControlItemButtonTop, InsertType.Top);
+            }
+            finally
+            {
+                // Unlock and update the layout control.
+                layoutControl1.EndUpdate();
+            }
+        }
+
+        private void lable_DoubleClick(object sender, EventArgs e)
         {
             if (sender is SimpleLabelItem simpleLabelItem)
             {

@@ -18,6 +18,13 @@ namespace LisokasNail.Models
             }
         }
 
+        public ColorBl(Check2ColorDto item)
+        {
+            Id = item.IdColor;
+            Name = item.Color?.Name;
+            Comment = item.Comment;
+        }
+
         public string Name { get; set; }
         public string Comment { get; set; }
 

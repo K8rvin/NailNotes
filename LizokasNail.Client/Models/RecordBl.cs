@@ -20,12 +20,14 @@ namespace LisokasNail.Models
                 UserId = dto.UserId;
                 RecordDate = dto.RecordDate;
                 User = new UserBl(dto.User);
+                Check = new CheckBl(dto.Check);
             }
         }
 
         public int UserId { get; set; }
         public DateTime RecordDate { get; set; }
         public UserBl User { get; set; }
+        public CheckBl Check { get; set; }
         public string UserName => User?.Name;
         public string DisplayName => $"{RecordDate} ({UserName})";
 

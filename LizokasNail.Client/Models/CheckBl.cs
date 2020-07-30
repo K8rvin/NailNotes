@@ -24,7 +24,7 @@ namespace LisokasNail.Models
                 Check2Color = dto.Check2Color;
                 Check2Top = dto.Check2Top;
                 Check2Design = dto.Check2Design;
-                Designs = new BindingList<DesignBl>(dto.Check2Design.Select(x => new DesignBl(x)).ToList());
+                Designs = dto.Check2Design != null ? new BindingList<DesignBl>(dto.Check2Design.Select(x => new DesignBl(x)).ToList()) : new BindingList<DesignBl>();
             }
         }
 

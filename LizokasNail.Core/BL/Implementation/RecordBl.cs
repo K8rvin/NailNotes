@@ -1,6 +1,7 @@
 ﻿using LizokasNail.Contract.Dto;
 using LizokasNail.Core.Dao;
 using LizokasNail.Core.Dao.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,9 +16,14 @@ namespace LizokasNail.Core.BL.Implementation
             _dao = dao;
         }
 
-        public IEnumerable<RecordDto> Get() => _dao.Get().Select(x => _map(x));
+        public IEnumerable<RecordDto> Get() => _dao.Get().OrderBy(x => x.RecordDate).Select(x => _map(x));
 
-        public IEnumerable<RecordDto> GetWithoutCheck() => _dao.Get(x=>x.Check == null).Select(x => _map(x));
+        public IEnumerable<RecordDto> GetWithoutCheck() => _dao.Get(x => x.Check == null).OrderBy(x => x.RecordDate).Select(x => _map(x));
+
+        public IEnumerable<RecordDto> GetByPeriod(DateTime dateStart, DateTime dateEnd)
+        {
+            return _dao.Get(x => x.RecordDate >= dateStart && x.RecordDate <= dateEnd).OrderBy(x=>x.RecordDate).Select(x => _map(x));
+        }
 
         public RecordDto GetById(int id) => _map(_dao.Get(x => x.Id == id)?.FirstOrDefault());
 
@@ -68,6 +74,7 @@ namespace LizokasNail.Core.BL.Implementation
                 UserId = item.UserId,
                 RecordDate = item.RecordDate,
                 User = new UserDto(item.User),
+                Check = new CheckDto(item.Check),
             };
         }
     }

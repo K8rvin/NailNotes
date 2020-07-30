@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItemMenu = new DevExpress.XtraBars.BarSubItem();
             this.barSubItemDictionaries = new DevExpress.XtraBars.BarSubItem();
@@ -39,6 +38,7 @@
             this.barButtonItemRecords = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemCheck = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -58,6 +58,8 @@
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemRecording = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemMaterials = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleButtonUsers = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItemUsers = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
@@ -69,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRecording)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -92,9 +95,10 @@
             this.barSubItemMaterials,
             this.barButtonItemDesign,
             this.barButtonItemCheck,
-            this.barButtonItemMaterials});
+            this.barButtonItemMaterials,
+            this.barButtonItemRefresh});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 17;
+            this.barManager1.MaxItemId = 18;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -167,6 +171,8 @@
             this.bar3.DockCol = 0;
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRefresh)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DisableClose = true;
             this.bar3.OptionsBar.DisableCustomization = true;
@@ -174,6 +180,13 @@
             this.bar3.OptionsBar.RotateWhenVertical = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
+            // 
+            // barButtonItemRefresh
+            // 
+            this.barButtonItemRefresh.Caption = "Обновить";
+            this.barButtonItemRefresh.Id = 17;
+            this.barButtonItemRefresh.Name = "barButtonItemRefresh";
+            this.barButtonItemRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemRefresh_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -186,22 +199,22 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 514);
-            this.barDockControlBottom.Size = new System.Drawing.Size(800, 23);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 512);
+            this.barDockControlBottom.Size = new System.Drawing.Size(800, 25);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 492);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 490);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(800, 22);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 492);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 490);
             // 
             // barButtonItemBase
             // 
@@ -235,7 +248,7 @@
             this.xtraTabControl.Location = new System.Drawing.Point(0, 22);
             this.xtraTabControl.Name = "xtraTabControl";
             this.xtraTabControl.SelectedTabPage = this.xtraTabPageMain;
-            this.xtraTabControl.Size = new System.Drawing.Size(800, 492);
+            this.xtraTabControl.Size = new System.Drawing.Size(800, 490);
             this.xtraTabControl.TabIndex = 4;
             this.xtraTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageMain});
@@ -245,7 +258,7 @@
             // 
             this.xtraTabPageMain.Controls.Add(this.splitContainerControlMain);
             this.xtraTabPageMain.Name = "xtraTabPageMain";
-            this.xtraTabPageMain.Size = new System.Drawing.Size(794, 464);
+            this.xtraTabPageMain.Size = new System.Drawing.Size(794, 462);
             this.xtraTabPageMain.Text = "Информация";
             // 
             // splitContainerControlMain
@@ -257,7 +270,7 @@
             this.splitContainerControlMain.Panel1.Text = "Panel1";
             this.splitContainerControlMain.Panel2.Controls.Add(this.layoutControlButtons);
             this.splitContainerControlMain.Panel2.Text = "Panel2";
-            this.splitContainerControlMain.Size = new System.Drawing.Size(794, 464);
+            this.splitContainerControlMain.Size = new System.Drawing.Size(794, 462);
             this.splitContainerControlMain.SplitterPosition = 405;
             this.splitContainerControlMain.TabIndex = 0;
             // 
@@ -266,11 +279,12 @@
             this.ucCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucCalendar1.Location = new System.Drawing.Point(0, 0);
             this.ucCalendar1.Name = "ucCalendar1";
-            this.ucCalendar1.Size = new System.Drawing.Size(405, 464);
+            this.ucCalendar1.Size = new System.Drawing.Size(405, 462);
             this.ucCalendar1.TabIndex = 0;
             // 
             // layoutControlButtons
             // 
+            this.layoutControlButtons.Controls.Add(this.simpleButtonUsers);
             this.layoutControlButtons.Controls.Add(this.simpleButtonMaterials);
             this.layoutControlButtons.Controls.Add(this.simpleButtonRecording);
             this.layoutControlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -278,7 +292,7 @@
             this.layoutControlButtons.Name = "layoutControlButtons";
             this.layoutControlButtons.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1072, 297, 725, 350);
             this.layoutControlButtons.Root = this.layoutControlGroup;
-            this.layoutControlButtons.Size = new System.Drawing.Size(384, 464);
+            this.layoutControlButtons.Size = new System.Drawing.Size(384, 462);
             this.layoutControlButtons.TabIndex = 0;
             // 
             // simpleButtonMaterials
@@ -312,10 +326,11 @@
             this.layoutControlGroup.GroupBordersVisible = false;
             this.layoutControlGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItemRecording,
-            this.layoutControlItemMaterials});
+            this.layoutControlItemMaterials,
+            this.layoutControlItemUsers});
             this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup.Name = "Root";
-            this.layoutControlGroup.Size = new System.Drawing.Size(384, 464);
+            this.layoutControlGroup.Size = new System.Drawing.Size(384, 462);
             this.layoutControlGroup.TextVisible = false;
             // 
             // layoutControlItemRecording
@@ -334,9 +349,32 @@
             this.layoutControlItemMaterials.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItemMaterials.Name = "layoutControlItemMaterials";
             this.layoutControlItemMaterials.Padding = new DevExpress.XtraLayout.Utils.Padding(20, 20, 2, 20);
-            this.layoutControlItemMaterials.Size = new System.Drawing.Size(364, 372);
+            this.layoutControlItemMaterials.Size = new System.Drawing.Size(364, 72);
             this.layoutControlItemMaterials.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemMaterials.TextVisible = false;
+            // 
+            // simpleButtonUsers
+            // 
+            this.simpleButtonUsers.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.simpleButtonUsers.Appearance.Options.UseFont = true;
+            this.simpleButtonUsers.Location = new System.Drawing.Point(30, 156);
+            this.simpleButtonUsers.MinimumSize = new System.Drawing.Size(0, 50);
+            this.simpleButtonUsers.Name = "simpleButtonUsers";
+            this.simpleButtonUsers.Size = new System.Drawing.Size(324, 50);
+            this.simpleButtonUsers.StyleController = this.layoutControlButtons;
+            this.simpleButtonUsers.TabIndex = 6;
+            this.simpleButtonUsers.Text = "Клиенты";
+            this.simpleButtonUsers.Click += new System.EventHandler(this.simpleButtonUsers_Click);
+            // 
+            // layoutControlItemUsers
+            // 
+            this.layoutControlItemUsers.Control = this.simpleButtonUsers;
+            this.layoutControlItemUsers.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItemUsers.Name = "layoutControlItemUsers";
+            this.layoutControlItemUsers.Padding = new DevExpress.XtraLayout.Utils.Padding(20, 20, 2, 20);
+            this.layoutControlItemUsers.Size = new System.Drawing.Size(364, 298);
+            this.layoutControlItemUsers.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItemUsers.TextVisible = false;
             // 
             // MainForm
             // 
@@ -364,6 +402,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRecording)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,6 +439,9 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemRecording;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemMaterials;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemRefresh;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonUsers;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemUsers;
     }
 }
 

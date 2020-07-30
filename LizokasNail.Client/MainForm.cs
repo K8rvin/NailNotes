@@ -144,9 +144,19 @@ namespace LizokasNail.Client
             form.Show();
         }
 
+        private void simpleButtonUsers_Click(object sender, EventArgs e)
+        {
+            var uc = TryOpenTabSheet<UCUser>("TabPageUser", "Клиенты");
+            uc.Init();
+        }
 
         #endregion Menu
 
+        private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ucCalendar1.Init();
+        }
 
+        
     }
 }

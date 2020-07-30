@@ -30,6 +30,8 @@
         {
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonAddTop = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonAddColor = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAddBase = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.textEditComment = new DevExpress.XtraEditors.TextEdit();
@@ -67,9 +69,7 @@
             this.layoutControlItemLableColor = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemLableTop = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemButtonBase = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButtonAddColor = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItemButtonColor = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButtonAddTop = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItemButtonTop = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -135,6 +135,26 @@
             this.layoutControl1.TabIndex = 101;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // simpleButtonAddTop
+            // 
+            this.simpleButtonAddTop.Location = new System.Drawing.Point(72, 88);
+            this.simpleButtonAddTop.Name = "simpleButtonAddTop";
+            this.simpleButtonAddTop.Size = new System.Drawing.Size(296, 22);
+            this.simpleButtonAddTop.StyleController = this.layoutControl1;
+            this.simpleButtonAddTop.TabIndex = 4;
+            this.simpleButtonAddTop.Text = "+";
+            this.simpleButtonAddTop.Click += new System.EventHandler(this.simpleButtonAddTop_Click);
+            // 
+            // simpleButtonAddColor
+            // 
+            this.simpleButtonAddColor.Location = new System.Drawing.Point(72, 62);
+            this.simpleButtonAddColor.Name = "simpleButtonAddColor";
+            this.simpleButtonAddColor.Size = new System.Drawing.Size(296, 22);
+            this.simpleButtonAddColor.StyleController = this.layoutControl1;
+            this.simpleButtonAddColor.TabIndex = 3;
+            this.simpleButtonAddColor.Text = "+";
+            this.simpleButtonAddColor.Click += new System.EventHandler(this.simpleButtonAddColor_Click);
+            // 
             // simpleButtonAddBase
             // 
             this.simpleButtonAddBase.Location = new System.Drawing.Point(72, 36);
@@ -174,7 +194,17 @@
             // 
             // numericUpDownPrice
             // 
+            this.numericUpDownPrice.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.numericUpDownPrice.Location = new System.Drawing.Point(82, 359);
+            this.numericUpDownPrice.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.numericUpDownPrice.Name = "numericUpDownPrice";
             this.numericUpDownPrice.Size = new System.Drawing.Size(286, 20);
             this.numericUpDownPrice.TabIndex = 6;
@@ -505,16 +535,6 @@
             this.layoutControlItemButtonBase.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemButtonBase.TextVisible = false;
             // 
-            // simpleButtonAddColor
-            // 
-            this.simpleButtonAddColor.Location = new System.Drawing.Point(72, 62);
-            this.simpleButtonAddColor.Name = "simpleButtonAddColor";
-            this.simpleButtonAddColor.Size = new System.Drawing.Size(296, 22);
-            this.simpleButtonAddColor.StyleController = this.layoutControl1;
-            this.simpleButtonAddColor.TabIndex = 3;
-            this.simpleButtonAddColor.Text = "+";
-            this.simpleButtonAddColor.Click += new System.EventHandler(this.simpleButtonAddColor_Click);
-            // 
             // layoutControlItemButtonColor
             // 
             this.layoutControlItemButtonColor.Control = this.simpleButtonAddColor;
@@ -523,16 +543,6 @@
             this.layoutControlItemButtonColor.Size = new System.Drawing.Size(300, 26);
             this.layoutControlItemButtonColor.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemButtonColor.TextVisible = false;
-            // 
-            // simpleButtonAddTop
-            // 
-            this.simpleButtonAddTop.Location = new System.Drawing.Point(72, 88);
-            this.simpleButtonAddTop.Name = "simpleButtonAddTop";
-            this.simpleButtonAddTop.Size = new System.Drawing.Size(296, 22);
-            this.simpleButtonAddTop.StyleController = this.layoutControl1;
-            this.simpleButtonAddTop.TabIndex = 4;
-            this.simpleButtonAddTop.Text = "+";
-            this.simpleButtonAddTop.Click += new System.EventHandler(this.simpleButtonAddTop_Click);
             // 
             // layoutControlItemButtonTop
             // 

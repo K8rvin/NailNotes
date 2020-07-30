@@ -2,6 +2,7 @@
 using Flurl.Http;
 using LizokasNail.Contract.Dto;
 using LizokasNail.Contract.Service;
+using System;
 using System.Collections.Generic;
 
 namespace LizokasNail.Http
@@ -24,6 +25,14 @@ namespace LizokasNail.Http
         public IEnumerable<RecordDto> GetWithoutCheck()
         {
             return Url.AppendPathSegment("record/GetWithoutCheck")
+                .GetJsonAsync<IEnumerable<RecordDto>>().Result;
+        }
+
+        public IEnumerable<RecordDto> GetByPeriod(DateTime dateStart, DateTime dateEnd)
+        {
+            return Url.AppendPathSegment("record/GetByPeriod")
+                .SetQueryParam("dateStart", dateStart)
+                .SetQueryParam("dateEnd", dateEnd)
                 .GetJsonAsync<IEnumerable<RecordDto>>().Result;
         }
 

@@ -23,6 +23,12 @@ namespace LizokasNail.WebApi.Controllers
         [HttpGet("GetWithoutCheck")]
         public IEnumerable<RecordDto> GetWithoutCheck() => _bl.GetWithoutCheck();
 
+        [HttpGet("GetByPeriod")]
+        public IEnumerable<RecordDto> GetByPeriod([FromQuery] DateTime dateStart, [FromQuery] DateTime dateEnd)
+        {
+            return _bl.GetByPeriod(dateStart, dateEnd);
+        }
+
         [HttpGet("GetById", Name = "GetRecordById")]
         public RecordDto GetById([FromQuery] int Id)
         {

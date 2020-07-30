@@ -17,6 +17,7 @@ namespace LizokasNail.Client.UserControls
     public partial class UCCalendar : UserControl
     {
         private readonly IRecordRepo _repo;
+        private readonly ICheckRepo _checkRepo;
         private List<RecordBl> _items = new List<RecordBl>();
         private List<Tuple<DateTime, DateTime>> Periods = new List<Tuple<DateTime, DateTime>>();
 
@@ -24,6 +25,7 @@ namespace LizokasNail.Client.UserControls
         {
             InitializeComponent();
             _repo = Di.Container.Instance.Resolve<IRecordRepo>();
+            _checkRepo = Di.Container.Instance.Resolve<ICheckRepo>();
 
             var today = DateTime.Today;
             Periods = new List<Tuple<DateTime, DateTime>>() 
@@ -66,15 +68,31 @@ namespace LizokasNail.Client.UserControls
             DXMouseEventArgs ea = e as DXMouseEventArgs;
             GridView view = sender as GridView;
             GridHitInfo info = view.CalcHitInfo(ea.Location);
-            if ((info.InRow || info.InRowCell) 
-                && (info.Column.FieldName == "RecordDate" || info.Column.FieldName == "UserName"))
+            if (info.InRow || info.InRowCell)                 
             {
                 RecordBl record = (RecordBl)view.GetRow(info.RowHandle);
-                var form = new EditRecordForm(_repo, record);
-                if (form.ShowDialog() == DialogResult.OK)
+                if (info.Column.FieldName == "RecordDate" || info.Column.FieldName == "UserName")
+                {                    
+                    var form = new EditRecordForm(_repo, record);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        RefreshGrid();
+                        form.Dispose();
+                    }
+                }
+                else if (info.Column.FieldName == "Check.Price")
                 {
-                    RefreshGrid();
-                    form.Dispose();
+                    var check = _checkRepo.Get(record.Check.Id);
+                    if (check == null)
+                    {
+                        check = new CheckBl() { RecordId = record.Id, Record = record };
+                    }
+                    var form = new EditCheckForm(_checkRepo, check);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        RefreshGrid();
+                        form.Dispose();
+                    }
                 }
             }
         }

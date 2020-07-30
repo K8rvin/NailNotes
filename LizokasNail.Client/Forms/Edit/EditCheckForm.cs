@@ -46,7 +46,7 @@ namespace LizokasNail.Client.Forms.Edit
             textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
 
             var records = _recordRepo.GetWithoutCheck();
-            if (_item.Record != null && !records.Contains(_item.Record))
+            if (_item.Record != null && !records.Any(x => x.Id == _item.RecordId))
             {
                 records.Add(_item.Record);
             }
@@ -54,7 +54,7 @@ namespace LizokasNail.Client.Forms.Edit
             searchLookUpEditRecord.Properties.ValueMember = "Id";
             searchLookUpEditRecord.Properties.DisplayMember = "DisplayName";
             searchLookUpEditRecord.DataBindings.Add("EditValue", _item, nameof(_item.RecordId));
-            
+
             gridControlDesign.DataSource = _item.Designs;
             repositoryItemSearchLookUpEditDesign.DataSource = _designRepo.Get();
 
@@ -64,7 +64,7 @@ namespace LizokasNail.Client.Forms.Edit
         private bool Validation()
         {
             if (_item.RecordId == 0) return false;
-            
+
             return true;
         }
 
@@ -93,7 +93,7 @@ namespace LizokasNail.Client.Forms.Edit
         private void GetData()
         {
             var baseLabels = layoutControlGroup1.Items.Where(x => x.Name.Contains("simpleLabelBase"));
-            List<BaseBl>items = baseLabels.Select(x => (BaseBl)x.Tag).ToList();
+            List<BaseBl> items = baseLabels.Select(x => (BaseBl)x.Tag).ToList();
             _item.Check2Base = items.Select(x => new Check2BaseDto(x, _item.Id));
 
             var colorLabels = layoutControlGroup1.Items.Where(x => x.Name.Contains("simpleLabelColor"));

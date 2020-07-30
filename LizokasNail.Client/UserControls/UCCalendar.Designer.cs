@@ -107,6 +107,7 @@
             this.gridViewYesterday.OptionsView.ShowIndicator = false;
             this.gridViewYesterday.OptionsView.ShowViewCaption = true;
             this.gridViewYesterday.ViewCaption = "Yesterday";
+            this.gridViewYesterday.DoubleClick += new System.EventHandler(this.gridView_DoubleClick);
             // 
             // gridColumnRecordDateY
             // 
@@ -172,6 +173,7 @@
             this.gridViewTomorrow.OptionsView.ShowIndicator = false;
             this.gridViewTomorrow.OptionsView.ShowViewCaption = true;
             this.gridViewTomorrow.ViewCaption = "Tomorrow";
+            this.gridViewTomorrow.DoubleClick += new System.EventHandler(this.gridView_DoubleClick);
             // 
             // gridColumnRecordDateT
             // 
@@ -237,6 +239,7 @@
             this.gridViewCurrentDate.OptionsView.ShowIndicator = false;
             this.gridViewCurrentDate.OptionsView.ShowViewCaption = true;
             this.gridViewCurrentDate.ViewCaption = "CurrentDate";
+            this.gridViewCurrentDate.DoubleClick += new System.EventHandler(this.gridView_DoubleClick);
             // 
             // gridColumnRecordDate
             // 

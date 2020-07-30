@@ -30,9 +30,8 @@ namespace LizokasNail.Client.Forms.Edit
                 _item = new RecordBl();
                 _item.RecordDate = DateTime.Today;
             }
+            dateNavigator1.DataBindings.Add("DateTime", _item, nameof(_item.RecordDate));
             
-            dateEdit.DataBindings.Add("EditValue", _item, nameof(_item.RecordDate));
-
             searchLookUpEditUser.Properties.DataSource = _userRepo.Get();
             searchLookUpEditUser.Properties.ValueMember = "Id";
             searchLookUpEditUser.Properties.DisplayMember = "Name";

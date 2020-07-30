@@ -1,5 +1,9 @@
-﻿using LisokasNail.Models;
+﻿using DevExpress.Utils;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using LisokasNail.Models;
 using LizokasNail.Client.Di;
+using LizokasNail.Client.Forms.Edit;
 using LizokasNail.Client.Utils;
 using System;
 using System.Collections.Generic;
@@ -13,6 +17,7 @@ namespace LizokasNail.Client.UserControls
     public partial class UCCalendar : UserControl
     {
         private readonly IRecordRepo _repo;
+        private readonly ICheckRepo _checkRepo;
         private List<RecordBl> _items = new List<RecordBl>();
         private List<Tuple<DateTime, DateTime>> Periods = new List<Tuple<DateTime, DateTime>>();
 
@@ -20,6 +25,7 @@ namespace LizokasNail.Client.UserControls
         {
             InitializeComponent();
             _repo = Di.Container.Instance.Resolve<IRecordRepo>();
+            _checkRepo = Di.Container.Instance.Resolve<ICheckRepo>();
 
             var today = DateTime.Today;
             Periods = new List<Tuple<DateTime, DateTime>>() 
@@ -53,11 +59,42 @@ namespace LizokasNail.Client.UserControls
         private void SettingsData()
         {
             gridControlYesterday.DataSource = _items.Where(x=>x.RecordDate >= Periods[0].Item1 && x.RecordDate <= Periods[0].Item2);
-            //gridViewYesterday.BestFitColumns();
             gridControlCurrentDate.DataSource = _items.Where(x => x.RecordDate >= Periods[1].Item1 && x.RecordDate <= Periods[1].Item2);
-            //gridViewCurrentDate.BestFitColumns();
             gridControlTomorrow.DataSource = _items.Where(x => x.RecordDate >= Periods[2].Item1 && x.RecordDate <= Periods[2].Item2);
-            //gridViewTomorrow.BestFitColumns();
+        }
+
+        private void gridView_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow || info.InRowCell)                 
+            {
+                RecordBl record = (RecordBl)view.GetRow(info.RowHandle);
+                if (info.Column.FieldName == "RecordDate" || info.Column.FieldName == "UserName")
+                {                    
+                    var form = new EditRecordForm(_repo, record);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        RefreshGrid();
+                        form.Dispose();
+                    }
+                }
+                else if (info.Column.FieldName == "Check.Price")
+                {
+                    var check = _checkRepo.Get(record.Check.Id);
+                    if (check == null)
+                    {
+                        check = new CheckBl() { RecordId = record.Id, Record = record };
+                    }
+                    var form = new EditCheckForm(_checkRepo, check);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        RefreshGrid();
+                        form.Dispose();
+                    }
+                }
+            }
         }
     }
 }

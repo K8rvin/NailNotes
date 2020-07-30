@@ -37,6 +37,9 @@ namespace LizokasNail.Core.Dao.EF
             modelBuilder.ApplyConfiguration(new DesignConfiguration());
             modelBuilder.ApplyConfiguration(new CheckConfiguration());
             modelBuilder.ApplyConfiguration(new Check2DesignConfiguration());
+            modelBuilder.ApplyConfiguration(new Check2BaseConfiguration());
+            modelBuilder.ApplyConfiguration(new Check2ColorConfiguration());
+            modelBuilder.ApplyConfiguration(new Check2TopConfiguration());
 
             //...
         }

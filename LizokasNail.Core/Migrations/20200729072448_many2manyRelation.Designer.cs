@@ -4,14 +4,16 @@ using LizokasNail.Core.Dao.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LizokasNail.Core.Migrations
 {
     [DbContext(typeof(EfContext))]
-    partial class EfContextModelSnapshot : ModelSnapshot
+    [Migration("20200729072448_many2manyRelation")]
+    partial class many2manyRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,6 +50,12 @@ namespace LizokasNail.Core.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("BaseId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ColorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
@@ -55,6 +63,9 @@ namespace LizokasNail.Core.Migrations
                         .HasColumnType("float");
 
                     b.Property<int>("RecordId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TopId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -124,9 +135,6 @@ namespace LizokasNail.Core.Migrations
 
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
 
                     b.Property<int>("IdCheck")
                         .HasColumnType("int");

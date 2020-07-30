@@ -2,14 +2,13 @@
 
 namespace LizokasNail.Core.Dao.Model
 {
-    public class Check2Design : EntityData, ICheck2DesignDto
+    public class Check2Top : EntityData, ICheck2TopDto
     {
         public int IdCheck { get; set; }
-        public int IdDesign { get; set; }
+        public int IdTop { get; set; }
         public string Comment { get; set; }
-        public int Count { get; set; }
 
         public virtual Check Check { get; set; }
-        public virtual Design Design { get; set; }
+        public virtual Top Top { get; set; }
     }
 }

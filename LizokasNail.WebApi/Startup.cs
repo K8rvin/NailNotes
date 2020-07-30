@@ -49,6 +49,10 @@ namespace LizokasNail.WebApi
             services.AddScoped<IDao<Top>, EntityDao<Top>>();
             services.AddScoped<IDao<Design>, EntityDao<Design>>();
             services.AddScoped<IDao<Check>, EntityDao<Check>>();
+            services.AddScoped<IDao<Check2Base>, EntityDao<Check2Base>>();
+            services.AddScoped<IDao<Check2Color>, EntityDao<Check2Color>>();
+            services.AddScoped<IDao<Check2Top>, EntityDao<Check2Top>>();
+            services.AddScoped<IDao<Check2Design>, EntityDao<Check2Design>>();
 
             #endregion
 

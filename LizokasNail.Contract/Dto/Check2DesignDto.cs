@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace LizokasNail.Contract.Dto
 {
     public interface ICheck2DesignDto : IIdentity
@@ -7,6 +6,7 @@ namespace LizokasNail.Contract.Dto
         int IdCheck { get; set; }
         int IdDesign { get; set; }
         string Comment { get; set; }
+        int Count { get; set; }
     }
 
     public class Check2DesignDto : Identity, ICheck2DesignDto
@@ -23,19 +23,22 @@ namespace LizokasNail.Contract.Dto
                 IdCheck = item.IdCheck;
                 IdDesign = item.IdDesign;
                 Comment = item.Comment;
+                Count = item.Count;
             }
         }
 
-        public Check2DesignDto(IDesignDto design, int checkId)
+        public Check2DesignDto(IDesignDto design, int checkId, int count)
         {
             IdCheck = checkId;
             IdDesign = design.Id;
             Comment = design.Comment;
+            Count = count;
         }
 
         public int IdCheck { get; set; }
         public int IdDesign { get; set; }
         public string Comment { get; set; }
+        public int Count { get; set; }
         public DesignDto Design { get; set; }
     }
 }

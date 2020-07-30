@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\Check2TopDto.cs" />
+    <Compile Include="Dto\Check2ColorDto.cs" />
+    <Compile Include="Dto\Check2BaseDto.cs" />
     <Compile Include="Dto\CheckDto.cs" />
     <Compile Include="Dto\Check2DesignDto.cs" />
     <Compile Include="Dto\DesignDto.cs" />

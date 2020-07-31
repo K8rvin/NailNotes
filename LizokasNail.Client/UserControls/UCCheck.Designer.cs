@@ -33,8 +33,12 @@
             this.gridViewCheck = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnUser = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnBaseNames = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnColorNames = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTopNames = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnDesignNames = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -45,10 +49,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gridColumnDesignNames = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnTopNames = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnColorNames = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnBaseNames = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -78,37 +78,70 @@
             this.gridColumnPrice,
             this.gridColumnComment});
             this.gridViewCheck.GridControl = this.gridControlCheck;
+            this.gridViewCheck.GroupCount = 1;
             this.gridViewCheck.Name = "gridViewCheck";
             this.gridViewCheck.OptionsBehavior.Editable = false;
             this.gridViewCheck.OptionsDetail.EnableMasterViewMode = false;
             this.gridViewCheck.OptionsView.ShowAutoFilterRow = true;
             this.gridViewCheck.OptionsView.ShowFooter = true;
+            this.gridViewCheck.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumnDate, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumnUser
             // 
             this.gridColumnUser.Caption = "Клиент";
             this.gridColumnUser.FieldName = "UserName";
+            this.gridColumnUser.MinWidth = 100;
             this.gridColumnUser.Name = "gridColumnUser";
             this.gridColumnUser.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Name", "Всего: {0}")});
             this.gridColumnUser.Visible = true;
             this.gridColumnUser.VisibleIndex = 0;
+            this.gridColumnUser.Width = 100;
             // 
             // gridColumnDate
             // 
             this.gridColumnDate.Caption = "Дата";
-            this.gridColumnDate.FieldName = "RecordDate";
+            this.gridColumnDate.DisplayFormat.FormatString = "g";
+            this.gridColumnDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumnDate.FieldName = "Record.RecordDate";
+            this.gridColumnDate.MinWidth = 100;
             this.gridColumnDate.Name = "gridColumnDate";
             this.gridColumnDate.Visible = true;
             this.gridColumnDate.VisibleIndex = 1;
+            this.gridColumnDate.Width = 150;
             // 
-            // gridColumnComment
+            // gridColumnBaseNames
             // 
-            this.gridColumnComment.Caption = "Примечание";
-            this.gridColumnComment.FieldName = "Comment";
-            this.gridColumnComment.Name = "gridColumnComment";
-            this.gridColumnComment.Visible = true;
-            this.gridColumnComment.VisibleIndex = 7;
+            this.gridColumnBaseNames.Caption = "Базы";
+            this.gridColumnBaseNames.FieldName = "BaseNames";
+            this.gridColumnBaseNames.Name = "gridColumnBaseNames";
+            this.gridColumnBaseNames.Visible = true;
+            this.gridColumnBaseNames.VisibleIndex = 2;
+            // 
+            // gridColumnColorNames
+            // 
+            this.gridColumnColorNames.Caption = "Цвета";
+            this.gridColumnColorNames.FieldName = "ColorNames";
+            this.gridColumnColorNames.Name = "gridColumnColorNames";
+            this.gridColumnColorNames.Visible = true;
+            this.gridColumnColorNames.VisibleIndex = 3;
+            // 
+            // gridColumnTopNames
+            // 
+            this.gridColumnTopNames.Caption = "Топы";
+            this.gridColumnTopNames.FieldName = "TopNames";
+            this.gridColumnTopNames.Name = "gridColumnTopNames";
+            this.gridColumnTopNames.Visible = true;
+            this.gridColumnTopNames.VisibleIndex = 4;
+            // 
+            // gridColumnDesignNames
+            // 
+            this.gridColumnDesignNames.Caption = "Дизайны";
+            this.gridColumnDesignNames.FieldName = "DesignNames";
+            this.gridColumnDesignNames.Name = "gridColumnDesignNames";
+            this.gridColumnDesignNames.Visible = true;
+            this.gridColumnDesignNames.VisibleIndex = 5;
             // 
             // gridColumnPrice
             // 
@@ -117,6 +150,14 @@
             this.gridColumnPrice.Name = "gridColumnPrice";
             this.gridColumnPrice.Visible = true;
             this.gridColumnPrice.VisibleIndex = 6;
+            // 
+            // gridColumnComment
+            // 
+            this.gridColumnComment.Caption = "Примечание";
+            this.gridColumnComment.FieldName = "Comment";
+            this.gridColumnComment.Name = "gridColumnComment";
+            this.gridColumnComment.Visible = true;
+            this.gridColumnComment.VisibleIndex = 7;
             // 
             // barManager1
             // 
@@ -202,38 +243,6 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(705, 29);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 485);
-            // 
-            // gridColumnDesignNames
-            // 
-            this.gridColumnDesignNames.Caption = "Дизайны";
-            this.gridColumnDesignNames.FieldName = "DesignNames";
-            this.gridColumnDesignNames.Name = "gridColumnDesignNames";
-            this.gridColumnDesignNames.Visible = true;
-            this.gridColumnDesignNames.VisibleIndex = 5;
-            // 
-            // gridColumnTopNames
-            // 
-            this.gridColumnTopNames.Caption = "Топы";
-            this.gridColumnTopNames.FieldName = "TopNames";
-            this.gridColumnTopNames.Name = "gridColumnTopNames";
-            this.gridColumnTopNames.Visible = true;
-            this.gridColumnTopNames.VisibleIndex = 4;
-            // 
-            // gridColumnColorNames
-            // 
-            this.gridColumnColorNames.Caption = "Цвета";
-            this.gridColumnColorNames.FieldName = "ColorNames";
-            this.gridColumnColorNames.Name = "gridColumnColorNames";
-            this.gridColumnColorNames.Visible = true;
-            this.gridColumnColorNames.VisibleIndex = 3;
-            // 
-            // gridColumnBaseNames
-            // 
-            this.gridColumnBaseNames.Caption = "Базы";
-            this.gridColumnBaseNames.FieldName = "BaseNames";
-            this.gridColumnBaseNames.Name = "gridColumnBaseNames";
-            this.gridColumnBaseNames.Visible = true;
-            this.gridColumnBaseNames.VisibleIndex = 2;
             // 
             // UCCheck
             // 

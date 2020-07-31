@@ -11,6 +11,7 @@ namespace LizokasNail.Core.BL
         IEnumerable<RecordDto> GetByPeriod(DateTime dateStart, DateTime dateEnd);
         RecordDto GetById(int id);
         RecordDto Add(RecordDto dto);
+        RecordDto AddNewUserRecord(RecordDto dto);
         RecordDto Update(RecordDto dto);
         void Delete(int id);
     }

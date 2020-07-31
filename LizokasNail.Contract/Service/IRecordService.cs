@@ -11,6 +11,7 @@ namespace LizokasNail.Contract.Service
         IEnumerable<RecordDto> GetWithoutCheck();
         IEnumerable<RecordDto> GetByPeriod(DateTime dateStart, DateTime dateEnd);
         RecordDto Add(RecordDto item);
+        RecordDto AddNewUserRecord(RecordDto item);
         RecordDto Update(RecordDto item);
         void Delete(int id);
     }

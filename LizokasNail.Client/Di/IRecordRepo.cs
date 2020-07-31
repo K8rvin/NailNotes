@@ -11,6 +11,7 @@ namespace LizokasNail.Client.Di
         List<RecordBl> GetWithoutCheck();
         List<RecordBl> GetByPeriod(DateTime dateStart, DateTime dateEnd);
         RecordBl Add(RecordBl item);
+        RecordBl AddNewUserRecord(RecordBl item);
         RecordBl Update(RecordBl item);
         void Delete(int id);
     }

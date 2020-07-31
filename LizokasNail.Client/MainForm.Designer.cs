@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItemMenu = new DevExpress.XtraBars.BarSubItem();
             this.barSubItemDictionaries = new DevExpress.XtraBars.BarSubItem();
@@ -53,12 +54,12 @@
             this.splitContainerControlMain = new DevExpress.XtraEditors.SplitContainerControl();
             this.ucCalendar1 = new LizokasNail.Client.UserControls.UCCalendar();
             this.layoutControlButtons = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonUsers = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonMaterials = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonRecording = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemRecording = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemMaterials = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButtonUsers = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItemUsers = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
@@ -295,6 +296,19 @@
             this.layoutControlButtons.Size = new System.Drawing.Size(384, 462);
             this.layoutControlButtons.TabIndex = 0;
             // 
+            // simpleButtonUsers
+            // 
+            this.simpleButtonUsers.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.simpleButtonUsers.Appearance.Options.UseFont = true;
+            this.simpleButtonUsers.Location = new System.Drawing.Point(30, 156);
+            this.simpleButtonUsers.MinimumSize = new System.Drawing.Size(0, 50);
+            this.simpleButtonUsers.Name = "simpleButtonUsers";
+            this.simpleButtonUsers.Size = new System.Drawing.Size(324, 50);
+            this.simpleButtonUsers.StyleController = this.layoutControlButtons;
+            this.simpleButtonUsers.TabIndex = 6;
+            this.simpleButtonUsers.Text = "Клиенты";
+            this.simpleButtonUsers.Click += new System.EventHandler(this.simpleButtonUsers_Click);
+            // 
             // simpleButtonMaterials
             // 
             this.simpleButtonMaterials.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -319,6 +333,7 @@
             this.simpleButtonRecording.StyleController = this.layoutControlButtons;
             this.simpleButtonRecording.TabIndex = 4;
             this.simpleButtonRecording.Text = "Запись";
+            this.simpleButtonRecording.Click += new System.EventHandler(this.simpleButtonRecording_Click);
             // 
             // layoutControlGroup
             // 
@@ -352,19 +367,6 @@
             this.layoutControlItemMaterials.Size = new System.Drawing.Size(364, 72);
             this.layoutControlItemMaterials.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemMaterials.TextVisible = false;
-            // 
-            // simpleButtonUsers
-            // 
-            this.simpleButtonUsers.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.simpleButtonUsers.Appearance.Options.UseFont = true;
-            this.simpleButtonUsers.Location = new System.Drawing.Point(30, 156);
-            this.simpleButtonUsers.MinimumSize = new System.Drawing.Size(0, 50);
-            this.simpleButtonUsers.Name = "simpleButtonUsers";
-            this.simpleButtonUsers.Size = new System.Drawing.Size(324, 50);
-            this.simpleButtonUsers.StyleController = this.layoutControlButtons;
-            this.simpleButtonUsers.TabIndex = 6;
-            this.simpleButtonUsers.Text = "Клиенты";
-            this.simpleButtonUsers.Click += new System.EventHandler(this.simpleButtonUsers_Click);
             // 
             // layoutControlItemUsers
             // 

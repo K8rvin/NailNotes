@@ -138,6 +138,15 @@ namespace LizokasNail.Client
         }
 
         //Buttons
+        private void simpleButtonRecording_Click(object sender, EventArgs e)
+        {
+            var form = new NewUserForm();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                ucCalendar1.Init();
+            }
+        }
+
         private void simpleButtonMaterials_Click(object sender, EventArgs e)
         {
             var form = new MaterialForm();

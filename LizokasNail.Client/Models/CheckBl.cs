@@ -1,4 +1,5 @@
 ﻿using LizokasNail.Contract.Dto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -37,7 +38,7 @@ namespace LisokasNail.Models
         public IEnumerable<Check2TopDto> Check2Top { get; set; }
         public IEnumerable<Check2DesignDto> Check2Design { get; set; }
 
-        public string RecordDate => Record?.RecordDate.ToString();
+        //public DateTime? RecordDate => Record?.RecordDate;
         public string UserName => Record?.UserName;
         public string BaseNames => string.Join(", ", Check2Base.Select(x => $"{x?.Base?.Name}({x.Comment})"));
         public string ColorNames => string.Join(", ", Check2Color.Select(x => $"{x?.Color?.Name}({x.Comment})"));

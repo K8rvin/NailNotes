@@ -42,6 +42,12 @@ namespace LizokasNail.Http
                 .PostJsonAsync(item).ReceiveJson<RecordDto>().Result;
         }
 
+        public RecordDto AddNewUserRecord(RecordDto item)
+        {
+            return Url.AppendPathSegment("record/AddNewUserRecord")
+                .PostJsonAsync(item).ReceiveJson<RecordDto>().Result;
+        }
+
         public RecordDto Update(RecordDto item)
         {
             return Url.AppendPathSegment("record")

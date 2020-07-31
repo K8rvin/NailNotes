@@ -49,6 +49,20 @@ namespace LizokasNail.WebApi.Controllers
             }
         }
 
+        [HttpPost("AddNewUserRecord")]
+        public ActionResult<RecordDto> AddNewUserRecord([FromBody] RecordDto dto)
+        {
+            try
+            {
+                var item = _bl.AddNewUserRecord(dto);
+                return CreatedAtRoute("GetRecordById", new { Id = item.Id }, item);
+            }
+            catch (Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
+        }
+
         [HttpPut()]
         public ActionResult<RecordDto> Update([FromBody] RecordDto dto)
         {

@@ -50,6 +50,12 @@ namespace LizokasNail.Client.Repository
             return dto != null ? new RecordBl(dto) : null;
         }
 
+        public RecordBl AddNewUserRecord(RecordBl item)
+        {
+            var dto = _service.AddNewUserRecord(item?.ToDto());
+            return dto != null ? new RecordBl(dto) : null;
+        }
+
         public RecordBl Update(RecordBl item)
         {
             var dto = _service.Update(item?.ToDto());

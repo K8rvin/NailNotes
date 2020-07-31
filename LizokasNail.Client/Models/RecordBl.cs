@@ -36,6 +36,7 @@ namespace LisokasNail.Models
             Id = Id,
             UserId = UserId,
             RecordDate = RecordDate,
+            User = User.ToDto()
         };
     }
 }

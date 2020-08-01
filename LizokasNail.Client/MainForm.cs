@@ -137,6 +137,12 @@ namespace LizokasNail.Client
             form.Show();
         }
 
+        private void barButtonItemProcedure_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var uc = TryOpenTabSheet<UCProcedure>("TabPageProcedure", "Процедуры");
+            uc.Init();
+        }
+
         //Buttons
         private void simpleButtonRecording_Click(object sender, EventArgs e)
         {

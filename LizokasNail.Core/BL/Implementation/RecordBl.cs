@@ -24,7 +24,7 @@ namespace LizokasNail.Core.BL.Implementation
 
         public IEnumerable<RecordDto> GetByPeriod(DateTime dateStart, DateTime dateEnd)
         {
-            return _dao.Get(x => x.RecordDate >= dateStart && x.RecordDate <= dateEnd).OrderBy(x=>x.RecordDate).Select(x => _map(x));
+            return _dao.Get(x => x.RecordDate >= dateStart && x.RecordDate <= dateEnd).OrderBy(x => x.RecordDate).Select(x => _map(x));
         }
 
         public RecordDto GetById(int id) => _map(_dao.Get(x => x.Id == id)?.FirstOrDefault());
@@ -91,6 +91,7 @@ namespace LizokasNail.Core.BL.Implementation
                 RecordDate = item.RecordDate,
                 User = new UserDto(item.User),
                 Check = new CheckDto(item.Check),
+                Record2Procedure = item.Record2Procedure.Select(x => new Record2ProcedureDto(x) { Procedure = new ProcedureDto(x.Procedure)}),
             };
         }
     }

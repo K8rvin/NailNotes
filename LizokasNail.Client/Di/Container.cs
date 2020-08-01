@@ -27,6 +27,7 @@ namespace LizokasNail.Client.Di
             AsSingleton<ITopService, TopService>();
             AsSingleton<IDesignService, DesignService>();
             AsSingleton<ICheckService, CheckService>();
+            AsSingleton<IProcedureService, ProcedureService>();
 
             /**
              * Репозитории
@@ -38,6 +39,7 @@ namespace LizokasNail.Client.Di
             AsTransient<ITopRepo, TopRepo>();
             AsTransient<IDesignRepo, DesignRepo>();
             AsTransient<ICheckRepo, CheckRepo>();
+            AsTransient<IProcedureRepo, ProcedureRepo>();
 
         }
 

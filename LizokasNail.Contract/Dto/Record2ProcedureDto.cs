@@ -24,6 +24,15 @@ namespace LizokasNail.Contract.Dto
             }
         }
 
+        public Record2ProcedureDto(IProcedureDto item, int idRecord)
+        {
+            if (item != null)
+            {
+                IdRecord = idRecord;
+                IdProcedure = item.Id;
+            }
+        }
+
         public int IdRecord { get; set; }
         public int IdProcedure { get; set; }
         public ProcedureDto Procedure { get; set; }

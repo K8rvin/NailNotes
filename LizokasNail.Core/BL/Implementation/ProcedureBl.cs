@@ -15,7 +15,7 @@ namespace LizokasNail.Core.BL.Implementation
             _dao = dao;
         }
 
-        public IEnumerable<ProcedureDto> Get() => _dao.Get().Select(x => _map(x));
+        public IEnumerable<ProcedureDto> Get() => _dao.Get().OrderBy(x=>x.Name).Select(x => _map(x));
 
         public ProcedureDto GetById(int id) => _map(_dao.Get(x => x.Id == id)?.FirstOrDefault());
 

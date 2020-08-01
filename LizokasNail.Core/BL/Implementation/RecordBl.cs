@@ -11,11 +11,13 @@ namespace LizokasNail.Core.BL.Implementation
     {
         private readonly IDao<Record> _dao;
         private readonly IUserBl _userBl;
+        private readonly IDao<Record2Procedure> _record2ProcedureDao;
 
-        public RecordBl(IDao<Record> dao, IUserBl userBl)
+        public RecordBl(IDao<Record> dao, IUserBl userBl, IDao<Record2Procedure> record2ProcedureDao)
         {
             _dao = dao;
             _userBl = userBl;
+            _record2ProcedureDao = record2ProcedureDao;
         }
 
         public IEnumerable<RecordDto> Get() => _dao.Get().OrderBy(x => x.RecordDate).Select(x => _map(x));
@@ -38,6 +40,8 @@ namespace LizokasNail.Core.BL.Implementation
             };
 
             _dao.Create(item);
+            _record2ProcedureDao.CreateRange(dto.Record2Procedure.Select(x => new Record2Procedure() { IdRecord = item.Id, IdProcedure = x.IdProcedure }));
+
             return _map(item);
         }
 
@@ -52,6 +56,8 @@ namespace LizokasNail.Core.BL.Implementation
             };
 
             _dao.Create(item);
+            _record2ProcedureDao.CreateRange(dto.Record2Procedure.Select(x => new Record2Procedure() { IdRecord = item.Id, IdProcedure = x.IdProcedure }));
+
             return _map(item);
         }
 
@@ -61,6 +67,9 @@ namespace LizokasNail.Core.BL.Implementation
             if (item == null)
                 throw new KeyNotFoundException();
 
+            _record2ProcedureDao.DeleteRange(item.Record2Procedure);
+            _record2ProcedureDao.CreateRange(dto.Record2Procedure.Select(x => new Record2Procedure() { IdRecord = item.Id, IdProcedure = x.IdProcedure }));
+            
             item.UserId = dto.UserId;
             item.RecordDate = dto.RecordDate;
             _dao.Update(item);

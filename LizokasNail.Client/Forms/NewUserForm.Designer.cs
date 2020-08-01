@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewUserForm));
             this.textEditName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.textEditComment = new DevExpress.XtraEditors.TextEdit();
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
@@ -52,11 +53,12 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageComboBoxEditCommunication.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).BeginInit();
@@ -72,8 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,14 +102,34 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(646, 115, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(380, 392);
+            this.layoutControl1.Size = new System.Drawing.Size(380, 562);
             this.layoutControl1.TabIndex = 100;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // dateNavigator1
+            // 
+            this.dateNavigator1.CalendarAppearance.DayCellSpecial.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.dateNavigator1.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
+            this.dateNavigator1.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNavigator1.CalendarTimeProperties.Mask.EditMask = "t";
+            this.dateNavigator1.CalendarTimeProperties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
+            this.dateNavigator1.CalendarTimeProperties.TouchUIMinuteIncrement = 10;
+            this.dateNavigator1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateNavigator1.DateTime = new System.DateTime(((long)(0)));
+            this.dateNavigator1.EditValue = new System.DateTime(((long)(0)));
+            this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Monday;
+            this.dateNavigator1.Location = new System.Drawing.Point(12, 84);
+            this.dateNavigator1.Name = "dateNavigator1";
+            this.dateNavigator1.Size = new System.Drawing.Size(356, 259);
+            this.dateNavigator1.StyleController = this.layoutControl1;
+            this.dateNavigator1.TabIndex = 102;
             // 
             // simpleButtonCancel
             // 
             this.simpleButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.simpleButtonCancel.Location = new System.Drawing.Point(191, 358);
+            this.simpleButtonCancel.Location = new System.Drawing.Point(191, 528);
             this.simpleButtonCancel.Name = "simpleButtonCancel";
             this.simpleButtonCancel.Size = new System.Drawing.Size(177, 22);
             this.simpleButtonCancel.StyleController = this.layoutControl1;
@@ -126,7 +146,7 @@
             // 
             // simpleButtonSave
             // 
-            this.simpleButtonSave.Location = new System.Drawing.Point(12, 358);
+            this.simpleButtonSave.Location = new System.Drawing.Point(12, 528);
             this.simpleButtonSave.Name = "simpleButtonSave";
             this.simpleButtonSave.Size = new System.Drawing.Size(175, 22);
             this.simpleButtonSave.StyleController = this.layoutControl1;
@@ -217,7 +237,7 @@
             this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(380, 392);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(380, 562);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -277,7 +297,7 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.simpleButtonSave;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 346);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 516);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(179, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -286,7 +306,7 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.simpleButtonCancel;
-            this.layoutControlItem10.Location = new System.Drawing.Point(179, 346);
+            this.layoutControlItem10.Location = new System.Drawing.Point(179, 516);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(181, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -297,7 +317,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 335);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(360, 19);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(360, 158);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -308,26 +328,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(145, 24);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // dateNavigator1
-            // 
-            this.dateNavigator1.CalendarAppearance.DayCellSpecial.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.dateNavigator1.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
-            this.dateNavigator1.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
-            this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNavigator1.CalendarTimeProperties.Mask.EditMask = "t";
-            this.dateNavigator1.CalendarTimeProperties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
-            this.dateNavigator1.CalendarTimeProperties.TouchUIMinuteIncrement = 10;
-            this.dateNavigator1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateNavigator1.DateTime = new System.DateTime(((long)(0)));
-            this.dateNavigator1.EditValue = new System.DateTime(((long)(0)));
-            this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator1.Location = new System.Drawing.Point(12, 84);
-            this.dateNavigator1.Name = "dateNavigator1";
-            this.dateNavigator1.Size = new System.Drawing.Size(356, 259);
-            this.dateNavigator1.StyleController = this.layoutControl1;
-            this.dateNavigator1.TabIndex = 102;
             // 
             // layoutControlItem7
             // 
@@ -344,7 +344,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.simpleButtonCancel;
-            this.ClientSize = new System.Drawing.Size(380, 392);
+            this.ClientSize = new System.Drawing.Size(380, 562);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -355,6 +355,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageComboBoxEditCommunication.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionCommunicationTypes)).EndInit();
@@ -370,8 +372,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 

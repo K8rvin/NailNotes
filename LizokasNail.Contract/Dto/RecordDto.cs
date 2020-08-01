@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LizokasNail.Contract.Dto
 {
@@ -28,5 +29,6 @@ namespace LizokasNail.Contract.Dto
         public DateTime RecordDate { get; set; }
         public UserDto User { get; set; }
         public CheckDto Check { get; set; }
+        public IEnumerable<Record2ProcedureDto> Record2Procedure { get; set; }
     }
 }

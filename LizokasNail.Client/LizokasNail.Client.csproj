@@ -84,6 +84,7 @@
     <Compile Include="Di\Container.cs" />
     <Compile Include="Di\ICheckRepo.cs" />
     <Compile Include="Di\IDesignRepo.cs" />
+    <Compile Include="Di\IProcedureRepo.cs" />
     <Compile Include="Di\ITopRepo.cs" />
     <Compile Include="Di\IColorRepo.cs" />
     <Compile Include="Di\IRecordRepo.cs" />
@@ -100,6 +101,12 @@
     </Compile>
     <Compile Include="Forms\Edit\EditDesignForm.Designer.cs">
       <DependentUpon>EditDesignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit\EditProcedureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit\EditProcedureForm.Designer.cs">
+      <DependentUpon>EditProcedureForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Edit\EditTopForm.cs">
       <SubType>Form</SubType>
@@ -175,6 +182,7 @@
     </Compile>
     <Compile Include="Models\CheckBl.cs" />
     <Compile Include="Models\DesignBl.cs" />
+    <Compile Include="Models\ProcedureBl.cs" />
     <Compile Include="Models\TopBl.cs" />
     <Compile Include="Models\ColorBl.cs" />
     <Compile Include="Models\Identity.cs" />
@@ -185,6 +193,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CheckRepo.cs" />
     <Compile Include="Repository\DesignRepo.cs" />
+    <Compile Include="Repository\ProcedureRepo.cs" />
     <Compile Include="Repository\TopRepo.cs" />
     <Compile Include="Repository\ColorRepo.cs" />
     <Compile Include="Repository\RecordRepo.cs" />
@@ -207,6 +216,12 @@
     </Compile>
     <Compile Include="UserControls\UCDesign.Designer.cs">
       <DependentUpon>UCDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCProcedure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCProcedure.Designer.cs">
+      <DependentUpon>UCProcedure.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCTop.cs">
       <SubType>UserControl</SubType>
@@ -251,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Edit\EditDesignForm.resx">
       <DependentUpon>EditDesignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit\EditProcedureForm.resx">
+      <DependentUpon>EditProcedureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Edit\EditTopForm.resx">
       <DependentUpon>EditTopForm.cs</DependentUpon>
@@ -307,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDesign.resx">
       <DependentUpon>UCDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCProcedure.resx">
+      <DependentUpon>UCProcedure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCTop.resx">
       <DependentUpon>UCTop.cs</DependentUpon>

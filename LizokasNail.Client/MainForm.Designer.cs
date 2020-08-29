@@ -61,6 +61,7 @@
             this.layoutControlItemRecording = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemMaterials = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemUsers = new DevExpress.XtraLayout.LayoutControlItem();
+            this.barButtonItemProcedure = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
@@ -97,9 +98,10 @@
             this.barButtonItemDesign,
             this.barButtonItemCheck,
             this.barButtonItemMaterials,
-            this.barButtonItemRefresh});
+            this.barButtonItemRefresh,
+            this.barButtonItemProcedure});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 18;
+            this.barManager1.MaxItemId = 19;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -134,7 +136,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemMaterials),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCheck)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCheck),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemProcedure)});
             this.barSubItemDictionaries.Name = "barSubItemDictionaries";
             // 
             // barButtonItemMaterials
@@ -378,6 +381,13 @@
             this.layoutControlItemUsers.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemUsers.TextVisible = false;
             // 
+            // barButtonItemProcedure
+            // 
+            this.barButtonItemProcedure.Caption = "Процедуры";
+            this.barButtonItemProcedure.Id = 18;
+            this.barButtonItemProcedure.Name = "barButtonItemProcedure";
+            this.barButtonItemProcedure.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProcedure_ItemClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,6 +454,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemRefresh;
         private DevExpress.XtraEditors.SimpleButton simpleButtonUsers;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemUsers;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemProcedure;
     }
 }
 

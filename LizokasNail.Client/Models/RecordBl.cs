@@ -1,5 +1,6 @@
 ﻿using LizokasNail.Contract.Dto;
 using System;
+using System.Collections.Generic;
 
 namespace LisokasNail.Models
 {
@@ -10,6 +11,7 @@ namespace LisokasNail.Models
     {
         public RecordBl()
         {
+            Record2Procedure = new HashSet<Record2ProcedureDto>();
         }
 
         public RecordBl(RecordDto dto)
@@ -21,6 +23,7 @@ namespace LisokasNail.Models
                 RecordDate = dto.RecordDate;
                 User = new UserBl(dto.User);
                 Check = new CheckBl(dto.Check);
+                Record2Procedure = dto.Record2Procedure;
             }
         }
 
@@ -28,6 +31,8 @@ namespace LisokasNail.Models
         public DateTime RecordDate { get; set; }
         public UserBl User { get; set; }
         public CheckBl Check { get; set; }
+        public IEnumerable<Record2ProcedureDto> Record2Procedure { get; set; }
+
         public string UserName => User?.Name;
         public string DisplayName => $"{RecordDate} ({UserName})";
 
@@ -36,7 +41,8 @@ namespace LisokasNail.Models
             Id = Id,
             UserId = UserId,
             RecordDate = RecordDate,
-            User = User?.ToDto()
+            User = User?.ToDto(),
+            Record2Procedure = Record2Procedure,
         };
     }
 }

@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="CheckService.cs" />
     <Compile Include="DesignService.cs" />
+    <Compile Include="ProcedureService.cs" />
     <Compile Include="TopService.cs" />
     <Compile Include="ColorService.cs" />
     <Compile Include="ServiceBase.cs" />

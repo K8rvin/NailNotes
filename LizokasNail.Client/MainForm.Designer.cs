@@ -52,7 +52,7 @@
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageMain = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControlMain = new DevExpress.XtraEditors.SplitContainerControl();
-            this.ucCalendar1 = new LizokasNail.Client.UserControls.UCCalendar();
+            this.ucThreeDaysCalendar = new LizokasNail.Client.UserControls.UCCalendar();
             this.layoutControlButtons = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButtonUsers = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonMaterials = new DevExpress.XtraEditors.SimpleButton();
@@ -267,7 +267,7 @@
             this.splitContainerControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControlMain.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControlMain.Name = "splitContainerControlMain";
-            this.splitContainerControlMain.Panel1.Controls.Add(this.ucCalendar1);
+            this.splitContainerControlMain.Panel1.Controls.Add(this.ucThreeDaysCalendar);
             this.splitContainerControlMain.Panel1.Text = "Panel1";
             this.splitContainerControlMain.Panel2.Controls.Add(this.layoutControlButtons);
             this.splitContainerControlMain.Panel2.Text = "Panel2";
@@ -277,11 +277,11 @@
             // 
             // ucCalendar1
             // 
-            this.ucCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCalendar1.Location = new System.Drawing.Point(0, 0);
-            this.ucCalendar1.Name = "ucCalendar1";
-            this.ucCalendar1.Size = new System.Drawing.Size(405, 462);
-            this.ucCalendar1.TabIndex = 0;
+            this.ucThreeDaysCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucThreeDaysCalendar.Location = new System.Drawing.Point(0, 0);
+            this.ucThreeDaysCalendar.Name = "ucCalendar1";
+            this.ucThreeDaysCalendar.Size = new System.Drawing.Size(405, 462);
+            this.ucThreeDaysCalendar.TabIndex = 0;
             // 
             // layoutControlButtons
             // 
@@ -434,7 +434,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemMaterials;
         private DevExpress.XtraScheduler.UI.WeekDaysEdit weekDaysEdit1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControlMain;
-        private UserControls.UCCalendar ucCalendar1;
+        private UserControls.UCCalendar ucThreeDaysCalendar;
         private DevExpress.XtraLayout.LayoutControl layoutControlButtons;
         private DevExpress.XtraEditors.SimpleButton simpleButtonMaterials;
         private DevExpress.XtraEditors.SimpleButton simpleButtonRecording;

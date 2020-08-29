@@ -28,7 +28,7 @@ namespace LizokasNail.Client
         /// <summary>
         /// Экземпляр класса (паттерн Singleton)
         /// </summary>
-        public static MainForm Instance => _instance ?? (_instance = new MainForm());
+        public static MainForm Instance => (_instance == null || _instance.IsDisposed) ? (_instance = new MainForm()) : _instance;
 
         /// <summary>Открытые закладки</summary>
         private readonly Dictionary<string, UserControl> _openedTabSheets = new Dictionary<string, UserControl>();
@@ -133,24 +133,23 @@ namespace LizokasNail.Client
 
         private void barButtonItemMaterials_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new MaterialForm();
-            form.Show();
+            MaterialForm.Instance.Show();
         }
 
         //Buttons
         private void simpleButtonRecording_Click(object sender, EventArgs e)
         {
-            var form = new NewUserForm();
+            var form = new SelectUserForm();
+            
             if (form.ShowDialog() == DialogResult.OK)
             {
-                ucCalendar1.Init();
+                ucThreeDaysCalendar.Init();
             }
         }
 
         private void simpleButtonMaterials_Click(object sender, EventArgs e)
         {
-            var form = new MaterialForm();
-            form.Show();
+            MaterialForm.Instance.Show();
         }
 
         private void simpleButtonUsers_Click(object sender, EventArgs e)
@@ -163,7 +162,7 @@ namespace LizokasNail.Client
 
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ucCalendar1.Init();
+            ucThreeDaysCalendar.Init();
         }
 
         

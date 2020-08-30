@@ -1,6 +1,7 @@
 ﻿using LizokasNail.Contract.Dto;
 using LizokasNail.Core.Dao;
 using LizokasNail.Core.Dao.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -25,6 +26,9 @@ namespace LizokasNail.Core.BL.Implementation
 
         public IEnumerable<CheckDto> Get() => _dao.Get().Select(x => _map(x));
 
+        public IEnumerable<CheckDto> GetByPeriod(DateTime dateStart, DateTime dateEnd)
+            => _dao.Get(x => x.Record.RecordDate >= dateStart && x.Record.RecordDate <= dateEnd.AddDays(1)).Select(x => _map(x));
+
         public CheckDto GetById(int id) => _map(_dao.Get(x => x.Id == id)?.FirstOrDefault());
 
         public CheckDto Add(CheckDto dto)
@@ -37,7 +41,7 @@ namespace LizokasNail.Core.BL.Implementation
             };
 
             _dao.Create(item);
-            _check2BaseDao.CreateRange(dto.Check2Base.Select(x=>new Check2Base() { IdCheck = item.Id, IdBase = x.IdBase, Comment = x.Comment}));
+            _check2BaseDao.CreateRange(dto.Check2Base.Select(x => new Check2Base() { IdCheck = item.Id, IdBase = x.IdBase, Comment = x.Comment }));
             _check2ColorDao.CreateRange(dto.Check2Color.Select(x => new Check2Color() { IdCheck = item.Id, IdColor = x.IdColor, Comment = x.Comment }));
             _check2TopDao.CreateRange(dto.Check2Top.Select(x => new Check2Top() { IdCheck = item.Id, IdTop = x.IdTop, Comment = x.Comment }));
             _check2DesignDao.CreateRange(dto.Check2Design.Select(x => new Check2Design() { IdCheck = item.Id, IdDesign = x.IdDesign, Comment = x.Comment, Count = x.Count }));

@@ -1,6 +1,7 @@
 ﻿using LisokasNail.Models;
 using LizokasNail.Client.Di;
 using LizokasNail.Contract.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity;
@@ -28,6 +29,12 @@ namespace LizokasNail.Client.Repository
         public virtual List<CheckBl> Get()
         {
             var dtos = _service.Get();
+            return dtos?.Select(x => _uc.Resolve<CheckBl>(new ParameterOverride("dto", x))).ToList();
+        }
+
+        public virtual List<CheckBl> GetByPeriod(DateTime DateStart, DateTime DateEnd)
+        {
+            var dtos = _service.GetByPeriod(DateStart, DateEnd);
             return dtos?.Select(x => _uc.Resolve<CheckBl>(new ParameterOverride("dto", x))).ToList();
         }
 

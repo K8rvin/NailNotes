@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControlCheck = new DevExpress.XtraGrid.GridControl();
             this.gridViewCheck = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnUser = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,19 +38,32 @@
             this.gridColumnDesignNames = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemEdit = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barEditItemDateStart = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barEditItemDateEnd = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlCheck
@@ -97,7 +109,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Name", "Всего: {0}")});
             this.gridColumnUser.Visible = true;
             this.gridColumnUser.VisibleIndex = 0;
-            this.gridColumnUser.Width = 100;
+            this.gridColumnUser.Width = 121;
             // 
             // gridColumnDate
             // 
@@ -117,7 +129,7 @@
             this.gridColumnBaseNames.FieldName = "BaseNames";
             this.gridColumnBaseNames.Name = "gridColumnBaseNames";
             this.gridColumnBaseNames.Visible = true;
-            this.gridColumnBaseNames.VisibleIndex = 2;
+            this.gridColumnBaseNames.VisibleIndex = 1;
             // 
             // gridColumnColorNames
             // 
@@ -125,7 +137,7 @@
             this.gridColumnColorNames.FieldName = "ColorNames";
             this.gridColumnColorNames.Name = "gridColumnColorNames";
             this.gridColumnColorNames.Visible = true;
-            this.gridColumnColorNames.VisibleIndex = 3;
+            this.gridColumnColorNames.VisibleIndex = 2;
             // 
             // gridColumnTopNames
             // 
@@ -133,7 +145,7 @@
             this.gridColumnTopNames.FieldName = "TopNames";
             this.gridColumnTopNames.Name = "gridColumnTopNames";
             this.gridColumnTopNames.Visible = true;
-            this.gridColumnTopNames.VisibleIndex = 4;
+            this.gridColumnTopNames.VisibleIndex = 3;
             // 
             // gridColumnDesignNames
             // 
@@ -141,7 +153,7 @@
             this.gridColumnDesignNames.FieldName = "DesignNames";
             this.gridColumnDesignNames.Name = "gridColumnDesignNames";
             this.gridColumnDesignNames.Visible = true;
-            this.gridColumnDesignNames.VisibleIndex = 5;
+            this.gridColumnDesignNames.VisibleIndex = 4;
             // 
             // gridColumnPrice
             // 
@@ -149,7 +161,7 @@
             this.gridColumnPrice.FieldName = "Price";
             this.gridColumnPrice.Name = "gridColumnPrice";
             this.gridColumnPrice.Visible = true;
-            this.gridColumnPrice.VisibleIndex = 6;
+            this.gridColumnPrice.VisibleIndex = 5;
             // 
             // gridColumnComment
             // 
@@ -157,7 +169,7 @@
             this.gridColumnComment.FieldName = "Comment";
             this.gridColumnComment.Name = "gridColumnComment";
             this.gridColumnComment.Visible = true;
-            this.gridColumnComment.VisibleIndex = 7;
+            this.gridColumnComment.VisibleIndex = 6;
             // 
             // barManager1
             // 
@@ -172,8 +184,17 @@
             this.barButtonItemRefresh,
             this.barButtonItemAdd,
             this.barButtonItemDelete,
-            this.barButtonItemEdit});
-            this.barManager1.MaxItemId = 4;
+            this.barButtonItemEdit,
+            this.barStaticItem1,
+            this.barEditItemDateStart,
+            this.barStaticItem2,
+            this.barEditItem2,
+            this.barEditItemDateEnd});
+            this.barManager1.MaxItemId = 9;
+            this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemDateEdit1,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemDateEdit2});
             // 
             // bar1
             // 
@@ -185,7 +206,11 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemAdd),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemEdit),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemDelete)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemDelete),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemDateStart),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemDateEnd)});
             this.bar1.Text = "Tools";
             // 
             // barButtonItemAdd
@@ -216,6 +241,54 @@
             this.barButtonItemDelete.Name = "barButtonItemDelete";
             this.barButtonItemDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemDelete_ItemClick);
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "Период с:";
+            this.barStaticItem1.Id = 4;
+            this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barEditItemDateStart
+            // 
+            this.barEditItemDateStart.Edit = this.repositoryItemDateEdit1;
+            this.barEditItemDateStart.EditWidth = 100;
+            this.barEditItemDateStart.Id = 5;
+            this.barEditItemDateStart.Name = "barEditItemDateStart";
+            this.barEditItemDateStart.EditValueChanged += new System.EventHandler(this.barEditItemDate_EditValueChanged);
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "по:";
+            this.barStaticItem2.Id = 6;
+            this.barStaticItem2.Name = "barStaticItem2";
+            this.barStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barEditItemDateEnd
+            // 
+            this.barEditItemDateEnd.Edit = this.repositoryItemDateEdit2;
+            this.barEditItemDateEnd.EditWidth = 100;
+            this.barEditItemDateEnd.Id = 8;
+            this.barEditItemDateEnd.Name = "barEditItemDateEnd";
+            this.barEditItemDateEnd.EditValueChanged += new System.EventHandler(this.barEditItemDate_EditValueChanged);
+            // 
+            // repositoryItemDateEdit2
+            // 
+            this.repositoryItemDateEdit2.AutoHeight = false;
+            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -244,6 +317,19 @@
             this.barDockControlRight.Location = new System.Drawing.Point(705, 29);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 485);
             // 
+            // barEditItem2
+            // 
+            this.barEditItem2.Caption = "barEditItem2";
+            this.barEditItem2.Edit = this.repositoryItemTextEdit1;
+            this.barEditItem2.EditWidth = 137;
+            this.barEditItem2.Id = 7;
+            this.barEditItem2.Name = "barEditItem2";
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
             // UCCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +344,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +376,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnColorNames;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnTopNames;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnDesignNames;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarEditItem barEditItemDateStart;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarEditItem barEditItemDateEnd;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
+        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
     }
 }

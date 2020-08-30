@@ -20,6 +20,12 @@ namespace LizokasNail.WebApi.Controllers
         [HttpGet]
         public IEnumerable<CheckDto> Get() => _bl.Get();
 
+        [HttpGet("GetByPeriod")]
+        public IEnumerable<CheckDto> GetByPeriod([FromQuery] DateTime DateStart, [FromQuery] DateTime DateEnd)
+        {
+            return _bl.GetByPeriod(DateStart, DateEnd);
+        }
+
         [HttpGet("GetById", Name = "GetCheckById")]
         public CheckDto GetById([FromQuery] int Id)
         {

@@ -2,6 +2,7 @@
 using LizokasNail.Client.Di;
 using LizokasNail.Client.Forms.Edit;
 using LizokasNail.Client.Utils;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Unity;
@@ -21,6 +22,9 @@ namespace LizokasNail.Client.UserControls
 
         public void Init()
         {
+            var today = DateTime.Today;
+            barEditItemDateStart.EditValue = new DateTime(today.Year, today.Month, 1);
+            barEditItemDateEnd.EditValue = ((DateTime)barEditItemDateStart.EditValue).AddMonths(1).AddDays(-1);
             RefreshGrid();
         }
 
@@ -28,7 +32,8 @@ namespace LizokasNail.Client.UserControls
 
         private void GetData()
         {
-            _items = _repo.Get();
+            if (barEditItemDateStart.EditValue != null && barEditItemDateEnd.EditValue != null)
+                _items = _repo.GetByPeriod((DateTime)barEditItemDateStart.EditValue, (DateTime)barEditItemDateEnd.EditValue);
         }
 
         private void SettingsData()
@@ -88,6 +93,11 @@ namespace LizokasNail.Client.UserControls
                     gridViewCheck.RefreshData();
                 }
             }
+        }
+
+        private void barEditItemDate_EditValueChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
         }
     }
 }

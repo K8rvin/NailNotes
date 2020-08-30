@@ -33,12 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Data.v15.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Images.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Utils.v15.2.dll</HintPath>
@@ -60,10 +62,17 @@
     <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -132,6 +141,12 @@
     <Compile Include="Forms\Edit\EditBaseForm.Designer.cs">
       <DependentUpon>EditBaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScheduleForm.Designer.cs">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SelectUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +214,12 @@
     <Compile Include="Repository\RecordRepo.cs" />
     <Compile Include="Repository\BaseRepo.cs" />
     <Compile Include="Repository\UserRepo.cs" />
+    <Compile Include="UserControls\UCSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSchedule.Designer.cs">
+      <DependentUpon>UCSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCCalendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -282,6 +303,9 @@
     <EmbeddedResource Include="Forms\Edit\EditBaseForm.resx">
       <DependentUpon>EditBaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScheduleForm.resx">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectUserForm.resx">
       <DependentUpon>SelectUserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +341,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\UCSchedule.resx">
+      <DependentUpon>UCSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCCalendar.resx">
       <DependentUpon>UCCalendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +415,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nail_64_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doublefirst_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doublelast_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

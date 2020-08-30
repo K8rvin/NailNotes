@@ -38,6 +38,8 @@
             this.barButtonItemUsers = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRecords = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemCheck = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemProcedure = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemSchedule = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -57,11 +59,12 @@
             this.simpleButtonUsers = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonMaterials = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonRecording = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonSchedule = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemRecording = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemMaterials = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemUsers = new DevExpress.XtraLayout.LayoutControlItem();
-            this.barButtonItemProcedure = new DevExpress.XtraBars.BarButtonItem();
+            this.layoutControlItemMaterials1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
@@ -74,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRecording)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -99,9 +103,10 @@
             this.barButtonItemCheck,
             this.barButtonItemMaterials,
             this.barButtonItemRefresh,
-            this.barButtonItemProcedure});
+            this.barButtonItemProcedure,
+            this.barButtonItemSchedule});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 19;
+            this.barManager1.MaxItemId = 20;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -137,7 +142,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemUsers),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCheck),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemProcedure)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemProcedure),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemSchedule)});
             this.barSubItemDictionaries.Name = "barSubItemDictionaries";
             // 
             // barButtonItemMaterials
@@ -167,6 +173,20 @@
             this.barButtonItemCheck.Id = 10;
             this.barButtonItemCheck.Name = "barButtonItemCheck";
             this.barButtonItemCheck.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCheck_ItemClick);
+            // 
+            // barButtonItemProcedure
+            // 
+            this.barButtonItemProcedure.Caption = "Процедуры";
+            this.barButtonItemProcedure.Id = 18;
+            this.barButtonItemProcedure.Name = "barButtonItemProcedure";
+            this.barButtonItemProcedure.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProcedure_ItemClick);
+            // 
+            // barButtonItemSchedule
+            // 
+            this.barButtonItemSchedule.Caption = "Ежедневник";
+            this.barButtonItemSchedule.Id = 19;
+            this.barButtonItemSchedule.Name = "barButtonItemSchedule";
+            this.barButtonItemSchedule.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemSchedule_ItemClick);
             // 
             // bar3
             // 
@@ -278,11 +298,11 @@
             this.splitContainerControlMain.SplitterPosition = 405;
             this.splitContainerControlMain.TabIndex = 0;
             // 
-            // ucCalendar1
+            // ucThreeDaysCalendar
             // 
             this.ucThreeDaysCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucThreeDaysCalendar.Location = new System.Drawing.Point(0, 0);
-            this.ucThreeDaysCalendar.Name = "ucCalendar1";
+            this.ucThreeDaysCalendar.Name = "ucThreeDaysCalendar";
             this.ucThreeDaysCalendar.Size = new System.Drawing.Size(405, 462);
             this.ucThreeDaysCalendar.TabIndex = 0;
             // 
@@ -291,6 +311,7 @@
             this.layoutControlButtons.Controls.Add(this.simpleButtonUsers);
             this.layoutControlButtons.Controls.Add(this.simpleButtonMaterials);
             this.layoutControlButtons.Controls.Add(this.simpleButtonRecording);
+            this.layoutControlButtons.Controls.Add(this.simpleButtonSchedule);
             this.layoutControlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControlButtons.Location = new System.Drawing.Point(0, 0);
             this.layoutControlButtons.Name = "layoutControlButtons";
@@ -338,6 +359,19 @@
             this.simpleButtonRecording.Text = "Запись";
             this.simpleButtonRecording.Click += new System.EventHandler(this.simpleButtonRecording_Click);
             // 
+            // simpleButtonSchedule
+            // 
+            this.simpleButtonSchedule.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.simpleButtonSchedule.Appearance.Options.UseFont = true;
+            this.simpleButtonSchedule.Location = new System.Drawing.Point(30, 228);
+            this.simpleButtonSchedule.MinimumSize = new System.Drawing.Size(0, 50);
+            this.simpleButtonSchedule.Name = "simpleButtonSchedule";
+            this.simpleButtonSchedule.Size = new System.Drawing.Size(324, 50);
+            this.simpleButtonSchedule.StyleController = this.layoutControlButtons;
+            this.simpleButtonSchedule.TabIndex = 7;
+            this.simpleButtonSchedule.Text = "Ежедневник";
+            this.simpleButtonSchedule.Click += new System.EventHandler(this.simpleButtonSchedule_Click);
+            // 
             // layoutControlGroup
             // 
             this.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -345,7 +379,8 @@
             this.layoutControlGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItemRecording,
             this.layoutControlItemMaterials,
-            this.layoutControlItemUsers});
+            this.layoutControlItemUsers,
+            this.layoutControlItemMaterials1});
             this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup.Name = "Root";
             this.layoutControlGroup.Size = new System.Drawing.Size(384, 462);
@@ -377,16 +412,21 @@
             this.layoutControlItemUsers.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItemUsers.Name = "layoutControlItemUsers";
             this.layoutControlItemUsers.Padding = new DevExpress.XtraLayout.Utils.Padding(20, 20, 2, 20);
-            this.layoutControlItemUsers.Size = new System.Drawing.Size(364, 298);
+            this.layoutControlItemUsers.Size = new System.Drawing.Size(364, 72);
             this.layoutControlItemUsers.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemUsers.TextVisible = false;
             // 
-            // barButtonItemProcedure
+            // layoutControlItemMaterials1
             // 
-            this.barButtonItemProcedure.Caption = "Процедуры";
-            this.barButtonItemProcedure.Id = 18;
-            this.barButtonItemProcedure.Name = "barButtonItemProcedure";
-            this.barButtonItemProcedure.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemProcedure_ItemClick);
+            this.layoutControlItemMaterials1.Control = this.simpleButtonSchedule;
+            this.layoutControlItemMaterials1.CustomizationFormText = "layoutControlItemMaterials";
+            this.layoutControlItemMaterials1.Location = new System.Drawing.Point(0, 216);
+            this.layoutControlItemMaterials1.Name = "layoutControlItemMaterials1";
+            this.layoutControlItemMaterials1.Padding = new DevExpress.XtraLayout.Utils.Padding(20, 20, 2, 20);
+            this.layoutControlItemMaterials1.Size = new System.Drawing.Size(364, 226);
+            this.layoutControlItemMaterials1.Text = "layoutControlItemMaterials";
+            this.layoutControlItemMaterials1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItemMaterials1.TextVisible = false;
             // 
             // MainForm
             // 
@@ -415,6 +455,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRecording)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,7 +483,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemDesign;
         private DevExpress.XtraBars.BarButtonItem barButtonItemCheck;
         private DevExpress.XtraBars.BarButtonItem barButtonItemMaterials;
-        private DevExpress.XtraScheduler.UI.WeekDaysEdit weekDaysEdit1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControlMain;
         private UserControls.UCCalendar ucThreeDaysCalendar;
         private DevExpress.XtraLayout.LayoutControl layoutControlButtons;
@@ -455,6 +495,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonUsers;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemUsers;
         private DevExpress.XtraBars.BarButtonItem barButtonItemProcedure;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemSchedule;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonSchedule;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemMaterials1;
     }
 }
 

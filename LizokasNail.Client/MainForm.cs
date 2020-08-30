@@ -142,6 +142,11 @@ namespace LizokasNail.Client
             uc.Init();
         }
 
+        private void barButtonItemSchedule_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ScheduleForm.Instance.Show();
+        }
+
         //Buttons
         private void simpleButtonRecording_Click(object sender, EventArgs e)
         {
@@ -164,13 +169,16 @@ namespace LizokasNail.Client
             uc.Init();
         }
 
+        private void simpleButtonSchedule_Click(object sender, EventArgs e)
+        {
+            ScheduleForm.Instance.Show();
+        }
+
         #endregion Menu
 
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ucThreeDaysCalendar.Init();
         }
-
-        
     }
 }

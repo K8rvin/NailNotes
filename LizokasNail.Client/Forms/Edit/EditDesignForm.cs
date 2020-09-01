@@ -27,8 +27,9 @@ namespace LizokasNail.Client.Forms.Edit
                 _item = new DesignBl();
             }
 
-            textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name));
-            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
+            textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name), true, DataSourceUpdateMode.OnPropertyChanged);
+            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
+            numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.Price), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private bool Validation()
@@ -47,6 +48,7 @@ namespace LizokasNail.Client.Forms.Edit
         {
             if (Validation() == false)
                 return;
+            ProcessTabKey(true);
 
             if (_item.Id == 0)
             {

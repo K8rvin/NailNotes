@@ -32,8 +32,8 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.searchLookUpEditTop = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridViewBase = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumnBaseName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnBaseComment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTopName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTopComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.textEditComment = new DevExpress.XtraEditors.TextEdit();
             this.simpleButtonAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -103,28 +103,28 @@
             // gridViewBase
             // 
             this.gridViewBase.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumnBaseName,
-            this.gridColumnBaseComment});
+            this.gridColumnTopName,
+            this.gridColumnTopComment});
             this.gridViewBase.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridViewBase.Name = "gridViewBase";
             this.gridViewBase.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridViewBase.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumnBaseName
+            // gridColumnTopName
             // 
-            this.gridColumnBaseName.Caption = "Марка";
-            this.gridColumnBaseName.FieldName = "Name";
-            this.gridColumnBaseName.Name = "gridColumnBaseName";
-            this.gridColumnBaseName.Visible = true;
-            this.gridColumnBaseName.VisibleIndex = 0;
+            this.gridColumnTopName.Caption = "Марка";
+            this.gridColumnTopName.FieldName = "Name";
+            this.gridColumnTopName.Name = "gridColumnTopName";
+            this.gridColumnTopName.Visible = true;
+            this.gridColumnTopName.VisibleIndex = 0;
             // 
-            // gridColumnBaseComment
+            // gridColumnTopComment
             // 
-            this.gridColumnBaseComment.Caption = "Примечание";
-            this.gridColumnBaseComment.FieldName = "Comment";
-            this.gridColumnBaseComment.Name = "gridColumnBaseComment";
-            this.gridColumnBaseComment.Visible = true;
-            this.gridColumnBaseComment.VisibleIndex = 1;
+            this.gridColumnTopComment.Caption = "Примечание";
+            this.gridColumnTopComment.FieldName = "Comment";
+            this.gridColumnTopComment.Name = "gridColumnTopComment";
+            this.gridColumnTopComment.Visible = true;
+            this.gridColumnTopComment.VisibleIndex = 1;
             // 
             // simpleButtonCancel
             // 
@@ -281,8 +281,8 @@
         private DevExpress.XtraEditors.TextEdit textEditComment;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEditTop;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewBase;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnBaseName;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnBaseComment;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnTopName;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnTopComment;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;

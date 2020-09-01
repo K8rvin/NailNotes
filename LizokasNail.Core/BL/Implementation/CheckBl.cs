@@ -97,7 +97,15 @@ namespace LizokasNail.Core.BL.Implementation
                 RecordId = item.RecordId,
                 Price = item.Price,
                 Comment = item.Comment,
-                Record = new RecordDto(item.Record) { User = new UserDto(item?.Record?.User), Check = new CheckDto(item?.Record?.Check) },
+                Record = new RecordDto(item.Record) 
+                { 
+                    User = new UserDto(item?.Record?.User), 
+                    Check = new CheckDto(item?.Record?.Check), 
+                    Record2Procedure = item?.Record?.Record2Procedure.Select(x=> new Record2ProcedureDto(x) 
+                    { 
+                        Procedure = new ProcedureDto(x.Procedure),                        
+                    }) 
+                },
                 Check2Base = item.Check2Base.Select(x => new Check2BaseDto(x) { Base = new BaseDto(x.Base) }),
                 Check2Color = item.Check2Color.Select(x => new Check2ColorDto(x) { Color = new ColorDto(x.Color) }),
                 Check2Top = item.Check2Top.Select(x => new Check2TopDto(x) { Top = new TopDto(x.Top) }),

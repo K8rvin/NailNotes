@@ -25,6 +25,7 @@ namespace LizokasNail.Core.BL.Implementation
             {
                 Name = dto.Name,
                 ShortName = dto.ShortName,
+                Price = dto.Price,
             };
 
             _dao.Create(item);
@@ -39,6 +40,7 @@ namespace LizokasNail.Core.BL.Implementation
 
             item.Name = dto.Name;
             item.ShortName = dto.ShortName;
+            item.Price = dto.Price;
             _dao.Update(item);
 
             return _map(item);

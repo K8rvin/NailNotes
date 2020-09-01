@@ -30,6 +30,7 @@
         {
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonAddDesign = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAddTop = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAddColor = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAddBase = new DevExpress.XtraEditors.SimpleButton();
@@ -37,7 +38,7 @@
             this.textEditComment = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlPrice = new DevExpress.XtraEditors.LabelControl();
             this.gridControlDesign = new DevExpress.XtraGrid.GridControl();
             this.gridViewDesign = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,8 +46,10 @@
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnCount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnDesignComment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEditRecord = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridViewRecord = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,6 +74,7 @@
             this.layoutControlItemButtonBase = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemButtonColor = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemButtonTop = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
@@ -97,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButtonSave
@@ -111,6 +116,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.simpleButtonAddDesign);
             this.layoutControl1.Controls.Add(this.simpleButtonAddTop);
             this.layoutControl1.Controls.Add(this.simpleButtonAddColor);
             this.layoutControl1.Controls.Add(this.simpleButtonAddBase);
@@ -119,7 +125,7 @@
             this.layoutControl1.Controls.Add(this.simpleButtonSave);
             this.layoutControl1.Controls.Add(this.labelControl2);
             this.layoutControl1.Controls.Add(this.numericUpDownPrice);
-            this.layoutControl1.Controls.Add(this.labelControl6);
+            this.layoutControl1.Controls.Add(this.labelControlPrice);
             this.layoutControl1.Controls.Add(this.gridControlDesign);
             this.layoutControl1.Controls.Add(this.searchLookUpEditRecord);
             this.layoutControl1.Controls.Add(this.labelControl5);
@@ -134,6 +140,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(380, 441);
             this.layoutControl1.TabIndex = 101;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // simpleButtonAddDesign
+            // 
+            this.simpleButtonAddDesign.Location = new System.Drawing.Point(12, 333);
+            this.simpleButtonAddDesign.Name = "simpleButtonAddDesign";
+            this.simpleButtonAddDesign.Size = new System.Drawing.Size(356, 22);
+            this.simpleButtonAddDesign.StyleController = this.layoutControl1;
+            this.simpleButtonAddDesign.TabIndex = 100;
+            this.simpleButtonAddDesign.Text = "+";
+            this.simpleButtonAddDesign.Click += new System.EventHandler(this.simpleButtonAddDesign_Click);
             // 
             // simpleButtonAddTop
             // 
@@ -201,22 +217,23 @@
             0});
             this.numericUpDownPrice.Location = new System.Drawing.Point(82, 359);
             this.numericUpDownPrice.Maximum = new decimal(new int[] {
-            99999,
+            999999,
             0,
             0,
             0});
             this.numericUpDownPrice.Name = "numericUpDownPrice";
+            this.numericUpDownPrice.ReadOnly = true;
             this.numericUpDownPrice.Size = new System.Drawing.Size(286, 20);
             this.numericUpDownPrice.TabIndex = 6;
             // 
-            // labelControl6
+            // labelControlPrice
             // 
-            this.labelControl6.Location = new System.Drawing.Point(12, 359);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(66, 13);
-            this.labelControl6.StyleController = this.layoutControl1;
-            this.labelControl6.TabIndex = 0;
-            this.labelControl6.Text = "Стоимость";
+            this.labelControlPrice.Location = new System.Drawing.Point(12, 359);
+            this.labelControlPrice.Name = "labelControlPrice";
+            this.labelControlPrice.Size = new System.Drawing.Size(66, 13);
+            this.labelControlPrice.StyleController = this.layoutControl1;
+            this.labelControlPrice.TabIndex = 0;
+            this.labelControlPrice.Text = "Стоимость";
             // 
             // gridControlDesign
             // 
@@ -225,7 +242,7 @@
             this.gridControlDesign.Name = "gridControlDesign";
             this.gridControlDesign.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSearchLookUpEditDesign});
-            this.gridControlDesign.Size = new System.Drawing.Size(356, 241);
+            this.gridControlDesign.Size = new System.Drawing.Size(356, 215);
             this.gridControlDesign.TabIndex = 5;
             this.gridControlDesign.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDesign});
@@ -235,12 +252,13 @@
             this.gridViewDesign.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumnName,
             this.gridColumnCount,
-            this.gridColumnDesignComment});
+            this.gridColumnDesignComment,
+            this.gridColumnPrice});
             this.gridViewDesign.GridControl = this.gridControlDesign;
             this.gridViewDesign.Name = "gridViewDesign";
-            this.gridViewDesign.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridViewDesign.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewDesign.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridViewDesign.OptionsView.ShowGroupPanel = false;
+            this.gridViewDesign.DoubleClick += new System.EventHandler(this.gridViewDesign_DoubleClick);
             // 
             // gridColumnName
             // 
@@ -248,6 +266,7 @@
             this.gridColumnName.ColumnEdit = this.repositoryItemSearchLookUpEditDesign;
             this.gridColumnName.FieldName = "Id";
             this.gridColumnName.Name = "gridColumnName";
+            this.gridColumnName.OptionsColumn.AllowEdit = false;
             this.gridColumnName.Visible = true;
             this.gridColumnName.VisibleIndex = 0;
             this.gridColumnName.Width = 232;
@@ -259,6 +278,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemSearchLookUpEditDesign.DisplayMember = "Name";
             this.repositoryItemSearchLookUpEditDesign.Name = "repositoryItemSearchLookUpEditDesign";
+            this.repositoryItemSearchLookUpEditDesign.ReadOnly = true;
+            this.repositoryItemSearchLookUpEditDesign.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.repositoryItemSearchLookUpEditDesign.ValueMember = "Id";
             this.repositoryItemSearchLookUpEditDesign.View = this.repositoryItemSearchLookUpEdit1View;
             // 
@@ -266,7 +287,8 @@
             // 
             this.repositoryItemSearchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn3});
             this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -290,6 +312,14 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Цена";
+            this.gridColumn3.FieldName = "Price";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
             // gridColumnCount
             // 
             this.gridColumnCount.Caption = "Кол-во";
@@ -303,6 +333,15 @@
             this.gridColumnDesignComment.Caption = "Примечание";
             this.gridColumnDesignComment.FieldName = "Comment";
             this.gridColumnDesignComment.Name = "gridColumnDesignComment";
+            // 
+            // gridColumnPrice
+            // 
+            this.gridColumnPrice.Caption = "Стоим.";
+            this.gridColumnPrice.FieldName = "PriceFull";
+            this.gridColumnPrice.Name = "gridColumnPrice";
+            this.gridColumnPrice.OptionsColumn.AllowEdit = false;
+            this.gridColumnPrice.Visible = true;
+            this.gridColumnPrice.VisibleIndex = 2;
             // 
             // searchLookUpEditRecord
             // 
@@ -396,7 +435,8 @@
             this.layoutControlItemLableTop,
             this.layoutControlItemButtonBase,
             this.layoutControlItemButtonColor,
-            this.layoutControlItemButtonTop});
+            this.layoutControlItemButtonTop,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(380, 441);
@@ -439,13 +479,13 @@
             this.layoutControlItemGridDesign.Control = this.gridControlDesign;
             this.layoutControlItemGridDesign.Location = new System.Drawing.Point(0, 102);
             this.layoutControlItemGridDesign.Name = "layoutControlItemGridDesign";
-            this.layoutControlItemGridDesign.Size = new System.Drawing.Size(360, 245);
+            this.layoutControlItemGridDesign.Size = new System.Drawing.Size(360, 219);
             this.layoutControlItemGridDesign.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemGridDesign.TextVisible = false;
             // 
             // layoutControlItemLablePrice
             // 
-            this.layoutControlItemLablePrice.Control = this.labelControl6;
+            this.layoutControlItemLablePrice.Control = this.labelControlPrice;
             this.layoutControlItemLablePrice.Location = new System.Drawing.Point(0, 347);
             this.layoutControlItemLablePrice.MaxSize = new System.Drawing.Size(0, 17);
             this.layoutControlItemLablePrice.MinSize = new System.Drawing.Size(58, 17);
@@ -553,6 +593,15 @@
             this.layoutControlItemButtonTop.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemButtonTop.TextVisible = false;
             // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.simpleButtonAddDesign;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 321);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(360, 26);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
             // EditCheckForm
             // 
             this.AcceptButton = this.simpleButtonSave;
@@ -592,6 +641,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -608,7 +658,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private System.Windows.Forms.NumericUpDown numericUpDownPrice;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControlPrice;
         private DevExpress.XtraGrid.GridControl gridControlDesign;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDesign;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnName;
@@ -640,5 +690,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonAddColor;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemButtonColor;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemButtonTop;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnPrice;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonAddDesign;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

@@ -1,10 +1,13 @@
-﻿using DevExpress.XtraLayout;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Utils;
 using LisokasNail.Models;
 using LizokasNail.Client.Di;
 using LizokasNail.Contract.Dto;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Unity;
@@ -42,7 +45,7 @@ namespace LizokasNail.Client.Forms.Edit
                 _item = new CheckBl();
             }
 
-            numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.Price));
+            numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.PriceDynamic));
             textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
 
             var records = _recordRepo.GetWithoutCheck();
@@ -57,6 +60,8 @@ namespace LizokasNail.Client.Forms.Edit
 
             gridControlDesign.DataSource = _item.Designs;
             repositoryItemSearchLookUpEditDesign.DataSource = _designRepo.Get();
+
+            labelControlPrice.DataBindings.Add("ToolTip", _item, nameof(_item.PriceDynamic));
 
             SetData();
         }
@@ -157,6 +162,16 @@ namespace LizokasNail.Client.Forms.Edit
             }
         }
 
+        private void simpleButtonAddDesign_Click(object sender, EventArgs e)
+        {
+            var selectDesignForm = new SelectDesignForm(_designRepo);
+            if (selectDesignForm.ShowDialog() == DialogResult.OK)
+            {
+                _item.Designs.Add(selectDesignForm._item);
+                _item.OnPropertyChanged(nameof(_item.PriceDynamic));
+            }
+        }
+
         private void CreateBaseLabel(BaseBl item)
         {
             layoutControl1.BeginUpdate();
@@ -231,6 +246,25 @@ namespace LizokasNail.Client.Forms.Edit
             if (sender is SimpleLabelItem simpleLabelItem)
             {
                 simpleLabelItem.Dispose();
+            }
+        }
+
+        private void gridViewDesign_DoubleClick(object sender, EventArgs e)
+        {
+            GridView view = (GridView)sender;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            GridHitInfo info = view.CalcHitInfo(pt);
+
+            if (info.InDataRow)
+            {
+                string colCaption = info.Column == null ? "N/A" : info.Column.FieldName;
+
+                var des = (DesignBl)gridViewDesign.GetFocusedRow();
+                if (des != null && colCaption == nameof(des.Id) || colCaption == nameof(des.PriceFull))
+                {
+                    _item.Designs.Remove(des);
+                    _item.OnPropertyChanged(nameof(_item.PriceDynamic));
+                }
             }
         }
     }

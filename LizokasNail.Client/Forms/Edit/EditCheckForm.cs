@@ -64,6 +64,8 @@ namespace LizokasNail.Client.Forms.Edit
             labelControlPrice.DataBindings.Add("ToolTip", _item, nameof(_item.PriceDynamic));
 
             SetData();
+
+            numericUpDownPrice.Controls[0].Enabled = false;  // Disable the arrow buttons.
         }
 
         private bool Validation()

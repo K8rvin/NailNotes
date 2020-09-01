@@ -215,6 +215,7 @@
             0,
             0,
             0});
+            this.numericUpDownPrice.InterceptArrowKeys = false;
             this.numericUpDownPrice.Location = new System.Drawing.Point(82, 359);
             this.numericUpDownPrice.Maximum = new decimal(new int[] {
             999999,

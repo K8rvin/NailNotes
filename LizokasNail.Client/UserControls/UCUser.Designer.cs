@@ -61,7 +61,6 @@
             this.gridControlUser.TabIndex = 4;
             this.gridControlUser.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewUser});
-            this.gridControlUser.DoubleClick += new System.EventHandler(this.gridViewUser_DoubleClick);
             // 
             // gridViewUser
             // 
@@ -76,6 +75,7 @@
             this.gridViewUser.OptionsBehavior.Editable = false;
             this.gridViewUser.OptionsView.ShowAutoFilterRow = true;
             this.gridViewUser.OptionsView.ShowFooter = true;
+            this.gridViewUser.DoubleClick += new System.EventHandler(this.gridView_DoubleClick);
             // 
             // gridColumnName
             // 

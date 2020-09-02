@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControlTop = new DevExpress.XtraGrid.GridControl();
             this.gridViewTop = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -57,7 +58,6 @@
             this.gridControlTop.TabIndex = 4;
             this.gridControlTop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTop});
-            this.gridControlTop.DoubleClick += new System.EventHandler(this.gridViewUser_DoubleClick);
             // 
             // gridViewTop
             // 
@@ -70,6 +70,7 @@
             this.gridViewTop.OptionsView.ShowAutoFilterRow = true;
             this.gridViewTop.OptionsView.ShowFooter = true;
             this.gridViewTop.OptionsView.ShowGroupPanel = false;
+            this.gridViewTop.DoubleClick += new System.EventHandler(this.gridView_DoubleClick);
             // 
             // gridColumnName
             // 

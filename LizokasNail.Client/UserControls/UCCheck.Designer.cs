@@ -77,7 +77,6 @@
             this.gridControlCheck.TabIndex = 4;
             this.gridControlCheck.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCheck});
-            this.gridControlCheck.DoubleClick += new System.EventHandler(this.gridViewUser_DoubleClick);
             // 
             // gridViewCheck
             // 
@@ -99,6 +98,7 @@
             this.gridViewCheck.OptionsView.ShowFooter = true;
             this.gridViewCheck.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumnDate, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridViewCheck.DoubleClick += new System.EventHandler(this.gridView_DoubleClick);
             // 
             // gridColumnUser
             // 

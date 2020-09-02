@@ -302,6 +302,7 @@
     <Compile Include="UserControls\UCUser.Designer.cs">
       <DependentUpon>UCUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\GridViewDoubleClick.cs" />
     <Compile Include="Utils\LoadingBar.cs" />
     <EmbeddedResource Include="Forms\Edit\EditCheckForm.resx">
       <DependentUpon>EditCheckForm.cs</DependentUpon>

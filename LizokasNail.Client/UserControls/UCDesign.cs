@@ -58,9 +58,12 @@ namespace LizokasNail.Client.UserControls
             ShowEditForm();
         }
 
-        private void gridViewUser_DoubleClick(object sender, System.EventArgs e)
+        private void gridView_DoubleClick(object sender, System.EventArgs e)
         {
-            ShowEditForm();
+            if (GridViewDoubleClick.IsClickInRow(sender, e))
+            {
+                ShowEditForm();
+            }
         }
 
         private void ShowEditForm()

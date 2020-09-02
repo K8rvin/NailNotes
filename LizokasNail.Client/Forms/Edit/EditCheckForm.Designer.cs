@@ -30,6 +30,7 @@
         {
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.textEditPriceFormula = new DevExpress.XtraEditors.TextEdit();
             this.textEditProcedure = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -81,7 +82,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -158,6 +158,15 @@
             this.layoutControl1.Size = new System.Drawing.Size(380, 525);
             this.layoutControl1.TabIndex = 101;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(12, 419);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(66, 13);
+            this.labelControl7.StyleController = this.layoutControl1;
+            this.labelControl7.TabIndex = 104;
+            this.labelControl7.Text = "Формула";
             // 
             // textEditPriceFormula
             // 
@@ -304,6 +313,7 @@
             this.gridViewDesign.Name = "gridViewDesign";
             this.gridViewDesign.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridViewDesign.OptionsView.ShowGroupPanel = false;
+            this.gridViewDesign.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewDesign_CellValueChanged);
             this.gridViewDesign.DoubleClick += new System.EventHandler(this.gridViewDesign_DoubleClick);
             // 
             // gridColumnName
@@ -678,15 +688,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(290, 24);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(12, 419);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(66, 13);
-            this.labelControl7.StyleController = this.layoutControl1;
-            this.labelControl7.TabIndex = 104;
-            this.labelControl7.Text = "Формула";
             // 
             // layoutControlItem5
             // 

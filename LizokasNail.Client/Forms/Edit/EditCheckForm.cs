@@ -45,7 +45,14 @@ namespace LizokasNail.Client.Forms.Edit
                 _item = new CheckBl();
             }
 
-            numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.PriceDynamic));
+            if (DateTime.Today > _item.Record.RecordDate)
+            {
+                numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.Price));
+            }
+            else
+            {
+                numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.PriceDynamic));
+            }
             textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
 
             var records = _recordRepo.GetWithoutCheck();
@@ -78,6 +85,25 @@ namespace LizokasNail.Client.Forms.Edit
 
         private void simpleButtonSave_Click(object sender, EventArgs e)
         {
+            if (DateTime.Today > _item.Record.RecordDate)
+            {
+                var res = MessageBox.Show(
+                    $"Вы уверены, что хотите внести изменение в расчет? " +
+                    $"\nДата записи {_item.Record.RecordDate} уже в прошлом. Могли измениться цены на дизайны/процедуры. " +
+                    $"\nЗафиксированная стоимость: {_item.Price}" +
+                    $"\nНовая стоимость: {_item.PriceDynamic}"
+                    , "Внимание!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if (res == DialogResult.Cancel)
+                {
+                    return;
+                }
+                else if (res == DialogResult.No)
+                {
+                    DialogResult = DialogResult.Cancel;
+                }
+            }
+            
             GetData();
 
             if (Validation() == false)
@@ -172,6 +198,7 @@ namespace LizokasNail.Client.Forms.Edit
             {
                 _item.Designs.Add(selectDesignForm._item);
                 _item.OnPropertyChanged(nameof(_item.PriceDynamic));
+                _item.OnPropertyChanged(nameof(_item.PriceFormula));
             }
         }
 
@@ -267,8 +294,15 @@ namespace LizokasNail.Client.Forms.Edit
                 {
                     _item.Designs.Remove(des);
                     _item.OnPropertyChanged(nameof(_item.PriceDynamic));
+                    _item.OnPropertyChanged(nameof(_item.PriceFormula));
                 }
             }
+        }
+
+        private void gridViewDesign_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            _item.OnPropertyChanged(nameof(_item.PriceDynamic));
+            _item.OnPropertyChanged(nameof(_item.PriceFormula));
         }
     }
 }

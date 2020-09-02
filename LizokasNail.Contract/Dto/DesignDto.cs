@@ -5,6 +5,7 @@ namespace LizokasNail.Contract.Dto
     {
         string Name { get; set; }
         string Comment { get; set; }
+        double Price { get; set; }
     }
 
     public class DesignDto : Identity, IDesignDto
@@ -20,10 +21,12 @@ namespace LizokasNail.Contract.Dto
                 Id = item.Id;
                 Name = item.Name;
                 Comment = item.Comment;
+                Price = item.Price;
             }
         }
 
         public string Name { get; set; }
         public string Comment { get; set; }
+        public double Price { get; set; }
     }
 }

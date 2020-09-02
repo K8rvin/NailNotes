@@ -15,6 +15,7 @@ namespace LisokasNail.Models
                 Id = dto.Id;
                 Name = dto.Name;
                 Comment = dto.Comment;
+                Price = dto.Price;
             }
         }
 
@@ -26,18 +27,23 @@ namespace LisokasNail.Models
                 Name = dto.Design.Name;
                 Comment = dto.Comment;
                 Count = dto.Count;
+                Price = dto.Design.Price;
             }
         }
 
         public string Name { get; set; }
         public string Comment { get; set; }
+        public double Price { get; set; }
+
         public int Count { get; set; }
+        public double PriceFull => Price * Count;
 
         public DesignDto ToDto() => new DesignDto()
         {
             Id = Id,
             Name = Name,
             Comment = Comment,
+            Price = Price,
         };
     }
 }

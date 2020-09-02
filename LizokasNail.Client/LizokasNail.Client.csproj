@@ -171,6 +171,12 @@
     <Compile Include="Forms\MaterialForm.Designer.cs">
       <DependentUpon>MaterialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Select\SelectDesignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Select\SelectDesignForm.Designer.cs">
+      <DependentUpon>SelectDesignForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Select\SelectTopForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MaterialForm.resx">
       <DependentUpon>MaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Select\SelectDesignForm.resx">
+      <DependentUpon>SelectDesignForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Select\SelectTopForm.resx">
       <DependentUpon>SelectTopForm.cs</DependentUpon>

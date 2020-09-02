@@ -7,6 +7,7 @@ using LizokasNail.Client.Forms.Edit;
 using LizokasNail.Client.Utils;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Unity;
@@ -48,6 +49,26 @@ namespace LizokasNail.Client.UserControls
             gridViewDay4.ViewCaption = startOfWeek.AddDays(3).ToLongDateString() + " Чт";
             gridViewDay5.ViewCaption = startOfWeek.AddDays(4).ToLongDateString() + " Пт";
             gridViewDay6.ViewCaption = startOfWeek.AddDays(5).ToLongDateString() + " Сб";
+
+            DateTime today = DateTime.Today;
+            SetGridViewCaptionForeColor(gridViewDay1, startOfWeek, today);
+            SetGridViewCaptionForeColor(gridViewDay2, startOfWeek.AddDays(1), today);
+            SetGridViewCaptionForeColor(gridViewDay3, startOfWeek.AddDays(2), today);
+            SetGridViewCaptionForeColor(gridViewDay4, startOfWeek.AddDays(3), today);
+            SetGridViewCaptionForeColor(gridViewDay5, startOfWeek.AddDays(4), today);
+            SetGridViewCaptionForeColor(gridViewDay6, startOfWeek.AddDays(5), today);
+        }
+
+        private void SetGridViewCaptionForeColor(GridView gridView, DateTime day, DateTime today)
+        {
+            if (day == today)
+            {
+                gridView.Appearance.ViewCaption.ForeColor = Color.Red;
+            }
+            else
+            {
+                gridView.Appearance.ViewCaption.ForeColor = Color.Black;
+            }
         }
 
         private void RefreshGrid() => LoadingBar.Instance.ShowLoading(ParentForm, GetData, SettingsData);

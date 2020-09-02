@@ -44,12 +44,24 @@ namespace LizokasNail.Client.Forms
 
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            barEditItemDate.EditValue = ucSchedule1.Periods.First().Item1;
+            if (barEditItemDate.EditValue != null && (DateTime)barEditItemDate.EditValue == ucSchedule1.Periods.First().Item1)
+            {
+                barEditItemDate.EditValue = ucSchedule1.Periods.First().Item2;
+            }
+            else
+            {
+                barEditItemDate.EditValue = ucSchedule1.Periods.First().Item1;
+            }
         }
 
         private void barEditItemDate_EditValueChanged(object sender, System.EventArgs e)
         {
-            ucSchedule1.Init((DateTime) barEditItemDate.EditValue);
+            ucSchedule1.Init((DateTime)barEditItemDate.EditValue);
+        }
+
+        private void barButtonItemCurrentWeek_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            barEditItemDate.EditValue = DateTime.Today;
         }
     }
 }

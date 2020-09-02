@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageWeek = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -40,7 +41,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -52,6 +53,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemCurrentWeek = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
             this.xtraTabPageWeek.SuspendLayout();
@@ -202,8 +204,9 @@
             this.barButtonItem2,
             this.barButtonItem3,
             this.barEditItemDate,
-            this.barStaticItem1});
-            this.barManager1.MaxItemId = 5;
+            this.barStaticItem1,
+            this.barButtonItemCurrentWeek});
+            this.barManager1.MaxItemId = 6;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1});
             this.barManager1.StatusBar = this.bar3;
@@ -218,7 +221,8 @@
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemDate)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemDate),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCurrentWeek, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -295,6 +299,13 @@
             this.barButtonItem3.Id = 2;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
+            // barButtonItemCurrentWeek
+            // 
+            this.barButtonItemCurrentWeek.Caption = "Текущая неделя";
+            this.barButtonItemCurrentWeek.Id = 5;
+            this.barButtonItemCurrentWeek.Name = "barButtonItemCurrentWeek";
+            this.barButtonItemCurrentWeek.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCurrentWeek_ItemClick);
+            // 
             // ScheduleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,5 +364,6 @@
         private DevExpress.XtraBars.BarEditItem barEditItemDate;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemCurrentWeek;
     }
 }

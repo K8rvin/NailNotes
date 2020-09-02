@@ -6,6 +6,7 @@ namespace LizokasNail.Contract.Dto
     {
         string Name { get; set; }
         string ShortName { get; set; }
+        double Price { get; set; }
     }
 
     public class ProcedureDto : Identity, IProcedureDto
@@ -21,10 +22,12 @@ namespace LizokasNail.Contract.Dto
                 Id = item.Id;
                 Name = item.Name;
                 ShortName = item.ShortName;
+                Price = item.Price;
             }
         }
 
         public string Name { get; set; }
         public string ShortName { get; set; }
+        public double Price { get; set; }
     }
 }

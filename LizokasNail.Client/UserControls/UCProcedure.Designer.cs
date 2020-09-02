@@ -43,6 +43,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProcedure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProcedure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -64,7 +65,8 @@
             // 
             this.gridViewProcedure.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumnName,
-            this.gridColumnShortName});
+            this.gridColumnShortName,
+            this.gridColumnPrice});
             this.gridViewProcedure.GridControl = this.gridControlProcedure;
             this.gridViewProcedure.Name = "gridViewProcedure";
             this.gridViewProcedure.OptionsBehavior.Editable = false;
@@ -175,6 +177,14 @@
             this.barDockControlRight.Location = new System.Drawing.Point(819, 29);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 421);
             // 
+            // gridColumnPrice
+            // 
+            this.gridColumnPrice.Caption = "Цена";
+            this.gridColumnPrice.FieldName = "Price";
+            this.gridColumnPrice.Name = "gridColumnPrice";
+            this.gridColumnPrice.Visible = true;
+            this.gridColumnPrice.VisibleIndex = 2;
+            // 
             // UCProcedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,5 +221,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnShortName;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnPrice;
     }
 }

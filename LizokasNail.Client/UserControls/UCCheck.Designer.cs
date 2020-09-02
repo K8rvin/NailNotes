@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControlCheck = new DevExpress.XtraGrid.GridControl();
             this.gridViewCheck = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnUser = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -38,7 +39,7 @@
             this.gridColumnDesignNames = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -160,6 +161,8 @@
             this.gridColumnPrice.Caption = "Стоимость";
             this.gridColumnPrice.FieldName = "Price";
             this.gridColumnPrice.Name = "gridColumnPrice";
+            this.gridColumnPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Price", "Итого: {0:0.##}")});
             this.gridColumnPrice.Visible = true;
             this.gridColumnPrice.VisibleIndex = 5;
             // 

@@ -68,6 +68,7 @@ namespace LizokasNail.WebApi
             services.AddScoped<IDesignBl, DesignBl>();
             services.AddScoped<ICheckBl, CheckBl>();
             services.AddScoped<IProcedureBl, ProcedureBl>();
+            services.AddScoped<IReportBl, ReportBl>();
 
             #endregion
 

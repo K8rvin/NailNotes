@@ -147,6 +147,11 @@ namespace LizokasNail.Client
             ScheduleForm.Instance.Show();
         }
 
+        private void barButtonItemReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ReportForm.Instance.Show();
+        }
+
         //Buttons
         private void simpleButtonRecording_Click(object sender, EventArgs e)
         {
@@ -172,6 +177,11 @@ namespace LizokasNail.Client
         private void simpleButtonSchedule_Click(object sender, EventArgs e)
         {
             ScheduleForm.Instance.Show();
+        }
+
+        private void simpleButtonReport_Click(object sender, EventArgs e)
+        {
+            ReportForm.Instance.Show();
         }
 
         #endregion Menu

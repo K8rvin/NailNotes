@@ -101,6 +101,7 @@ namespace LizokasNail.Client.Forms.Edit
                 else if (res == DialogResult.No)
                 {
                     DialogResult = DialogResult.Cancel;
+                    return;
                 }
             }
             

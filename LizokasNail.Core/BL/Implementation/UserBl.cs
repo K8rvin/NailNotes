@@ -61,9 +61,9 @@ namespace LizokasNail.Core.BL.Implementation
             }
         }
 
-        private UserDto _map(IUserDto item)
+        private UserDto _map(User item)
         {
-            return new UserDto(item);
+            return new UserDto(item) { Records = item.Records.Select(x=> new RecordDto(x))};
         }
     }
 }

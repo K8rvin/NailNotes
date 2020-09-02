@@ -1,5 +1,8 @@
 ﻿using LizokasNail.Contract.Dto;
 using LizokasNail.Contract.Enum;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LisokasNail.Models
 {   
@@ -18,6 +21,7 @@ namespace LisokasNail.Models
                 Phone = dto.Phone;
                 CommunicationType = dto.CommunicationType;
                 Comment = dto.Comment;
+                Records = dto.Records;
             }
         }
 
@@ -25,6 +29,9 @@ namespace LisokasNail.Models
         public string Phone { get; set; }
         public CommunicationType CommunicationType { get; set; }
         public string Comment { get; set; }
+        public IEnumerable<RecordDto> Records { get; set; }
+
+        public DateTime? LastRecordDate => Records?.Any() == true ?  Records?.Select(x=>x.RecordDate)?.OrderByDescending(x => x)?.FirstOrDefault() : null;
 
         public UserDto ToDto() => new UserDto()
         {

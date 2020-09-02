@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControlUser = new DevExpress.XtraGrid.GridControl();
             this.gridViewUser = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnCommunicationType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.gridColumnLastRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -67,7 +69,8 @@
             this.gridColumnName,
             this.gridColumnPhone,
             this.gridColumnCommunicationType,
-            this.gridColumnComment});
+            this.gridColumnComment,
+            this.gridColumnLastRecordDate});
             this.gridViewUser.GridControl = this.gridControlUser;
             this.gridViewUser.Name = "gridViewUser";
             this.gridViewUser.OptionsBehavior.Editable = false;
@@ -107,6 +110,16 @@
             this.gridColumnComment.Name = "gridColumnComment";
             this.gridColumnComment.Visible = true;
             this.gridColumnComment.VisibleIndex = 3;
+            // 
+            // gridColumnLastRecordDate
+            // 
+            this.gridColumnLastRecordDate.Caption = "Последний визит";
+            this.gridColumnLastRecordDate.DisplayFormat.FormatString = "G";
+            this.gridColumnLastRecordDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumnLastRecordDate.FieldName = "LastRecordDate";
+            this.gridColumnLastRecordDate.Name = "gridColumnLastRecordDate";
+            this.gridColumnLastRecordDate.Visible = true;
+            this.gridColumnLastRecordDate.VisibleIndex = 4;
             // 
             // barManager1
             // 
@@ -230,5 +243,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnLastRecordDate;
     }
 }

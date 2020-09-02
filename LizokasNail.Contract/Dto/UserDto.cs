@@ -1,4 +1,5 @@
 ﻿using LizokasNail.Contract.Enum;
+using System.Collections.Generic;
 
 namespace LizokasNail.Contract.Dto
 {
@@ -32,5 +33,6 @@ namespace LizokasNail.Contract.Dto
         public string Phone { get; set; }
         public CommunicationType CommunicationType { get; set; }
         public string Comment { get; set; }
+        public IEnumerable<RecordDto> Records { get; set; }
     }
 }

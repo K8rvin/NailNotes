@@ -2,6 +2,7 @@
 using LizokasNail.Client.Di;
 using LizokasNail.Client.Utils;
 using System;
+using System.IO;
 using System.Windows.Forms;
 using Unity;
 
@@ -65,6 +66,20 @@ namespace LizokasNail.Client.UserControls
             viewModel.OnPropertyChanged(nameof(viewModel.TotalCost));
             viewModel.OnPropertyChanged(nameof(viewModel.TotalPrice));
             viewModel.OnPropertyChanged(nameof(viewModel.TotalIncoming));
+        }
+
+        private void barButtonItemToExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show(
+                "Будет сформирован файл .xlsx и помещен в Мои документы. Продолжить?", 
+                "Внимание!", 
+                MessageBoxButtons.OKCancel, 
+                MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                gridViewReport.ExportToXlsx(
+                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                    $"анализ расходов {barEditItemMonth.EditValue}.{barEditItemYear.EditValue}.xlsx"));
+            }
         }
     }
 }

@@ -42,7 +42,7 @@
             this.xtraTabControl.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl.Name = "xtraTabControl";
             this.xtraTabControl.SelectedTabPage = this.xtraTabPageCosts;
-            this.xtraTabControl.Size = new System.Drawing.Size(800, 484);
+            this.xtraTabControl.Size = new System.Drawing.Size(800, 496);
             this.xtraTabControl.TabIndex = 5;
             this.xtraTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageCosts});
@@ -51,7 +51,7 @@
             // 
             this.xtraTabPageCosts.Controls.Add(this.ucMonthReport1);
             this.xtraTabPageCosts.Name = "xtraTabPageCosts";
-            this.xtraTabPageCosts.Size = new System.Drawing.Size(794, 456);
+            this.xtraTabPageCosts.Size = new System.Drawing.Size(794, 468);
             this.xtraTabPageCosts.Text = "Анализ расходов";
             // 
             // ucMonthReport1
@@ -59,14 +59,14 @@
             this.ucMonthReport1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucMonthReport1.Location = new System.Drawing.Point(0, 0);
             this.ucMonthReport1.Name = "ucMonthReport1";
-            this.ucMonthReport1.Size = new System.Drawing.Size(794, 456);
+            this.ucMonthReport1.Size = new System.Drawing.Size(794, 468);
             this.ucMonthReport1.TabIndex = 0;
             // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 484);
+            this.ClientSize = new System.Drawing.Size(800, 496);
             this.Controls.Add(this.xtraTabControl);
             this.Name = "ReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

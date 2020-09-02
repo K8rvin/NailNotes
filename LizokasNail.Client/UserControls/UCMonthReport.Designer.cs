@@ -38,13 +38,14 @@
             this.gridColumnCostSumm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barEditItemYear = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barEditItemMonth = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemMonth1 = new DevExpress.XtraScheduler.UI.RepositoryItemMonth();
+            this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemToExcel = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -183,8 +184,9 @@
             this.barStaticItem1,
             this.barEditItemMonth,
             this.barStaticItem2,
-            this.barEditItemYear});
-            this.barManager1.MaxItemId = 12;
+            this.barEditItemYear,
+            this.barButtonItemToExcel});
+            this.barManager1.MaxItemId = 13;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
@@ -198,19 +200,13 @@
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemYear),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemMonth)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemMonth),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemToExcel, true)});
             this.bar1.Text = "Tools";
-            // 
-            // barButtonItemRefresh
-            // 
-            this.barButtonItemRefresh.Caption = "Обновить";
-            this.barButtonItemRefresh.Id = 0;
-            this.barButtonItemRefresh.Name = "barButtonItemRefresh";
-            this.barButtonItemRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemRefresh_ItemClick);
             // 
             // barStaticItem1
             // 
@@ -255,6 +251,20 @@
             this.repositoryItemMonth1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemMonth1.Name = "repositoryItemMonth1";
+            // 
+            // barButtonItemRefresh
+            // 
+            this.barButtonItemRefresh.Caption = "Обновить";
+            this.barButtonItemRefresh.Id = 0;
+            this.barButtonItemRefresh.Name = "barButtonItemRefresh";
+            this.barButtonItemRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemRefresh_ItemClick);
+            // 
+            // barButtonItemToExcel
+            // 
+            this.barButtonItemToExcel.Caption = "В Excel";
+            this.barButtonItemToExcel.Id = 12;
+            this.barButtonItemToExcel.Name = "barButtonItemToExcel";
+            this.barButtonItemToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemToExcel_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -590,5 +600,6 @@
         private DevExpress.XtraBars.BarEditItem barEditItemYear;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemToExcel;
     }
 }

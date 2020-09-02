@@ -30,6 +30,7 @@
         {
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEditPriceFormula = new DevExpress.XtraEditors.TextEdit();
             this.textEditProcedure = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButtonAddDesign = new DevExpress.XtraEditors.SimpleButton();
@@ -79,8 +80,12 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPriceFormula.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditProcedure.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
@@ -109,6 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButtonSave
@@ -123,6 +130,8 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.labelControl7);
+            this.layoutControl1.Controls.Add(this.textEditPriceFormula);
             this.layoutControl1.Controls.Add(this.textEditProcedure);
             this.layoutControl1.Controls.Add(this.labelControl6);
             this.layoutControl1.Controls.Add(this.simpleButtonAddDesign);
@@ -150,6 +159,15 @@
             this.layoutControl1.TabIndex = 101;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // textEditPriceFormula
+            // 
+            this.textEditPriceFormula.Location = new System.Drawing.Point(82, 419);
+            this.textEditPriceFormula.Name = "textEditPriceFormula";
+            this.textEditPriceFormula.Properties.ReadOnly = true;
+            this.textEditPriceFormula.Size = new System.Drawing.Size(286, 20);
+            this.textEditPriceFormula.StyleController = this.layoutControl1;
+            this.textEditPriceFormula.TabIndex = 103;
+            // 
             // textEditProcedure
             // 
             this.textEditProcedure.Location = new System.Drawing.Point(72, 36);
@@ -170,7 +188,7 @@
             // 
             // simpleButtonAddDesign
             // 
-            this.simpleButtonAddDesign.Location = new System.Drawing.Point(12, 417);
+            this.simpleButtonAddDesign.Location = new System.Drawing.Point(12, 393);
             this.simpleButtonAddDesign.Name = "simpleButtonAddDesign";
             this.simpleButtonAddDesign.Size = new System.Drawing.Size(356, 22);
             this.simpleButtonAddDesign.StyleController = this.layoutControl1;
@@ -270,7 +288,7 @@
             this.gridControlDesign.Name = "gridControlDesign";
             this.gridControlDesign.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSearchLookUpEditDesign});
-            this.gridControlDesign.Size = new System.Drawing.Size(356, 275);
+            this.gridControlDesign.Size = new System.Drawing.Size(356, 251);
             this.gridControlDesign.TabIndex = 5;
             this.gridControlDesign.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDesign});
@@ -466,7 +484,9 @@
             this.layoutControlItemButtonTop,
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(380, 525);
@@ -509,7 +529,7 @@
             this.layoutControlItemGridDesign.Control = this.gridControlDesign;
             this.layoutControlItemGridDesign.Location = new System.Drawing.Point(0, 126);
             this.layoutControlItemGridDesign.Name = "layoutControlItemGridDesign";
-            this.layoutControlItemGridDesign.Size = new System.Drawing.Size(360, 279);
+            this.layoutControlItemGridDesign.Size = new System.Drawing.Size(360, 255);
             this.layoutControlItemGridDesign.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemGridDesign.TextVisible = false;
             // 
@@ -626,7 +646,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.simpleButtonAddDesign;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 405);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 381);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(360, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -650,6 +670,36 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.textEditPriceFormula;
+            this.layoutControlItem4.Location = new System.Drawing.Point(70, 407);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(290, 24);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(12, 419);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(66, 13);
+            this.labelControl7.StyleController = this.layoutControl1;
+            this.labelControl7.TabIndex = 104;
+            this.labelControl7.Text = "Формула";
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.labelControl7;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 407);
+            this.layoutControlItem5.MaxSize = new System.Drawing.Size(0, 17);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(58, 17);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(70, 24);
+            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
             // EditCheckForm
             // 
             this.AcceptButton = this.simpleButtonSave;
@@ -665,6 +715,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPriceFormula.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditProcedure.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
@@ -693,6 +744,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -749,5 +802,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.TextEdit textEditPriceFormula;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

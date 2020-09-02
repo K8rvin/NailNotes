@@ -61,7 +61,7 @@ namespace LizokasNail.Client.Forms.Edit
             gridControlDesign.DataSource = _item.Designs;
             repositoryItemSearchLookUpEditDesign.DataSource = _designRepo.Get();
 
-            labelControlPrice.DataBindings.Add("ToolTip", _item, nameof(_item.PriceDynamic));
+            textEditPriceFormula.DataBindings.Add("EditValue", _item, nameof(_item.PriceFormula));
 
             SetData();
 

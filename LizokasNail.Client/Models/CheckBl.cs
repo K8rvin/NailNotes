@@ -43,6 +43,7 @@ namespace LisokasNail.Models
         public int RecordId { get; set; }
         public double Price { get; set; }
         public double PriceDynamic => Record.Record2Procedure.Sum(x => x.Procedure.Price) + Designs.Sum(x => x.PriceFull);
+        public string PriceFormula => $"({string.Join("+", Record.Record2Procedure.Select(x => x.Procedure.Price))}) + ({string.Join("+", Designs.Select(x => x.PriceFull))})";
         public string Comment { get; set; }
         public RecordBl Record { get; set; }
         public IEnumerable<Check2BaseDto> Check2Base { get; set; }

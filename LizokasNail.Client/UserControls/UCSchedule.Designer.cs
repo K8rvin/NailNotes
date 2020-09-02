@@ -108,6 +108,7 @@
             // gridControlDay4
             // 
             this.gridControlDay4.Location = new System.Drawing.Point(468, 12);
+            this.gridControlDay4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlDay4.MainView = this.gridViewDay4;
             this.gridControlDay4.Name = "gridControlDay4";
             this.gridControlDay4.Size = new System.Drawing.Size(452, 216);
@@ -174,6 +175,7 @@
             // gridControlDay5
             // 
             this.gridControlDay5.Location = new System.Drawing.Point(468, 232);
+            this.gridControlDay5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlDay5.MainView = this.gridViewDay5;
             this.gridControlDay5.Name = "gridControlDay5";
             this.gridControlDay5.Size = new System.Drawing.Size(452, 216);
@@ -240,6 +242,7 @@
             // gridControlDay6
             // 
             this.gridControlDay6.Location = new System.Drawing.Point(468, 452);
+            this.gridControlDay6.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlDay6.MainView = this.gridViewDay6;
             this.gridControlDay6.Name = "gridControlDay6";
             this.gridControlDay6.Size = new System.Drawing.Size(452, 216);
@@ -306,6 +309,7 @@
             // gridControlDay1
             // 
             this.gridControlDay1.Location = new System.Drawing.Point(12, 12);
+            this.gridControlDay1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlDay1.MainView = this.gridViewDay1;
             this.gridControlDay1.Name = "gridControlDay1";
             this.gridControlDay1.Size = new System.Drawing.Size(452, 216);
@@ -372,6 +376,7 @@
             // gridControlDay3
             // 
             this.gridControlDay3.Location = new System.Drawing.Point(12, 452);
+            this.gridControlDay3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlDay3.MainView = this.gridViewDay3;
             this.gridControlDay3.Name = "gridControlDay3";
             this.gridControlDay3.Size = new System.Drawing.Size(452, 216);
@@ -437,7 +442,10 @@
             // 
             // gridControlDay2
             // 
+            this.gridControlDay2.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.White;
+            this.gridControlDay2.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
             this.gridControlDay2.Location = new System.Drawing.Point(12, 232);
+            this.gridControlDay2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControlDay2.MainView = this.gridViewDay2;
             this.gridControlDay2.Name = "gridControlDay2";
             this.gridControlDay2.Size = new System.Drawing.Size(452, 216);

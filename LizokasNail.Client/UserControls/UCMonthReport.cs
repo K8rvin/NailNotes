@@ -30,8 +30,8 @@ namespace LizokasNail.Client.UserControls
         public void Init()
         {
             var today = DateTime.Today;
-            barEditItemDateStart.EditValue = new DateTime(today.Year, today.Month, 1);
-            barEditItemDateEnd.EditValue = ((DateTime)barEditItemDateStart.EditValue).AddMonths(1).AddDays(-1);
+            barEditItemYear.EditValue = today.Year;
+            barEditItemMonth.EditValue = today.Month;
             RefreshGrid();
         }
 
@@ -39,7 +39,9 @@ namespace LizokasNail.Client.UserControls
 
         private void GetData()
         {
-            viewModel.Items = _repo.GetMonthReport((DateTime)barEditItemDateStart.EditValue, (DateTime)barEditItemDateEnd.EditValue);            
+            var dateStart = new DateTime(int.Parse(barEditItemYear.EditValue.ToString()), (int)barEditItemMonth.EditValue, 1);
+            var dateEnd = dateStart.AddMonths(1).AddDays(-1);
+            viewModel.Items = _repo.GetMonthReport(dateStart, dateEnd);            
         }
 
         private void SettingsData()

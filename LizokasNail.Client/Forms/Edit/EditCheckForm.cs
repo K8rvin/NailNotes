@@ -65,6 +65,7 @@ namespace LizokasNail.Client.Forms.Edit
 
             SetData();
 
+            textEditProcedure.Text = string.Join("; ", _item.Record.Record2Procedure.Select(x=>x.Procedure.Name));
             numericUpDownPrice.Controls[0].Enabled = false;  // Disable the arrow buttons.
         }
 

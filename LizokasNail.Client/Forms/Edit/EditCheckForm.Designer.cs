@@ -30,6 +30,8 @@
         {
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEditProcedure = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButtonAddDesign = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAddTop = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAddColor = new DevExpress.XtraEditors.SimpleButton();
@@ -75,8 +77,11 @@
             this.layoutControlItemButtonColor = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemButtonTop = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditProcedure.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDesign)).BeginInit();
@@ -102,11 +107,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButtonSave
             // 
-            this.simpleButtonSave.Location = new System.Drawing.Point(12, 407);
+            this.simpleButtonSave.Location = new System.Drawing.Point(12, 491);
             this.simpleButtonSave.Name = "simpleButtonSave";
             this.simpleButtonSave.Size = new System.Drawing.Size(176, 22);
             this.simpleButtonSave.StyleController = this.layoutControl1;
@@ -116,6 +123,8 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.textEditProcedure);
+            this.layoutControl1.Controls.Add(this.labelControl6);
             this.layoutControl1.Controls.Add(this.simpleButtonAddDesign);
             this.layoutControl1.Controls.Add(this.simpleButtonAddTop);
             this.layoutControl1.Controls.Add(this.simpleButtonAddColor);
@@ -137,13 +146,31 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(528, 149, 669, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(380, 441);
+            this.layoutControl1.Size = new System.Drawing.Size(380, 525);
             this.layoutControl1.TabIndex = 101;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // textEditProcedure
+            // 
+            this.textEditProcedure.Location = new System.Drawing.Point(72, 36);
+            this.textEditProcedure.Name = "textEditProcedure";
+            this.textEditProcedure.Properties.ReadOnly = true;
+            this.textEditProcedure.Size = new System.Drawing.Size(296, 20);
+            this.textEditProcedure.StyleController = this.layoutControl1;
+            this.textEditProcedure.TabIndex = 102;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(12, 36);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(56, 13);
+            this.labelControl6.StyleController = this.layoutControl1;
+            this.labelControl6.TabIndex = 0;
+            this.labelControl6.Text = "Процедура";
+            // 
             // simpleButtonAddDesign
             // 
-            this.simpleButtonAddDesign.Location = new System.Drawing.Point(12, 333);
+            this.simpleButtonAddDesign.Location = new System.Drawing.Point(12, 417);
             this.simpleButtonAddDesign.Name = "simpleButtonAddDesign";
             this.simpleButtonAddDesign.Size = new System.Drawing.Size(356, 22);
             this.simpleButtonAddDesign.StyleController = this.layoutControl1;
@@ -153,7 +180,7 @@
             // 
             // simpleButtonAddTop
             // 
-            this.simpleButtonAddTop.Location = new System.Drawing.Point(72, 88);
+            this.simpleButtonAddTop.Location = new System.Drawing.Point(72, 112);
             this.simpleButtonAddTop.Name = "simpleButtonAddTop";
             this.simpleButtonAddTop.Size = new System.Drawing.Size(296, 22);
             this.simpleButtonAddTop.StyleController = this.layoutControl1;
@@ -163,7 +190,7 @@
             // 
             // simpleButtonAddColor
             // 
-            this.simpleButtonAddColor.Location = new System.Drawing.Point(72, 62);
+            this.simpleButtonAddColor.Location = new System.Drawing.Point(72, 86);
             this.simpleButtonAddColor.Name = "simpleButtonAddColor";
             this.simpleButtonAddColor.Size = new System.Drawing.Size(296, 22);
             this.simpleButtonAddColor.StyleController = this.layoutControl1;
@@ -173,7 +200,7 @@
             // 
             // simpleButtonAddBase
             // 
-            this.simpleButtonAddBase.Location = new System.Drawing.Point(72, 36);
+            this.simpleButtonAddBase.Location = new System.Drawing.Point(72, 60);
             this.simpleButtonAddBase.Name = "simpleButtonAddBase";
             this.simpleButtonAddBase.Size = new System.Drawing.Size(296, 22);
             this.simpleButtonAddBase.StyleController = this.layoutControl1;
@@ -184,7 +211,7 @@
             // simpleButtonCancel
             // 
             this.simpleButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.simpleButtonCancel.Location = new System.Drawing.Point(192, 407);
+            this.simpleButtonCancel.Location = new System.Drawing.Point(192, 491);
             this.simpleButtonCancel.Name = "simpleButtonCancel";
             this.simpleButtonCancel.Size = new System.Drawing.Size(176, 22);
             this.simpleButtonCancel.StyleController = this.layoutControl1;
@@ -193,7 +220,7 @@
             // 
             // textEditComment
             // 
-            this.textEditComment.Location = new System.Drawing.Point(82, 383);
+            this.textEditComment.Location = new System.Drawing.Point(82, 467);
             this.textEditComment.Name = "textEditComment";
             this.textEditComment.Size = new System.Drawing.Size(286, 20);
             this.textEditComment.StyleController = this.layoutControl1;
@@ -201,7 +228,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 383);
+            this.labelControl2.Location = new System.Drawing.Point(12, 467);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(66, 13);
             this.labelControl2.StyleController = this.layoutControl1;
@@ -216,7 +243,7 @@
             0,
             0});
             this.numericUpDownPrice.InterceptArrowKeys = false;
-            this.numericUpDownPrice.Location = new System.Drawing.Point(82, 359);
+            this.numericUpDownPrice.Location = new System.Drawing.Point(82, 443);
             this.numericUpDownPrice.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -229,7 +256,7 @@
             // 
             // labelControlPrice
             // 
-            this.labelControlPrice.Location = new System.Drawing.Point(12, 359);
+            this.labelControlPrice.Location = new System.Drawing.Point(12, 443);
             this.labelControlPrice.Name = "labelControlPrice";
             this.labelControlPrice.Size = new System.Drawing.Size(66, 13);
             this.labelControlPrice.StyleController = this.layoutControl1;
@@ -238,12 +265,12 @@
             // 
             // gridControlDesign
             // 
-            this.gridControlDesign.Location = new System.Drawing.Point(12, 114);
+            this.gridControlDesign.Location = new System.Drawing.Point(12, 138);
             this.gridControlDesign.MainView = this.gridViewDesign;
             this.gridControlDesign.Name = "gridControlDesign";
             this.gridControlDesign.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSearchLookUpEditDesign});
-            this.gridControlDesign.Size = new System.Drawing.Size(356, 215);
+            this.gridControlDesign.Size = new System.Drawing.Size(356, 275);
             this.gridControlDesign.TabIndex = 5;
             this.gridControlDesign.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDesign});
@@ -383,7 +410,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(12, 88);
+            this.labelControl5.Location = new System.Drawing.Point(12, 112);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(56, 13);
             this.labelControl5.StyleController = this.layoutControl1;
@@ -401,7 +428,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(12, 36);
+            this.labelControl3.Location = new System.Drawing.Point(12, 60);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(56, 22);
             this.labelControl3.StyleController = this.layoutControl1;
@@ -410,7 +437,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(12, 62);
+            this.labelControl4.Location = new System.Drawing.Point(12, 86);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(56, 22);
             this.labelControl4.StyleController = this.layoutControl1;
@@ -437,10 +464,12 @@
             this.layoutControlItemButtonBase,
             this.layoutControlItemButtonColor,
             this.layoutControlItemButtonTop,
-            this.layoutControlItem1});
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(380, 441);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(380, 525);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItemLookupRecord
@@ -455,7 +484,7 @@
             // layoutControlItemLableBase
             // 
             this.layoutControlItemLableBase.Control = this.labelControl3;
-            this.layoutControlItemLableBase.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItemLableBase.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItemLableBase.MinSize = new System.Drawing.Size(1, 1);
             this.layoutControlItemLableBase.Name = "layoutControlItemLableBase";
             this.layoutControlItemLableBase.Size = new System.Drawing.Size(60, 26);
@@ -478,16 +507,16 @@
             // layoutControlItemGridDesign
             // 
             this.layoutControlItemGridDesign.Control = this.gridControlDesign;
-            this.layoutControlItemGridDesign.Location = new System.Drawing.Point(0, 102);
+            this.layoutControlItemGridDesign.Location = new System.Drawing.Point(0, 126);
             this.layoutControlItemGridDesign.Name = "layoutControlItemGridDesign";
-            this.layoutControlItemGridDesign.Size = new System.Drawing.Size(360, 219);
+            this.layoutControlItemGridDesign.Size = new System.Drawing.Size(360, 279);
             this.layoutControlItemGridDesign.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemGridDesign.TextVisible = false;
             // 
             // layoutControlItemLablePrice
             // 
             this.layoutControlItemLablePrice.Control = this.labelControlPrice;
-            this.layoutControlItemLablePrice.Location = new System.Drawing.Point(0, 347);
+            this.layoutControlItemLablePrice.Location = new System.Drawing.Point(0, 431);
             this.layoutControlItemLablePrice.MaxSize = new System.Drawing.Size(0, 17);
             this.layoutControlItemLablePrice.MinSize = new System.Drawing.Size(58, 17);
             this.layoutControlItemLablePrice.Name = "layoutControlItemLablePrice";
@@ -499,7 +528,7 @@
             // layoutControlItemLookupPrice
             // 
             this.layoutControlItemLookupPrice.Control = this.numericUpDownPrice;
-            this.layoutControlItemLookupPrice.Location = new System.Drawing.Point(70, 347);
+            this.layoutControlItemLookupPrice.Location = new System.Drawing.Point(70, 431);
             this.layoutControlItemLookupPrice.Name = "layoutControlItemLookupPrice";
             this.layoutControlItemLookupPrice.Size = new System.Drawing.Size(290, 24);
             this.layoutControlItemLookupPrice.TextSize = new System.Drawing.Size(0, 0);
@@ -508,7 +537,7 @@
             // layoutControlItemLableComment
             // 
             this.layoutControlItemLableComment.Control = this.labelControl2;
-            this.layoutControlItemLableComment.Location = new System.Drawing.Point(0, 371);
+            this.layoutControlItemLableComment.Location = new System.Drawing.Point(0, 455);
             this.layoutControlItemLableComment.MaxSize = new System.Drawing.Size(0, 17);
             this.layoutControlItemLableComment.MinSize = new System.Drawing.Size(65, 17);
             this.layoutControlItemLableComment.Name = "layoutControlItemLableComment";
@@ -520,7 +549,7 @@
             // layoutControlItemLookupComment
             // 
             this.layoutControlItemLookupComment.Control = this.textEditComment;
-            this.layoutControlItemLookupComment.Location = new System.Drawing.Point(70, 371);
+            this.layoutControlItemLookupComment.Location = new System.Drawing.Point(70, 455);
             this.layoutControlItemLookupComment.Name = "layoutControlItemLookupComment";
             this.layoutControlItemLookupComment.Size = new System.Drawing.Size(290, 24);
             this.layoutControlItemLookupComment.TextSize = new System.Drawing.Size(0, 0);
@@ -529,7 +558,7 @@
             // layoutControlItemButtonSave
             // 
             this.layoutControlItemButtonSave.Control = this.simpleButtonSave;
-            this.layoutControlItemButtonSave.Location = new System.Drawing.Point(0, 395);
+            this.layoutControlItemButtonSave.Location = new System.Drawing.Point(0, 479);
             this.layoutControlItemButtonSave.Name = "layoutControlItemButtonSave";
             this.layoutControlItemButtonSave.Size = new System.Drawing.Size(180, 26);
             this.layoutControlItemButtonSave.TextSize = new System.Drawing.Size(0, 0);
@@ -538,7 +567,7 @@
             // layoutControlItemButtonCancel
             // 
             this.layoutControlItemButtonCancel.Control = this.simpleButtonCancel;
-            this.layoutControlItemButtonCancel.Location = new System.Drawing.Point(180, 395);
+            this.layoutControlItemButtonCancel.Location = new System.Drawing.Point(180, 479);
             this.layoutControlItemButtonCancel.Name = "layoutControlItemButtonCancel";
             this.layoutControlItemButtonCancel.Size = new System.Drawing.Size(180, 26);
             this.layoutControlItemButtonCancel.TextSize = new System.Drawing.Size(0, 0);
@@ -547,7 +576,7 @@
             // layoutControlItemLableColor
             // 
             this.layoutControlItemLableColor.Control = this.labelControl4;
-            this.layoutControlItemLableColor.Location = new System.Drawing.Point(0, 50);
+            this.layoutControlItemLableColor.Location = new System.Drawing.Point(0, 74);
             this.layoutControlItemLableColor.MinSize = new System.Drawing.Size(1, 1);
             this.layoutControlItemLableColor.Name = "layoutControlItemLableColor";
             this.layoutControlItemLableColor.Size = new System.Drawing.Size(60, 26);
@@ -558,7 +587,7 @@
             // layoutControlItemLableTop
             // 
             this.layoutControlItemLableTop.Control = this.labelControl5;
-            this.layoutControlItemLableTop.Location = new System.Drawing.Point(0, 76);
+            this.layoutControlItemLableTop.Location = new System.Drawing.Point(0, 100);
             this.layoutControlItemLableTop.MaxSize = new System.Drawing.Size(0, 17);
             this.layoutControlItemLableTop.MinSize = new System.Drawing.Size(22, 17);
             this.layoutControlItemLableTop.Name = "layoutControlItemLableTop";
@@ -570,7 +599,7 @@
             // layoutControlItemButtonBase
             // 
             this.layoutControlItemButtonBase.Control = this.simpleButtonAddBase;
-            this.layoutControlItemButtonBase.Location = new System.Drawing.Point(60, 24);
+            this.layoutControlItemButtonBase.Location = new System.Drawing.Point(60, 48);
             this.layoutControlItemButtonBase.Name = "layoutControlItemButtonBase";
             this.layoutControlItemButtonBase.Size = new System.Drawing.Size(300, 26);
             this.layoutControlItemButtonBase.TextSize = new System.Drawing.Size(0, 0);
@@ -579,7 +608,7 @@
             // layoutControlItemButtonColor
             // 
             this.layoutControlItemButtonColor.Control = this.simpleButtonAddColor;
-            this.layoutControlItemButtonColor.Location = new System.Drawing.Point(60, 50);
+            this.layoutControlItemButtonColor.Location = new System.Drawing.Point(60, 74);
             this.layoutControlItemButtonColor.Name = "layoutControlItemButtonColor";
             this.layoutControlItemButtonColor.Size = new System.Drawing.Size(300, 26);
             this.layoutControlItemButtonColor.TextSize = new System.Drawing.Size(0, 0);
@@ -588,7 +617,7 @@
             // layoutControlItemButtonTop
             // 
             this.layoutControlItemButtonTop.Control = this.simpleButtonAddTop;
-            this.layoutControlItemButtonTop.Location = new System.Drawing.Point(60, 76);
+            this.layoutControlItemButtonTop.Location = new System.Drawing.Point(60, 100);
             this.layoutControlItemButtonTop.Name = "layoutControlItemButtonTop";
             this.layoutControlItemButtonTop.Size = new System.Drawing.Size(300, 26);
             this.layoutControlItemButtonTop.TextSize = new System.Drawing.Size(0, 0);
@@ -597,11 +626,29 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.simpleButtonAddDesign;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 321);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 405);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(360, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.labelControl6;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(60, 24);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.textEditProcedure;
+            this.layoutControlItem3.Location = new System.Drawing.Point(60, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(300, 24);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
             // 
             // EditCheckForm
             // 
@@ -609,7 +656,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.simpleButtonCancel;
-            this.ClientSize = new System.Drawing.Size(380, 441);
+            this.ClientSize = new System.Drawing.Size(380, 525);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -618,6 +665,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEditProcedure.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDesign)).EndInit();
@@ -643,6 +691,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemButtonTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -695,5 +745,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonAddDesign;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.TextEdit textEditProcedure;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

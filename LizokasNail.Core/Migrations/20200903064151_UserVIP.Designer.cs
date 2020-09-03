@@ -4,14 +4,16 @@ using LizokasNail.Core.Dao.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LizokasNail.Core.Migrations
 {
     [DbContext(typeof(EfContext))]
-    partial class EfContextModelSnapshot : ModelSnapshot
+    [Migration("20200903064151_UserVIP")]
+    partial class UserVIP
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -206,9 +208,6 @@ namespace LizokasNail.Core.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<double>("PriceVip")
-                        .HasColumnType("float");
-
                     b.HasKey("Id");
 
                     b.HasIndex("Name")
@@ -253,9 +252,6 @@ namespace LizokasNail.Core.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceVip")
                         .HasColumnType("float");
 
                     b.Property<string>("ShortName")

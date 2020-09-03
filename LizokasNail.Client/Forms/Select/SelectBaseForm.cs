@@ -38,6 +38,8 @@ namespace LizokasNail.Client.Forms.Edit
 
         private void simpleButtonAdd_Click(object sender, EventArgs e)
         {
+            ProcessTabKey(true);
+
             if (Validation() == false)
             {
                 MessageBox.Show("Не заполнены все необходимые поля");

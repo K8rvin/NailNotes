@@ -9,9 +9,10 @@ namespace LizokasNail.Contract.Dto
         string Phone { get; set; }
         CommunicationType CommunicationType { get; set; }
         string Comment { get; set; }
+        bool Vip { get; set; }
     }
 
-    public class UserDto: Identity, IUserDto
+    public class UserDto : Identity, IUserDto
     {
         public UserDto()
         {
@@ -26,6 +27,7 @@ namespace LizokasNail.Contract.Dto
                 Phone = item.Phone;
                 CommunicationType = item.CommunicationType;
                 Comment = item.Comment;
+                Vip = item.Vip;
             }
         }
 
@@ -33,6 +35,7 @@ namespace LizokasNail.Contract.Dto
         public string Phone { get; set; }
         public CommunicationType CommunicationType { get; set; }
         public string Comment { get; set; }
+        public bool Vip { get; set; } = false;
         public IEnumerable<RecordDto> Records { get; set; }
     }
 }

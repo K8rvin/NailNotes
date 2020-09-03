@@ -1,4 +1,5 @@
-﻿using LizokasNail.Contract.Dto;
+﻿using DevExpress.XtraPrinting;
+using LizokasNail.Contract.Dto;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -42,8 +43,8 @@ namespace LisokasNail.Models
 
         public int RecordId { get; set; }
         public double Price { get; set; }
-        public double PriceDynamic => Record.Record2Procedure.Sum(x => x.Procedure.Price) + Designs.Sum(x => x.PriceFull);
-        public string PriceFormula => $"({string.Join("+", Record.Record2Procedure.Select(x => x.Procedure.Price))}) + ({string.Join("+", Designs.Select(x => x.PriceFull))}) = {PriceDynamic} р";
+        public double PriceDynamic => Record.Record2Procedure.Sum(x => IsVip ? x.Procedure.PriceVip : x.Procedure.Price) + Designs.Sum(x => IsVip ? x.PriceVipFull : x.PriceFull);
+        public string PriceFormula => $"({string.Join("+", Record.Record2Procedure.Select(x => IsVip ? x.Procedure.PriceVip : x.Procedure.Price))}) + ({string.Join("+", Designs.Select(x => IsVip ? x.PriceVipFull : x.PriceFull))}) = {PriceDynamic} р";
         public string Comment { get; set; }
         public RecordBl Record { get; set; }
         public IEnumerable<Check2BaseDto> Check2Base { get; set; }
@@ -56,6 +57,7 @@ namespace LisokasNail.Models
         public string ColorNames => string.Join(", ", Check2Color.Select(x => $"{x?.Color?.Name}({x.Comment})"));
         public string TopNames => string.Join(", ", Check2Top.Select(x => $"{x?.Top?.Name}({x.Comment})"));
         public string DesignNames => string.Join(", ", Check2Design.Select(x => $"{x?.Design?.Name}({x.Count} шт)"));
+        public bool IsVip => Record?.User?.Vip == true;
 
         private BindingList<DesignBl> designs = new BindingList<DesignBl>();
         public BindingList<DesignBl> Designs

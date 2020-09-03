@@ -83,6 +83,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumnPriceVip = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPriceFormula.Properties)).BeginInit();
@@ -308,7 +309,8 @@
             this.gridColumnName,
             this.gridColumnCount,
             this.gridColumnDesignComment,
-            this.gridColumnPrice});
+            this.gridColumnPrice,
+            this.gridColumnPriceVip});
             this.gridViewDesign.GridControl = this.gridControlDesign;
             this.gridViewDesign.Name = "gridViewDesign";
             this.gridViewDesign.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
@@ -701,6 +703,14 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // gridColumnPriceVip
+            // 
+            this.gridColumnPriceVip.Caption = "Стоим. (vip)";
+            this.gridColumnPriceVip.FieldName = "PriceVip";
+            this.gridColumnPriceVip.Name = "gridColumnPriceVip";
+            this.gridColumnPriceVip.Visible = true;
+            this.gridColumnPriceVip.VisibleIndex = 3;
+            // 
             // EditCheckForm
             // 
             this.AcceptButton = this.simpleButtonSave;
@@ -807,5 +817,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnPriceVip;
     }
 }

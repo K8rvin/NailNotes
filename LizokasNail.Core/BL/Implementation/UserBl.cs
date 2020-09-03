@@ -27,6 +27,7 @@ namespace LizokasNail.Core.BL.Implementation
                 Phone = dto.Phone,
                 CommunicationType = dto.CommunicationType,
                 Comment = dto.Comment,
+                Vip = dto.Vip,
             };
 
             _dao.Create(item);
@@ -43,6 +44,7 @@ namespace LizokasNail.Core.BL.Implementation
             item.Phone = dto.Phone;
             item.CommunicationType = dto.CommunicationType;
             item.Comment = dto.Comment;
+            item.Vip = dto.Vip;
             _dao.Update(item);
 
             return _map(item);

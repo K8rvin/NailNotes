@@ -38,12 +38,13 @@ namespace LizokasNail.Client.Forms.Edit
 
         private void simpleButtonAdd_Click(object sender, EventArgs e)
         {
+            ProcessTabKey(true);
+
             if (Validation() == false)
             {
                 MessageBox.Show("Не заполнены все необходимые поля");
                 return;
             }
-            ProcessTabKey(true);
 
             DialogResult = DialogResult.OK;
         }
@@ -58,6 +59,7 @@ namespace LizokasNail.Client.Forms.Edit
                 _item.Comment = item.Comment;
                 _item.Name = item.Name;
                 _item.Price = item.Price;
+                _item.PriceVip = item.PriceVip;
             }
         }
     }

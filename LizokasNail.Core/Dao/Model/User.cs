@@ -16,5 +16,6 @@ namespace LizokasNail.Core.Dao.Model
         public CommunicationType CommunicationType { get; set; }
         public string Comment { get; set; }
         public virtual ICollection<Record> Records { get; set; }
+        public bool Vip { get; set; } = false;
     }
 }

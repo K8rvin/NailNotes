@@ -30,6 +30,7 @@ namespace LizokasNail.Client.Forms.Edit
             textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name), true, DataSourceUpdateMode.OnPropertyChanged);
             textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
             numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.Price), true, DataSourceUpdateMode.OnPropertyChanged);
+            numericUpDownPriceVip.DataBindings.Add("Value", _item, nameof(_item.PriceVip), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private bool Validation()
@@ -46,9 +47,10 @@ namespace LizokasNail.Client.Forms.Edit
 
         private void simpleButtonSave_Click(object sender, EventArgs e)
         {
+            ProcessTabKey(true);
+
             if (Validation() == false)
                 return;
-            ProcessTabKey(true);
 
             if (_item.Id == 0)
             {

@@ -16,12 +16,14 @@ namespace LisokasNail.Models
                 Name = dto.Name;
                 ShortName = dto.ShortName;
                 Price = dto.Price;
+                PriceVip = dto.PriceVip;
             }
         }
 
         public string Name { get; set; }
         public string ShortName { get; set; }
         public double Price { get; set; }
+        public double PriceVip { get; set; }
 
         public ProcedureDto ToDto() => new ProcedureDto()
         {
@@ -29,6 +31,7 @@ namespace LisokasNail.Models
             Name = Name,
             ShortName = ShortName,
             Price = Price,
+            PriceVip = PriceVip,
         };
     }
 }

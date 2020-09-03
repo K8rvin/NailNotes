@@ -40,6 +40,7 @@
             this.barButtonItemCheck = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemProcedure = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemSchedule = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemReport = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -60,14 +61,14 @@
             this.simpleButtonMaterials = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonRecording = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonSchedule = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonReport = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemRecording = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemMaterials = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemUsers = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemMaterials1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButtonReport = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItemUsers1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.barButtonItemReport = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemPriceCost = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
@@ -109,9 +110,10 @@
             this.barButtonItemRefresh,
             this.barButtonItemProcedure,
             this.barButtonItemSchedule,
-            this.barButtonItemReport});
+            this.barButtonItemReport,
+            this.barButtonItemPriceCost});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 21;
+            this.barManager1.MaxItemId = 22;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -149,7 +151,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCheck),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemProcedure),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemSchedule),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemReport)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemReport),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemPriceCost)});
             this.barSubItemDictionaries.Name = "barSubItemDictionaries";
             // 
             // barButtonItemMaterials
@@ -193,6 +196,13 @@
             this.barButtonItemSchedule.Id = 19;
             this.barButtonItemSchedule.Name = "barButtonItemSchedule";
             this.barButtonItemSchedule.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemSchedule_ItemClick);
+            // 
+            // barButtonItemReport
+            // 
+            this.barButtonItemReport.Caption = "Отчеты";
+            this.barButtonItemReport.Id = 20;
+            this.barButtonItemReport.Name = "barButtonItemReport";
+            this.barButtonItemReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemReport_ItemClick);
             // 
             // bar3
             // 
@@ -379,6 +389,19 @@
             this.simpleButtonSchedule.Text = "Ежедневник";
             this.simpleButtonSchedule.Click += new System.EventHandler(this.simpleButtonSchedule_Click);
             // 
+            // simpleButtonReport
+            // 
+            this.simpleButtonReport.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.simpleButtonReport.Appearance.Options.UseFont = true;
+            this.simpleButtonReport.Location = new System.Drawing.Point(30, 300);
+            this.simpleButtonReport.MinimumSize = new System.Drawing.Size(0, 50);
+            this.simpleButtonReport.Name = "simpleButtonReport";
+            this.simpleButtonReport.Size = new System.Drawing.Size(324, 50);
+            this.simpleButtonReport.StyleController = this.layoutControlButtons;
+            this.simpleButtonReport.TabIndex = 8;
+            this.simpleButtonReport.Text = "Отчеты";
+            this.simpleButtonReport.Click += new System.EventHandler(this.simpleButtonReport_Click);
+            // 
             // layoutControlGroup
             // 
             this.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -436,19 +459,6 @@
             this.layoutControlItemMaterials1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemMaterials1.TextVisible = false;
             // 
-            // simpleButtonReport
-            // 
-            this.simpleButtonReport.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.simpleButtonReport.Appearance.Options.UseFont = true;
-            this.simpleButtonReport.Location = new System.Drawing.Point(30, 300);
-            this.simpleButtonReport.MinimumSize = new System.Drawing.Size(0, 50);
-            this.simpleButtonReport.Name = "simpleButtonReport";
-            this.simpleButtonReport.Size = new System.Drawing.Size(324, 50);
-            this.simpleButtonReport.StyleController = this.layoutControlButtons;
-            this.simpleButtonReport.TabIndex = 8;
-            this.simpleButtonReport.Text = "Отчеты";
-            this.simpleButtonReport.Click += new System.EventHandler(this.simpleButtonReport_Click);
-            // 
             // layoutControlItemUsers1
             // 
             this.layoutControlItemUsers1.Control = this.simpleButtonReport;
@@ -461,12 +471,12 @@
             this.layoutControlItemUsers1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemUsers1.TextVisible = false;
             // 
-            // barButtonItemReport
+            // barButtonItemPriceCost
             // 
-            this.barButtonItemReport.Caption = "Отчеты";
-            this.barButtonItemReport.Id = 20;
-            this.barButtonItemReport.Name = "barButtonItemReport";
-            this.barButtonItemReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemReport_ItemClick);
+            this.barButtonItemPriceCost.Caption = "Себестоимость";
+            this.barButtonItemPriceCost.Id = 21;
+            this.barButtonItemPriceCost.Name = "barButtonItemPriceCost";
+            this.barButtonItemPriceCost.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPriceCost_ItemClick);
             // 
             // MainForm
             // 
@@ -542,6 +552,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonReport;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemUsers1;
         private DevExpress.XtraBars.BarButtonItem barButtonItemReport;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPriceCost;
     }
 }
 

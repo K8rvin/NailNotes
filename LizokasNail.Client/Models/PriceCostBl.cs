@@ -32,7 +32,7 @@ namespace LisokasNail.Models
             Type = Type,
             Procedure = Procedure,
             Value = Value,
-            DateEnd = DateEnd,
+            DateEnd = new DateTime(DateEnd.Year, DateEnd.Month, 1).AddMonths(1).AddDays(-1),
         };
     }
 }

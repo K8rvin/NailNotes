@@ -152,6 +152,12 @@ namespace LizokasNail.Client
             ReportForm.Instance.Show();
         }
 
+        private void barButtonItemPriceCost_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var uc = TryOpenTabSheet<UCPriceCost>("TabPagePriceCost", "Себестоимость");
+            uc.Init();
+        }
+
         //Buttons
         private void simpleButtonRecording_Click(object sender, EventArgs e)
         {

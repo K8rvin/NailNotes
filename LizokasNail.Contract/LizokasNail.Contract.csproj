@@ -59,6 +59,7 @@
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Enum\CommunicationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IPriceCostService.cs" />
     <Compile Include="Service\IReportService.cs" />
     <Compile Include="Service\ICheckService.cs" />
     <Compile Include="Service\IDesignService.cs" />

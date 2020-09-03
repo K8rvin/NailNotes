@@ -75,5 +75,10 @@ namespace LizokasNail.WebApi.Controllers
 
             return Ok();
         }
+
+        [HttpGet("Ping")]
+        public string Ping() => "ping succeded";
+
+        
     }
 }

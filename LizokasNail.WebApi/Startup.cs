@@ -17,23 +17,16 @@ namespace LizokasNail.WebApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             //подключение к БД
-            //var connection = ConfigurationManager.AppSetting["ConnectionStrings:Default"];
+            var connection = ConfigurationManager.AppSetting["ConnectionStrings:Default"];
             //var connection = ConfigurationManager.AppSetting["ConnectionStrings:Mdf"];
-            var connection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={0};Integrated Security=True";
-            var dbName = ConfigurationManager.AppSetting["ConnectionStrings:dbName"];
-            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), dbName);
-            connection = string.Format(connection, path);
+            //var connection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={0};Integrated Security=True";
+            //var dbName = ConfigurationManager.AppSetting["ConnectionStrings:dbName"];
+            //var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), dbName);
+            //connection = string.Format(connection, path);
             services.AddDbContext<EfContext>(opt => opt.UseSqlServer(connection));
 
             services.AddControllers();
@@ -80,6 +73,11 @@ namespace LizokasNail.WebApi
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "LizokasNails API", Version = "v1" });
+            });
+
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.AutomaticAuthentication = true;
             });
         }
 

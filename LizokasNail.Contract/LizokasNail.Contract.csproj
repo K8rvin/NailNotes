@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\PriceCostDto.cs" />
     <Compile Include="Dto\MonthReportDto.cs" />
     <Compile Include="Dto\Record2ProcedureDto.cs" />
     <Compile Include="Dto\Check2TopDto.cs" />

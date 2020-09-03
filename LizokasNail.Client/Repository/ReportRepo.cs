@@ -1,5 +1,6 @@
 ﻿using LisokasNail.Models;
 using LizokasNail.Client.Di;
+using LizokasNail.Contract.Dto;
 using LizokasNail.Contract.Service;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,12 @@ namespace LizokasNail.Client.Repository
         {
             var dtos = _service.GetMonthReport(dateStart, dateEnd);
             return dtos?.Select(x => _uc.Resolve<MonthReportBl>(new ParameterOverride("dto", x))).ToList();
+        }
+
+        public PriceCostBl UpdatePriceCost(MonthReportBl monthReport, int year, int month)
+        {
+            var dto = _service.UpdatePriceCost(new MonthReportDto(monthReport), year, month);
+            return dto != null ? new PriceCostBl(dto) : null;
         }
     }
 }

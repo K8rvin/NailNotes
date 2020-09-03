@@ -19,9 +19,15 @@ namespace LizokasNail.WebApi.Controllers
 
 
         [HttpGet("GetMonthReport")]
-        public IEnumerable<MonthReportDto> GetMonthReport([FromQuery] DateTime dateStart, DateTime dateEnd)
+        public IEnumerable<MonthReportDto> GetMonthReport([FromQuery] DateTime dateStart, [FromQuery] DateTime dateEnd)
         {
             return _bl.GetMonthReport(dateStart, dateEnd);
+        }
+
+        [HttpPost("UpdatePriceCost")]
+        public PriceCostDto UpdatePriceCost([FromBody] MonthReportDto monthReport, [FromQuery] int year, [FromQuery] int month)
+        {
+            return _bl.UpdatePriceCost(monthReport, year, month);
         }
     }
 }

@@ -58,6 +58,9 @@ namespace LizokasNail.Client.UserControls
 
         private void gridViewReport_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            var row = (MonthReportBl)gridViewReport.GetFocusedRow();
+            _repo.UpdatePriceCost(row, int.Parse(barEditItemYear.EditValue.ToString()), (int)barEditItemMonth.EditValue);
+
             InvokeTotals();
         }
 

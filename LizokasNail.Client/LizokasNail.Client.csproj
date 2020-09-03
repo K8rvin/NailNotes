@@ -208,6 +208,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\PriceCostBl.cs" />
     <Compile Include="Models\MonthReportViewModel.cs" />
     <Compile Include="Models\MonthReportBl.cs" />
     <Compile Include="Models\CheckBl.cs" />

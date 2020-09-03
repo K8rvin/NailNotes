@@ -16,5 +16,16 @@ namespace LizokasNail.Http
                 .SetQueryParam("dateEnd", dateEnd)
                 .GetJsonAsync<IEnumerable<MonthReportDto>>().Result;
         }
+
+        public PriceCostDto UpdatePriceCost(MonthReportDto monthReport, int year, int month)
+        {
+            var resp = Url.AppendPathSegment("report/UpdatePriceCost")
+                .SetQueryParam("year", year)
+                .SetQueryParam("month", month)
+                .PostJsonAsync(monthReport)
+                .ReceiveJson<PriceCostDto>();
+
+            return resp.Result;
+        }
     }
 }

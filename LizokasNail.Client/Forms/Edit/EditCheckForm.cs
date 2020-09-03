@@ -74,6 +74,17 @@ namespace LizokasNail.Client.Forms.Edit
 
             textEditProcedure.Text = string.Join("; ", _item.Record.Record2Procedure.Select(x=>x.Procedure.Name));
             numericUpDownPrice.Controls[0].Enabled = false;  // Disable the arrow buttons.
+
+            if (_item.IsVip)
+            {
+                gridColumnPrice.Visible = false;
+                gridColumnPriceVip.Visible = true;
+            }
+            else
+            {
+                gridColumnPrice.Visible = true;
+                gridColumnPriceVip.Visible = false;
+            }
         }
 
         private bool Validation()
@@ -85,6 +96,8 @@ namespace LizokasNail.Client.Forms.Edit
 
         private void simpleButtonSave_Click(object sender, EventArgs e)
         {
+            ProcessTabKey(true);
+
             if (DateTime.Today > _item.Record.RecordDate)
             {
                 var res = MessageBox.Show(
@@ -112,6 +125,7 @@ namespace LizokasNail.Client.Forms.Edit
                 MessageBox.Show("Не заполнены все необходимые поля");
                 return;
             }
+            
 
             if (_item.Id == 0)
             {

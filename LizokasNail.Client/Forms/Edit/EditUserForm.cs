@@ -30,6 +30,7 @@ namespace LizokasNail.Client.Forms.Edit
             textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name));
             textEditPhone.DataBindings.Add("EditValue", _item, nameof(_item.Phone));
             textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
+            checkEditVip.DataBindings.Add("Checked", _item, nameof(_item.Vip));
 
             imageComboBoxEditCommunication.Properties.Items.AddEnum<CommunicationType>();
             imageComboBoxEditCommunication.DataBindings.Add("EditValue", _item, nameof(_item.CommunicationType));
@@ -42,6 +43,8 @@ namespace LizokasNail.Client.Forms.Edit
 
         private void simpleButtonSave_Click(object sender, EventArgs e)
         {
+            ProcessTabKey(true);
+
             if (_item.Id == 0)
             {
                 _repo.Add(_item);

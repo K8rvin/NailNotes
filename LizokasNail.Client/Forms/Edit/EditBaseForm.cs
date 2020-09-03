@@ -45,6 +45,8 @@ namespace LizokasNail.Client.Forms.Edit
 
         private void simpleButtonSave_Click(object sender, EventArgs e)
         {
+            ProcessTabKey(true);
+
             if (Validation() == false)
                 return;
 

@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControlDesign = new DevExpress.XtraGrid.GridControl();
             this.gridViewDesign = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -44,6 +43,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.gridColumnPriceVip = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -65,7 +65,8 @@
             this.gridViewDesign.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumnName,
             this.gridColumnComment,
-            this.gridColumnPrice});
+            this.gridColumnPrice,
+            this.gridColumnPriceVip});
             this.gridViewDesign.GridControl = this.gridControlDesign;
             this.gridViewDesign.Name = "gridViewDesign";
             this.gridViewDesign.OptionsBehavior.Editable = false;
@@ -185,6 +186,14 @@
             this.barDockControlRight.Location = new System.Drawing.Point(705, 29);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 485);
             // 
+            // gridColumnPriceVip
+            // 
+            this.gridColumnPriceVip.Caption = "Цена VIP";
+            this.gridColumnPriceVip.FieldName = "PriceVip";
+            this.gridColumnPriceVip.Name = "gridColumnPriceVip";
+            this.gridColumnPriceVip.Visible = true;
+            this.gridColumnPriceVip.VisibleIndex = 3;
+            // 
             // UCDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,5 +231,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnComment;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnPriceVip;
     }
 }

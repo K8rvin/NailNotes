@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControlUser = new DevExpress.XtraGrid.GridControl();
             this.gridViewUser = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -36,7 +35,7 @@
             this.gridColumnCommunicationType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnLastRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -46,6 +45,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.gridColumnVip = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -69,7 +69,8 @@
             this.gridColumnPhone,
             this.gridColumnCommunicationType,
             this.gridColumnComment,
-            this.gridColumnLastRecordDate});
+            this.gridColumnLastRecordDate,
+            this.gridColumnVip});
             this.gridViewUser.GridControl = this.gridControlUser;
             this.gridViewUser.Name = "gridViewUser";
             this.gridViewUser.OptionsBehavior.Editable = false;
@@ -206,6 +207,14 @@
             this.barDockControlRight.Location = new System.Drawing.Point(700, 29);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 507);
             // 
+            // gridColumnVip
+            // 
+            this.gridColumnVip.Caption = "VIP";
+            this.gridColumnVip.FieldName = "Vip";
+            this.gridColumnVip.Name = "gridColumnVip";
+            this.gridColumnVip.Visible = true;
+            this.gridColumnVip.VisibleIndex = 5;
+            // 
             // UCUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,5 +253,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnLastRecordDate;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnVip;
     }
 }

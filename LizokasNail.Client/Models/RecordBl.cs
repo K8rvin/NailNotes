@@ -34,7 +34,7 @@ namespace LisokasNail.Models
         public IEnumerable<Record2ProcedureDto> Record2Procedure { get; set; }
 
         public string UserName => User?.Name;
-        public string DisplayName => $"{RecordDate} ({UserName})";
+        public string DisplayName => $"{RecordDate} ({UserName}){((User?.Vip == true) ? " [VIP клиент]" : "")}";
 
         public RecordDto ToDto() => new RecordDto()
         {

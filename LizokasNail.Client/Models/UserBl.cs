@@ -21,6 +21,7 @@ namespace LisokasNail.Models
                 Phone = dto.Phone;
                 CommunicationType = dto.CommunicationType;
                 Comment = dto.Comment;
+                Vip = dto.Vip;
                 Records = dto.Records;
             }
         }
@@ -29,6 +30,7 @@ namespace LisokasNail.Models
         public string Phone { get; set; }
         public CommunicationType CommunicationType { get; set; }
         public string Comment { get; set; }
+        public bool Vip { get; set; }
         public IEnumerable<RecordDto> Records { get; set; }
 
         public DateTime? LastRecordDate => Records?.Any() == true ?  Records?.Select(x=>x.RecordDate)?.OrderByDescending(x => x)?.FirstOrDefault() : null;
@@ -40,6 +42,7 @@ namespace LisokasNail.Models
             Phone = Phone,
             CommunicationType = CommunicationType,
             Comment = Comment,
+            Vip = Vip,
         };
     }
 }

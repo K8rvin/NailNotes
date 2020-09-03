@@ -35,6 +35,7 @@
             this.gridViewBase = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -46,7 +47,7 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPriceVip = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
@@ -118,7 +119,8 @@
             this.gridViewBase.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumnName,
             this.gridColumnComment,
-            this.gridColumnPrice});
+            this.gridColumnPrice,
+            this.gridColumnPriceVip});
             this.gridViewBase.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridViewBase.Name = "gridViewBase";
             this.gridViewBase.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -139,6 +141,14 @@
             this.gridColumnComment.Name = "gridColumnComment";
             this.gridColumnComment.Visible = true;
             this.gridColumnComment.VisibleIndex = 1;
+            // 
+            // gridColumnPrice
+            // 
+            this.gridColumnPrice.Caption = "Цена";
+            this.gridColumnPrice.FieldName = "Price";
+            this.gridColumnPrice.Name = "gridColumnPrice";
+            this.gridColumnPrice.Visible = true;
+            this.gridColumnPrice.VisibleIndex = 2;
             // 
             // simpleButtonCancel
             // 
@@ -249,13 +259,13 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // gridColumnPrice
+            // gridColumnPriceVip
             // 
-            this.gridColumnPrice.Caption = "Цена";
-            this.gridColumnPrice.FieldName = "Price";
-            this.gridColumnPrice.Name = "gridColumnPrice";
-            this.gridColumnPrice.Visible = true;
-            this.gridColumnPrice.VisibleIndex = 2;
+            this.gridColumnPriceVip.Caption = "Цена (vip)";
+            this.gridColumnPriceVip.FieldName = "PriceVip";
+            this.gridColumnPriceVip.Name = "gridColumnPriceVip";
+            this.gridColumnPriceVip.Visible = true;
+            this.gridColumnPriceVip.VisibleIndex = 3;
             // 
             // SelectDesignForm
             // 
@@ -308,5 +318,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownCount;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnPriceVip;
     }
 }

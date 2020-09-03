@@ -82,6 +82,7 @@ namespace LizokasNail.Client.Forms
 
         private void simpleButtonSave_Click(object sender, EventArgs e)
         {
+            ProcessTabKey(true);
             GetProcedures();
 
             if (Validation() == false)

@@ -42,6 +42,7 @@ namespace LizokasNail.Core.Dao.EF
             modelBuilder.ApplyConfiguration(new Check2TopConfiguration());
             modelBuilder.ApplyConfiguration(new ProcedureConfiguration());
             modelBuilder.ApplyConfiguration(new Record2ProcedureConfiguration());
+            modelBuilder.ApplyConfiguration(new PriceCostConfiguration());
 
             //...
         }

@@ -55,6 +55,7 @@ namespace LizokasNail.WebApi
             services.AddScoped<IDao<Check2Design>, EntityDao<Check2Design>>();
             services.AddScoped<IDao<Procedure>, EntityDao<Procedure>>();
             services.AddScoped<IDao<Record2Procedure>, EntityDao<Record2Procedure>>();
+            services.AddScoped<IDao<PriceCost>, EntityDao<PriceCost>>();
 
             #endregion
 
@@ -68,6 +69,8 @@ namespace LizokasNail.WebApi
             services.AddScoped<IDesignBl, DesignBl>();
             services.AddScoped<ICheckBl, CheckBl>();
             services.AddScoped<IProcedureBl, ProcedureBl>();
+            services.AddScoped<IReportBl, ReportBl>();
+            services.AddScoped<IPriceCostBl, PriceCostBl>();
 
             #endregion
 

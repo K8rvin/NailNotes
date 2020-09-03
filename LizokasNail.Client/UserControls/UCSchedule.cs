@@ -97,12 +97,12 @@ namespace LizokasNail.Client.UserControls
 
         private void SettingsData()
         {
-            gridControlDay1.DataSource = _items.Where(x => x.RecordDate >= Periods[0].Item1 && x.RecordDate <= Periods[0].Item2);
-            gridControlDay2.DataSource = _items.Where(x => x.RecordDate >= Periods[1].Item1 && x.RecordDate <= Periods[1].Item2);
-            gridControlDay3.DataSource = _items.Where(x => x.RecordDate >= Periods[2].Item1 && x.RecordDate <= Periods[2].Item2);
-            gridControlDay4.DataSource = _items.Where(x => x.RecordDate >= Periods[3].Item1 && x.RecordDate <= Periods[3].Item2);
-            gridControlDay5.DataSource = _items.Where(x => x.RecordDate >= Periods[4].Item1 && x.RecordDate <= Periods[4].Item2);
-            gridControlDay6.DataSource = _items.Where(x => x.RecordDate >= Periods[5].Item1 && x.RecordDate <= Periods[5].Item2);
+            gridControlDay1.DataSource = _items.Where(x => x.RecordDate >= Periods[0].Item1 && x.RecordDate < Periods[0].Item2);
+            gridControlDay2.DataSource = _items.Where(x => x.RecordDate >= Periods[1].Item1 && x.RecordDate < Periods[1].Item2);
+            gridControlDay3.DataSource = _items.Where(x => x.RecordDate >= Periods[2].Item1 && x.RecordDate < Periods[2].Item2);
+            gridControlDay4.DataSource = _items.Where(x => x.RecordDate >= Periods[3].Item1 && x.RecordDate < Periods[3].Item2);
+            gridControlDay5.DataSource = _items.Where(x => x.RecordDate >= Periods[4].Item1 && x.RecordDate < Periods[4].Item2);
+            gridControlDay6.DataSource = _items.Where(x => x.RecordDate >= Periods[5].Item1 && x.RecordDate < Periods[5].Item2);
         }
 
         /// <summary>

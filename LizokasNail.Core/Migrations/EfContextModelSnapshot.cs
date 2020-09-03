@@ -215,6 +215,30 @@ namespace LizokasNail.Core.Migrations
                     b.ToTable("Design");
                 });
 
+            modelBuilder.Entity("LizokasNail.Core.Dao.Model.PriceCost", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Procedure")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Value")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PriceCost");
+                });
+
             modelBuilder.Entity("LizokasNail.Core.Dao.Model.Procedure", b =>
                 {
                     b.Property<int>("Id")

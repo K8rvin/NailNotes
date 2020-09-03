@@ -40,6 +40,7 @@
             this.barButtonItemCheck = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemProcedure = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemSchedule = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemReport = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -60,11 +61,14 @@
             this.simpleButtonMaterials = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonRecording = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonSchedule = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonReport = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemRecording = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemMaterials = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemUsers = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemMaterials1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemUsers1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.barButtonItemPriceCost = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
@@ -78,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUsers1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -104,9 +109,11 @@
             this.barButtonItemMaterials,
             this.barButtonItemRefresh,
             this.barButtonItemProcedure,
-            this.barButtonItemSchedule});
+            this.barButtonItemSchedule,
+            this.barButtonItemReport,
+            this.barButtonItemPriceCost});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 20;
+            this.barManager1.MaxItemId = 22;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -143,7 +150,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRecords),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCheck),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemProcedure),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemSchedule)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemSchedule),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemReport),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemPriceCost)});
             this.barSubItemDictionaries.Name = "barSubItemDictionaries";
             // 
             // barButtonItemMaterials
@@ -187,6 +196,13 @@
             this.barButtonItemSchedule.Id = 19;
             this.barButtonItemSchedule.Name = "barButtonItemSchedule";
             this.barButtonItemSchedule.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemSchedule_ItemClick);
+            // 
+            // barButtonItemReport
+            // 
+            this.barButtonItemReport.Caption = "Отчеты";
+            this.barButtonItemReport.Id = 20;
+            this.barButtonItemReport.Name = "barButtonItemReport";
+            this.barButtonItemReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemReport_ItemClick);
             // 
             // bar3
             // 
@@ -312,6 +328,7 @@
             this.layoutControlButtons.Controls.Add(this.simpleButtonMaterials);
             this.layoutControlButtons.Controls.Add(this.simpleButtonRecording);
             this.layoutControlButtons.Controls.Add(this.simpleButtonSchedule);
+            this.layoutControlButtons.Controls.Add(this.simpleButtonReport);
             this.layoutControlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControlButtons.Location = new System.Drawing.Point(0, 0);
             this.layoutControlButtons.Name = "layoutControlButtons";
@@ -372,6 +389,19 @@
             this.simpleButtonSchedule.Text = "Ежедневник";
             this.simpleButtonSchedule.Click += new System.EventHandler(this.simpleButtonSchedule_Click);
             // 
+            // simpleButtonReport
+            // 
+            this.simpleButtonReport.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.simpleButtonReport.Appearance.Options.UseFont = true;
+            this.simpleButtonReport.Location = new System.Drawing.Point(30, 300);
+            this.simpleButtonReport.MinimumSize = new System.Drawing.Size(0, 50);
+            this.simpleButtonReport.Name = "simpleButtonReport";
+            this.simpleButtonReport.Size = new System.Drawing.Size(324, 50);
+            this.simpleButtonReport.StyleController = this.layoutControlButtons;
+            this.simpleButtonReport.TabIndex = 8;
+            this.simpleButtonReport.Text = "Отчеты";
+            this.simpleButtonReport.Click += new System.EventHandler(this.simpleButtonReport_Click);
+            // 
             // layoutControlGroup
             // 
             this.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -380,7 +410,8 @@
             this.layoutControlItemRecording,
             this.layoutControlItemMaterials,
             this.layoutControlItemUsers,
-            this.layoutControlItemMaterials1});
+            this.layoutControlItemMaterials1,
+            this.layoutControlItemUsers1});
             this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup.Name = "Root";
             this.layoutControlGroup.Size = new System.Drawing.Size(384, 462);
@@ -423,10 +454,29 @@
             this.layoutControlItemMaterials1.Location = new System.Drawing.Point(0, 216);
             this.layoutControlItemMaterials1.Name = "layoutControlItemMaterials1";
             this.layoutControlItemMaterials1.Padding = new DevExpress.XtraLayout.Utils.Padding(20, 20, 2, 20);
-            this.layoutControlItemMaterials1.Size = new System.Drawing.Size(364, 226);
+            this.layoutControlItemMaterials1.Size = new System.Drawing.Size(364, 72);
             this.layoutControlItemMaterials1.Text = "layoutControlItemMaterials";
             this.layoutControlItemMaterials1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemMaterials1.TextVisible = false;
+            // 
+            // layoutControlItemUsers1
+            // 
+            this.layoutControlItemUsers1.Control = this.simpleButtonReport;
+            this.layoutControlItemUsers1.CustomizationFormText = "layoutControlItemUsers";
+            this.layoutControlItemUsers1.Location = new System.Drawing.Point(0, 288);
+            this.layoutControlItemUsers1.Name = "layoutControlItemUsers1";
+            this.layoutControlItemUsers1.Padding = new DevExpress.XtraLayout.Utils.Padding(20, 20, 2, 20);
+            this.layoutControlItemUsers1.Size = new System.Drawing.Size(364, 154);
+            this.layoutControlItemUsers1.Text = "layoutControlItemUsers";
+            this.layoutControlItemUsers1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItemUsers1.TextVisible = false;
+            // 
+            // barButtonItemPriceCost
+            // 
+            this.barButtonItemPriceCost.Caption = "Себестоимость";
+            this.barButtonItemPriceCost.Id = 21;
+            this.barButtonItemPriceCost.Name = "barButtonItemPriceCost";
+            this.barButtonItemPriceCost.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPriceCost_ItemClick);
             // 
             // MainForm
             // 
@@ -456,6 +506,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemMaterials1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUsers1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,6 +549,10 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemSchedule;
         private DevExpress.XtraEditors.SimpleButton simpleButtonSchedule;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemMaterials1;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonReport;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemUsers1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemReport;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPriceCost;
     }
 }
 

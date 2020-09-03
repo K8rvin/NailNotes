@@ -58,9 +58,9 @@ namespace LizokasNail.Client.UserControls
 
         private void SettingsData()
         {
-            gridControlYesterday.DataSource = _items.Where(x=>x.RecordDate >= Periods[0].Item1 && x.RecordDate <= Periods[0].Item2);
-            gridControlCurrentDate.DataSource = _items.Where(x => x.RecordDate >= Periods[1].Item1 && x.RecordDate <= Periods[1].Item2);
-            gridControlTomorrow.DataSource = _items.Where(x => x.RecordDate >= Periods[2].Item1 && x.RecordDate <= Periods[2].Item2);
+            gridControlYesterday.DataSource = _items.Where(x=>x.RecordDate >= Periods[0].Item1 && x.RecordDate < Periods[0].Item2);
+            gridControlCurrentDate.DataSource = _items.Where(x => x.RecordDate >= Periods[1].Item1 && x.RecordDate < Periods[1].Item2);
+            gridControlTomorrow.DataSource = _items.Where(x => x.RecordDate >= Periods[2].Item1 && x.RecordDate < Periods[2].Item2);
         }
 
         private void gridView_DoubleClick(object sender, EventArgs e)

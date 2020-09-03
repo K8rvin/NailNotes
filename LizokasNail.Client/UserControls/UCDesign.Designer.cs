@@ -33,6 +33,7 @@
             this.gridViewDesign = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -43,7 +44,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -59,7 +59,6 @@
             this.gridControlDesign.TabIndex = 4;
             this.gridControlDesign.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDesign});
-            this.gridControlDesign.DoubleClick += new System.EventHandler(this.gridViewUser_DoubleClick);
             // 
             // gridViewDesign
             // 
@@ -73,6 +72,7 @@
             this.gridViewDesign.OptionsView.ShowAutoFilterRow = true;
             this.gridViewDesign.OptionsView.ShowFooter = true;
             this.gridViewDesign.OptionsView.ShowGroupPanel = false;
+            this.gridViewDesign.DoubleClick += new System.EventHandler(this.gridView_DoubleClick);
             // 
             // gridColumnName
             // 
@@ -91,6 +91,14 @@
             this.gridColumnComment.Name = "gridColumnComment";
             this.gridColumnComment.Visible = true;
             this.gridColumnComment.VisibleIndex = 1;
+            // 
+            // gridColumnPrice
+            // 
+            this.gridColumnPrice.Caption = "Цена";
+            this.gridColumnPrice.FieldName = "Price";
+            this.gridColumnPrice.Name = "gridColumnPrice";
+            this.gridColumnPrice.Visible = true;
+            this.gridColumnPrice.VisibleIndex = 2;
             // 
             // barManager1
             // 
@@ -176,14 +184,6 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(705, 29);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 485);
-            // 
-            // gridColumnPrice
-            // 
-            this.gridColumnPrice.Caption = "Цена";
-            this.gridColumnPrice.FieldName = "Price";
-            this.gridColumnPrice.Name = "gridColumnPrice";
-            this.gridColumnPrice.Visible = true;
-            this.gridColumnPrice.VisibleIndex = 2;
             // 
             // UCDesign
             // 

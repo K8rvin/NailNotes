@@ -30,19 +30,22 @@ namespace LizokasNail.Http
             }
         }
 
-        private const string DefaultUrl = "http://localhost:44357/api/";
-
         protected string Url { get; }
 
         private static string GetUrl()
         {
             try
             {
-                return ConfigurationManager.AppSettings.Get("apiUrl");
+#if DEBUG
+                return ConfigurationManager.AppSettings.Get("apiUrlDebug");
+#else
+                return ConfigurationManager.AppSettings.Get("apiUrlRelease");
+#endif
+
             }
             catch
             {
-                return DefaultUrl;
+                throw;
             }
 
         }

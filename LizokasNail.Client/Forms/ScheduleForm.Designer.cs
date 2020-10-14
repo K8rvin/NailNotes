@@ -51,6 +51,9 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barEditItemWeekCheckSumm = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barStaticItemSundayCheck = new DevExpress.XtraBars.BarStaticItem();
+            this.barEditItemSundayCheck = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -58,9 +61,6 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItemSundayCheck = new DevExpress.XtraBars.BarStaticItem();
-            this.barEditItemSundayCheck = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
             this.xtraTabPageWeek.SuspendLayout();
@@ -85,7 +85,7 @@
             this.xtraTabControl.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl.Name = "xtraTabControl";
             this.xtraTabControl.SelectedTabPage = this.xtraTabPageWeek;
-            this.xtraTabControl.Size = new System.Drawing.Size(940, 491);
+            this.xtraTabControl.Size = new System.Drawing.Size(940, 548);
             this.xtraTabControl.TabIndex = 5;
             this.xtraTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageWeek});
@@ -94,7 +94,7 @@
             // 
             this.xtraTabPageWeek.Controls.Add(this.layoutControl1);
             this.xtraTabPageWeek.Name = "xtraTabPageWeek";
-            this.xtraTabPageWeek.Size = new System.Drawing.Size(934, 463);
+            this.xtraTabPageWeek.Size = new System.Drawing.Size(934, 520);
             this.xtraTabPageWeek.Text = "Неделя";
             // 
             // layoutControl1
@@ -106,14 +106,14 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(934, 463);
+            this.layoutControl1.Size = new System.Drawing.Size(934, 520);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // simpleButtonRight
             // 
             this.simpleButtonRight.Image = global::LizokasNail.Client.Properties.Resources.doublelast_32x32;
-            this.simpleButtonRight.Location = new System.Drawing.Point(880, 413);
+            this.simpleButtonRight.Location = new System.Drawing.Point(880, 470);
             this.simpleButtonRight.Name = "simpleButtonRight";
             this.simpleButtonRight.Size = new System.Drawing.Size(42, 38);
             this.simpleButtonRight.StyleController = this.layoutControl1;
@@ -124,7 +124,7 @@
             // simpleButtonLeft
             // 
             this.simpleButtonLeft.Image = global::LizokasNail.Client.Properties.Resources.doublefirst_32x32;
-            this.simpleButtonLeft.Location = new System.Drawing.Point(12, 413);
+            this.simpleButtonLeft.Location = new System.Drawing.Point(12, 470);
             this.simpleButtonLeft.Name = "simpleButtonLeft";
             this.simpleButtonLeft.Size = new System.Drawing.Size(42, 38);
             this.simpleButtonLeft.StyleController = this.layoutControl1;
@@ -136,7 +136,7 @@
             // 
             this.ucSchedule1.Location = new System.Drawing.Point(58, 12);
             this.ucSchedule1.Name = "ucSchedule1";
-            this.ucSchedule1.Size = new System.Drawing.Size(818, 439);
+            this.ucSchedule1.Size = new System.Drawing.Size(818, 496);
             this.ucSchedule1.TabIndex = 0;
             // 
             // layoutControlGroup1
@@ -151,7 +151,7 @@
             this.emptySpaceItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(934, 463);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(934, 520);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -159,14 +159,14 @@
             this.layoutControlItem1.Control = this.ucSchedule1;
             this.layoutControlItem1.Location = new System.Drawing.Point(46, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(822, 443);
+            this.layoutControlItem1.Size = new System.Drawing.Size(822, 500);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.simpleButtonLeft;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 401);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 458);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(46, 42);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -175,7 +175,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.simpleButtonRight;
-            this.layoutControlItem3.Location = new System.Drawing.Point(868, 401);
+            this.layoutControlItem3.Location = new System.Drawing.Point(868, 458);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(46, 42);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -186,7 +186,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(868, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(46, 401);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(46, 441);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -195,7 +195,7 @@
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem1";
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(46, 401);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(46, 441);
             this.emptySpaceItem2.Text = "emptySpaceItem1";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -311,52 +311,6 @@
             this.repositoryItemTextEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(940, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 491);
-            this.barDockControlBottom.Size = new System.Drawing.Size(940, 25);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 491);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(940, 0);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 491);
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Влево";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Вправо";
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // barStaticItem3
-            // 
-            this.barStaticItem3.Id = 8;
-            this.barStaticItem3.Name = "barStaticItem3";
-            this.barStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
             // barStaticItemSundayCheck
             // 
             this.barStaticItemSundayCheck.Caption = "За воскресенье:";
@@ -382,11 +336,57 @@
             this.repositoryItemTextEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(940, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 548);
+            this.barDockControlBottom.Size = new System.Drawing.Size(940, 25);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 548);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(940, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 548);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Влево";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Вправо";
+            this.barButtonItem3.Id = 2;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barStaticItem3
+            // 
+            this.barStaticItem3.Id = 8;
+            this.barStaticItem3.Name = "barStaticItem3";
+            this.barStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
             // ScheduleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 516);
+            this.ClientSize = new System.Drawing.Size(940, 573);
             this.Controls.Add(this.xtraTabControl);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

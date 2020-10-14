@@ -47,13 +47,13 @@ namespace LizokasNail.Client.Forms.Edit
 
             if (DateTime.Today > _item.Record.RecordDate)
             {
-                numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.Price));
+                numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.Price), true, DataSourceUpdateMode.OnPropertyChanged);
             }
             else
             {
-                numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.PriceDynamic));
+                numericUpDownPrice.DataBindings.Add("Value", _item, nameof(_item.PriceDynamic), true, DataSourceUpdateMode.OnPropertyChanged);
             }
-            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
+            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
 
             var records = _recordRepo.GetWithoutCheck();
             if (_item.Record != null && !records.Any(x => x.Id == _item.RecordId))
@@ -63,12 +63,12 @@ namespace LizokasNail.Client.Forms.Edit
             searchLookUpEditRecord.Properties.DataSource = records;
             searchLookUpEditRecord.Properties.ValueMember = "Id";
             searchLookUpEditRecord.Properties.DisplayMember = "DisplayName";
-            searchLookUpEditRecord.DataBindings.Add("EditValue", _item, nameof(_item.RecordId));
+            searchLookUpEditRecord.DataBindings.Add("EditValue", _item, nameof(_item.RecordId), true, DataSourceUpdateMode.OnPropertyChanged);
 
             gridControlDesign.DataSource = _item.Designs;
             repositoryItemSearchLookUpEditDesign.DataSource = _designRepo.Get();
 
-            textEditPriceFormula.DataBindings.Add("EditValue", _item, nameof(_item.PriceFormula));
+            textEditPriceFormula.DataBindings.Add("EditValue", _item, nameof(_item.PriceFormula), true, DataSourceUpdateMode.OnPropertyChanged);
 
             SetData();
 

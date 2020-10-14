@@ -20,7 +20,7 @@ namespace LizokasNail.Client.Forms.Edit
             _repo = repo;
             _item = new BaseBl();
 
-            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
+            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
 
             _bases = _repo.Get();
             searchLookUpEditBase.Properties.DataSource = _bases;

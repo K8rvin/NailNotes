@@ -26,14 +26,14 @@ namespace LizokasNail.Client.Forms
             _procedureRepo = Di.Container.Instance.Resolve<IProcedureRepo>();
             _item = new RecordBl() { User = new UserBl(), RecordDate = DateTime.Today};
 
-            textEditName.DataBindings.Add("EditValue", _item.User, nameof(_item.User.Name));
-            textEditPhone.DataBindings.Add("EditValue", _item.User, nameof(_item.User.Phone));
-            textEditComment.DataBindings.Add("EditValue", _item.User, nameof(_item.User.Comment));
+            textEditName.DataBindings.Add("EditValue", _item.User, nameof(_item.User.Name), true, DataSourceUpdateMode.OnPropertyChanged);
+            textEditPhone.DataBindings.Add("EditValue", _item.User, nameof(_item.User.Phone), true, DataSourceUpdateMode.OnPropertyChanged);
+            textEditComment.DataBindings.Add("EditValue", _item.User, nameof(_item.User.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
 
             imageComboBoxEditCommunication.Properties.Items.AddEnum<CommunicationType>();
-            imageComboBoxEditCommunication.DataBindings.Add("EditValue", _item.User, nameof(_item.User.CommunicationType));
+            imageComboBoxEditCommunication.DataBindings.Add("EditValue", _item.User, nameof(_item.User.CommunicationType), true, DataSourceUpdateMode.OnPropertyChanged);
 
-            dateNavigator1.DataBindings.Add("DateTime", _item, nameof(_item.RecordDate));
+            dateNavigator1.DataBindings.Add("DateTime", _item, nameof(_item.RecordDate), true, DataSourceUpdateMode.OnPropertyChanged);
 
             var procedures = _procedureRepo.Get();
             SetProcedures(procedures);

@@ -28,10 +28,10 @@ namespace LizokasNail.Client.Forms.Edit
                 _item.DateEnd = DateTime.Today;
             }
 
-            textEditType.DataBindings.Add("EditValue", _item, nameof(_item.Type));
-            textEditProcedure.DataBindings.Add("EditValue", _item, nameof(_item.Procedure));
-            numericUpDownValue.DataBindings.Add("Value", _item, nameof(_item.Value));
-            dateEditDateEnd.DataBindings.Add("EditValue", _item, nameof(_item.DateEnd));
+            textEditType.DataBindings.Add("EditValue", _item, nameof(_item.Type), true, DataSourceUpdateMode.OnPropertyChanged);
+            textEditProcedure.DataBindings.Add("EditValue", _item, nameof(_item.Procedure), true, DataSourceUpdateMode.OnPropertyChanged);
+            numericUpDownValue.DataBindings.Add("Value", _item, nameof(_item.Value), true, DataSourceUpdateMode.OnPropertyChanged);
+            dateEditDateEnd.DataBindings.Add("EditValue", _item, nameof(_item.DateEnd), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private bool Validation()

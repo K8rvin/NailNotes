@@ -20,7 +20,7 @@ namespace LizokasNail.Client.Forms.Edit
             _repo = repo;
             _item = new ColorBl();
 
-            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
+            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
 
             _colors = _repo.Get();
             searchLookUpEditColor.Properties.DataSource = _colors;

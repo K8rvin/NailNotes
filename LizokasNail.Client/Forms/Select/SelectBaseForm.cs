@@ -19,13 +19,19 @@ namespace LizokasNail.Client.Forms.Edit
             InitializeComponent();
             _repo = repo;
             _item = new BaseBl();
+            Bind();
+        }
 
+        private void Bind()
+        {
+            textEditComment.DataBindings.Clear();
             textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
 
             _bases = _repo.Get();
             searchLookUpEditBase.Properties.DataSource = _bases;
             searchLookUpEditBase.Properties.ValueMember = "Id";
             searchLookUpEditBase.Properties.DisplayMember = "Name";
+            searchLookUpEditBase.DataBindings.Clear();
             searchLookUpEditBase.DataBindings.Add("EditValue", _item, nameof(_item.Id), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
@@ -58,6 +64,17 @@ namespace LizokasNail.Client.Forms.Edit
                 var item = _bases.FirstOrDefault(x => x.Id == selectedId);
                 _item.Comment = item.Comment;
                 _item.Name = item.Name;
+            }
+        }
+
+        private void simpleButtonAddBase_Click(object sender, EventArgs e)
+        {
+            var form = new EditBaseForm(_repo);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                _item = form._item;
+                Bind();
+                form.Dispose();
             }
         }
     }

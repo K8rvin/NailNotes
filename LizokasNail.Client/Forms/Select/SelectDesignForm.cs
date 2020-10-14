@@ -19,13 +19,19 @@ namespace LizokasNail.Client.Forms.Edit
             InitializeComponent();
             _repo = repo;
             _item = new DesignBl();
+            Bind();
+        }
 
+        private void Bind()
+        {
             _designs = _repo.Get();
             searchLookUpEditDesign.Properties.DataSource = _designs;
             searchLookUpEditDesign.Properties.ValueMember = "Id";
             searchLookUpEditDesign.Properties.DisplayMember = "Name";
+            searchLookUpEditDesign.DataBindings.Clear();
             searchLookUpEditDesign.DataBindings.Add("EditValue", _item, nameof(_item.Id), true, DataSourceUpdateMode.OnPropertyChanged);
 
+            numericUpDownCount.DataBindings.Clear();
             numericUpDownCount.DataBindings.Add("Value", _item, nameof(_item.Count), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
@@ -60,6 +66,17 @@ namespace LizokasNail.Client.Forms.Edit
                 _item.Name = item.Name;
                 _item.Price = item.Price;
                 _item.PriceVip = item.PriceVip;
+            }
+        }
+
+        private void simpleButtonAddDesign_Click(object sender, EventArgs e)
+        {
+            var form = new EditDesignForm(_repo);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                _item = form._item;
+                Bind();
+                form.Dispose();
             }
         }
     }

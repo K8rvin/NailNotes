@@ -211,6 +211,10 @@ namespace LizokasNail.Client.Forms.Edit
             var selectDesignForm = new SelectDesignForm(_designRepo);
             if (selectDesignForm.ShowDialog() == DialogResult.OK)
             {
+                if (!(repositoryItemSearchLookUpEditDesign.DataSource as List<DesignBl>).Any(x => x.Id == selectDesignForm._item.Id))
+                {
+                    repositoryItemSearchLookUpEditDesign.DataSource = _designRepo.Get();
+                }
                 _item.Designs.Add(selectDesignForm._item);
                 _item.OnPropertyChanged(nameof(_item.PriceDynamic));
                 _item.OnPropertyChanged(nameof(_item.PriceFormula));

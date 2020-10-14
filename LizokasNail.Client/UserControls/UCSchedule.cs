@@ -3,6 +3,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using LisokasNail.Models;
 using LizokasNail.Client.Di;
+using LizokasNail.Client.Forms;
 using LizokasNail.Client.Forms.Edit;
 using LizokasNail.Client.Utils;
 using System;
@@ -19,7 +20,7 @@ namespace LizokasNail.Client.UserControls
     {
         private readonly IRecordRepo _repo;
         private readonly ICheckRepo _checkRepo;
-        private List<RecordBl> _items = new List<RecordBl>();
+        public List<RecordBl> _items = new List<RecordBl>();
         public List<Tuple<DateTime, DateTime>> Periods = new List<Tuple<DateTime, DateTime>>();
 
         public UCSchedule()
@@ -42,6 +43,7 @@ namespace LizokasNail.Client.UserControls
                 new Tuple<DateTime, DateTime>(startOfWeek.AddDays(3), startOfWeek.AddDays(4)),
                 new Tuple<DateTime, DateTime>(startOfWeek.AddDays(4), startOfWeek.AddDays(5)),
                 new Tuple<DateTime, DateTime>(startOfWeek.AddDays(5), startOfWeek.AddDays(6)),
+                new Tuple<DateTime, DateTime>(startOfWeek.AddDays(6), startOfWeek.AddDays(7)),
             };
             gridViewDay1.ViewCaption = startOfWeek.ToLongDateString() + " Пн";
             gridViewDay2.ViewCaption = startOfWeek.AddDays(1).ToLongDateString() + " Вт";
@@ -85,7 +87,7 @@ namespace LizokasNail.Client.UserControls
             RefreshGrid();
         }
 
-        private void UCCalendar_Load(object sender, System.EventArgs e)
+        private void UCCalendar_Load(object sender, EventArgs e)
         {
             RefreshGrid();
         }
@@ -103,6 +105,24 @@ namespace LizokasNail.Client.UserControls
             gridControlDay4.DataSource = _items.Where(x => x.RecordDate >= Periods[3].Item1 && x.RecordDate < Periods[3].Item2);
             gridControlDay5.DataSource = _items.Where(x => x.RecordDate >= Periods[4].Item1 && x.RecordDate < Periods[4].Item2);
             gridControlDay6.DataSource = _items.Where(x => x.RecordDate >= Periods[5].Item1 && x.RecordDate < Periods[5].Item2);
+
+            //Сводка прибыли за неделю
+            (ParentForm as ScheduleForm).barEditItemWeekCheckSumm.EditValue = _items.Sum(x => x.Check?.Price);
+
+            //Сводка по воскресенью (воскресенье не выводится в ежедневнике)
+            var sundayRecords = _items.Where(x => x.RecordDate >= Periods[6].Item1 && x.RecordDate < Periods[6].Item2);
+            if (sundayRecords.Any())
+            {
+                (ParentForm as ScheduleForm).barStaticItemSundayCheck.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                (ParentForm as ScheduleForm).barEditItemSundayCheck.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                (ParentForm as ScheduleForm).barEditItemSundayCheck.EditValue = sundayRecords.Sum(x => x.Check?.Price);
+            }
+            else
+            {
+                (ParentForm as ScheduleForm).barStaticItemSundayCheck.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                (ParentForm as ScheduleForm).barEditItemSundayCheck.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                (ParentForm as ScheduleForm).barEditItemSundayCheck.EditValue = 0;
+            }
         }
 
         /// <summary>

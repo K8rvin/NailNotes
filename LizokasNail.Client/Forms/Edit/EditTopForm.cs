@@ -9,7 +9,7 @@ namespace LizokasNail.Client.Forms.Edit
     public partial class EditTopForm : Form
     {
         private readonly ITopRepo _repo;
-        private TopBl _item;
+        public TopBl _item;
 
         public EditTopForm(ITopRepo repo, TopBl item = null)
         {
@@ -52,7 +52,7 @@ namespace LizokasNail.Client.Forms.Edit
 
             if (_item.Id == 0)
             {
-                _repo.Add(_item);
+                _item = _repo.Add(_item);
             }
             else
             {

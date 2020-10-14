@@ -54,6 +54,7 @@
             this.gridColumnCount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnDesignComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPriceVip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEditRecord = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridViewRecord = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,7 +84,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumnPriceVip = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPriceFormula.Properties)).BeginInit();
@@ -325,6 +325,8 @@
             this.gridColumnName.FieldName = "Id";
             this.gridColumnName.Name = "gridColumnName";
             this.gridColumnName.OptionsColumn.AllowEdit = false;
+            this.gridColumnName.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnName.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
             this.gridColumnName.Visible = true;
             this.gridColumnName.VisibleIndex = 0;
             this.gridColumnName.Width = 232;
@@ -400,6 +402,14 @@
             this.gridColumnPrice.OptionsColumn.AllowEdit = false;
             this.gridColumnPrice.Visible = true;
             this.gridColumnPrice.VisibleIndex = 2;
+            // 
+            // gridColumnPriceVip
+            // 
+            this.gridColumnPriceVip.Caption = "Стоим. (vip)";
+            this.gridColumnPriceVip.FieldName = "PriceVip";
+            this.gridColumnPriceVip.Name = "gridColumnPriceVip";
+            this.gridColumnPriceVip.Visible = true;
+            this.gridColumnPriceVip.VisibleIndex = 3;
             // 
             // searchLookUpEditRecord
             // 
@@ -702,14 +712,6 @@
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
-            // 
-            // gridColumnPriceVip
-            // 
-            this.gridColumnPriceVip.Caption = "Стоим. (vip)";
-            this.gridColumnPriceVip.FieldName = "PriceVip";
-            this.gridColumnPriceVip.Name = "gridColumnPriceVip";
-            this.gridColumnPriceVip.Visible = true;
-            this.gridColumnPriceVip.VisibleIndex = 3;
             // 
             // EditCheckForm
             // 

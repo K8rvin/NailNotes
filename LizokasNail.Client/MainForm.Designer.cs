@@ -41,6 +41,7 @@
             this.barButtonItemProcedure = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemSchedule = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemReport = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemPriceCost = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -68,7 +69,6 @@
             this.layoutControlItemUsers = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemMaterials1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemUsers1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.barButtonItemPriceCost = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
@@ -139,6 +139,7 @@
             this.barSubItemMenu.Caption = "Основное";
             this.barSubItemMenu.Id = 1;
             this.barSubItemMenu.Name = "barSubItemMenu";
+            this.barSubItemMenu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barSubItemDictionaries
             // 
@@ -203,6 +204,13 @@
             this.barButtonItemReport.Id = 20;
             this.barButtonItemReport.Name = "barButtonItemReport";
             this.barButtonItemReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemReport_ItemClick);
+            // 
+            // barButtonItemPriceCost
+            // 
+            this.barButtonItemPriceCost.Caption = "Себестоимость";
+            this.barButtonItemPriceCost.Id = 21;
+            this.barButtonItemPriceCost.Name = "barButtonItemPriceCost";
+            this.barButtonItemPriceCost.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPriceCost_ItemClick);
             // 
             // bar3
             // 
@@ -470,13 +478,6 @@
             this.layoutControlItemUsers1.Text = "layoutControlItemUsers";
             this.layoutControlItemUsers1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemUsers1.TextVisible = false;
-            // 
-            // barButtonItemPriceCost
-            // 
-            this.barButtonItemPriceCost.Caption = "Себестоимость";
-            this.barButtonItemPriceCost.Id = 21;
-            this.barButtonItemPriceCost.Name = "barButtonItemPriceCost";
-            this.barButtonItemPriceCost.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPriceCost_ItemClick);
             // 
             // MainForm
             // 

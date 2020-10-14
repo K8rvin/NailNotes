@@ -19,13 +19,19 @@ namespace LizokasNail.Client.Forms.Edit
             InitializeComponent();
             _repo = repo;
             _item = new ColorBl();
+            Bind();
+        }
 
+        private void Bind()
+        {
+            textEditComment.DataBindings.Clear();
             textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
 
             _colors = _repo.Get();
             searchLookUpEditColor.Properties.DataSource = _colors;
             searchLookUpEditColor.Properties.ValueMember = "Id";
             searchLookUpEditColor.Properties.DisplayMember = "Name";
+            searchLookUpEditColor.DataBindings.Clear();
             searchLookUpEditColor.DataBindings.Add("EditValue", _item, nameof(_item.Id), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
@@ -58,6 +64,17 @@ namespace LizokasNail.Client.Forms.Edit
                 var item = _colors.FirstOrDefault(x => x.Id == selectedId);
                 _item.Comment = item.Comment;
                 _item.Name = item.Name;
+            }
+        }
+
+        private void simpleButtonAddColor_Click(object sender, EventArgs e)
+        {
+            var form = new EditColorForm(_repo);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                _item = form._item;
+                Bind();
+                form.Dispose();
             }
         }
     }

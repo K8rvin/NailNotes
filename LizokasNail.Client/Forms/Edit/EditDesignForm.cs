@@ -9,7 +9,7 @@ namespace LizokasNail.Client.Forms.Edit
     public partial class EditDesignForm : Form
     {
         private readonly IDesignRepo _repo;
-        private DesignBl _item;
+        public DesignBl _item;
 
         public EditDesignForm(IDesignRepo repo, DesignBl item = null)
         {
@@ -54,7 +54,7 @@ namespace LizokasNail.Client.Forms.Edit
 
             if (_item.Id == 0)
             {
-                _repo.Add(_item);
+                _item = _repo.Add(_item);
             }
             else
             {

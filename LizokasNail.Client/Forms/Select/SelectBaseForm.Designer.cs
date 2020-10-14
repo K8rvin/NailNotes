@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButtonAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditComment = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonAddBase = new DevExpress.XtraEditors.SimpleButton();
             this.searchLookUpEditBase = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridViewBase = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnBaseName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnBaseComment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.textEditComment = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButtonAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -46,11 +47,12 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditBase.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewBase)).BeginInit();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditBase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -59,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -71,42 +74,33 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Марка";
             // 
-            // simpleButtonAdd
+            // layoutControl1
             // 
-            this.simpleButtonAdd.Location = new System.Drawing.Point(12, 81);
-            this.simpleButtonAdd.Name = "simpleButtonAdd";
-            this.simpleButtonAdd.Size = new System.Drawing.Size(176, 22);
-            this.simpleButtonAdd.StyleController = this.layoutControl1;
-            this.simpleButtonAdd.TabIndex = 98;
-            this.simpleButtonAdd.Text = "Добавить";
-            this.simpleButtonAdd.Click += new System.EventHandler(this.simpleButtonAdd_Click);
+            this.layoutControl1.Controls.Add(this.simpleButtonAddBase);
+            this.layoutControl1.Controls.Add(this.searchLookUpEditBase);
+            this.layoutControl1.Controls.Add(this.simpleButtonCancel);
+            this.layoutControl1.Controls.Add(this.textEditComment);
+            this.layoutControl1.Controls.Add(this.simpleButtonAdd);
+            this.layoutControl1.Controls.Add(this.labelControl2);
+            this.layoutControl1.Controls.Add(this.labelControl1);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(657, 108, 250, 350);
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(380, 115);
+            this.layoutControl1.TabIndex = 100;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // simpleButtonCancel
+            // simpleButtonAddBase
             // 
-            this.simpleButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.simpleButtonCancel.Location = new System.Drawing.Point(192, 81);
-            this.simpleButtonCancel.Name = "simpleButtonCancel";
-            this.simpleButtonCancel.Size = new System.Drawing.Size(176, 22);
-            this.simpleButtonCancel.StyleController = this.layoutControl1;
-            this.simpleButtonCancel.TabIndex = 99;
-            this.simpleButtonCancel.Text = "Отмена";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 36);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(61, 13);
-            this.labelControl2.StyleController = this.layoutControl1;
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Примечание";
-            // 
-            // textEditComment
-            // 
-            this.textEditComment.Location = new System.Drawing.Point(77, 36);
-            this.textEditComment.Name = "textEditComment";
-            this.textEditComment.Size = new System.Drawing.Size(291, 20);
-            this.textEditComment.StyleController = this.layoutControl1;
-            this.textEditComment.TabIndex = 2;
+            this.simpleButtonAddBase.Location = new System.Drawing.Point(345, 12);
+            this.simpleButtonAddBase.Name = "simpleButtonAddBase";
+            this.simpleButtonAddBase.Size = new System.Drawing.Size(23, 22);
+            this.simpleButtonAddBase.StyleController = this.layoutControl1;
+            this.simpleButtonAddBase.TabIndex = 101;
+            this.simpleButtonAddBase.Text = "+";
+            this.simpleButtonAddBase.Click += new System.EventHandler(this.simpleButtonAddBase_Click);
             // 
             // searchLookUpEditBase
             // 
@@ -115,7 +109,7 @@
             this.searchLookUpEditBase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.searchLookUpEditBase.Properties.View = this.gridViewBase;
-            this.searchLookUpEditBase.Size = new System.Drawing.Size(291, 20);
+            this.searchLookUpEditBase.Size = new System.Drawing.Size(264, 20);
             this.searchLookUpEditBase.StyleController = this.layoutControl1;
             this.searchLookUpEditBase.TabIndex = 1;
             this.searchLookUpEditBase.EditValueChanged += new System.EventHandler(this.searchLookUpEditBase_EditValueChanged);
@@ -146,22 +140,42 @@
             this.gridColumnBaseComment.Visible = true;
             this.gridColumnBaseComment.VisibleIndex = 1;
             // 
-            // layoutControl1
+            // simpleButtonCancel
             // 
-            this.layoutControl1.Controls.Add(this.searchLookUpEditBase);
-            this.layoutControl1.Controls.Add(this.simpleButtonCancel);
-            this.layoutControl1.Controls.Add(this.textEditComment);
-            this.layoutControl1.Controls.Add(this.simpleButtonAdd);
-            this.layoutControl1.Controls.Add(this.labelControl2);
-            this.layoutControl1.Controls.Add(this.labelControl1);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(657, 108, 250, 350);
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(380, 115);
-            this.layoutControl1.TabIndex = 100;
-            this.layoutControl1.Text = "layoutControl1";
+            this.simpleButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.simpleButtonCancel.Location = new System.Drawing.Point(193, 81);
+            this.simpleButtonCancel.Name = "simpleButtonCancel";
+            this.simpleButtonCancel.Size = new System.Drawing.Size(175, 22);
+            this.simpleButtonCancel.StyleController = this.layoutControl1;
+            this.simpleButtonCancel.TabIndex = 99;
+            this.simpleButtonCancel.Text = "Отмена";
+            // 
+            // textEditComment
+            // 
+            this.textEditComment.Location = new System.Drawing.Point(77, 38);
+            this.textEditComment.Name = "textEditComment";
+            this.textEditComment.Size = new System.Drawing.Size(291, 20);
+            this.textEditComment.StyleController = this.layoutControl1;
+            this.textEditComment.TabIndex = 2;
+            // 
+            // simpleButtonAdd
+            // 
+            this.simpleButtonAdd.Location = new System.Drawing.Point(12, 81);
+            this.simpleButtonAdd.Name = "simpleButtonAdd";
+            this.simpleButtonAdd.Size = new System.Drawing.Size(177, 22);
+            this.simpleButtonAdd.StyleController = this.layoutControl1;
+            this.simpleButtonAdd.TabIndex = 98;
+            this.simpleButtonAdd.Text = "Добавить";
+            this.simpleButtonAdd.Click += new System.EventHandler(this.simpleButtonAdd_Click);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(12, 38);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(61, 13);
+            this.labelControl2.StyleController = this.layoutControl1;
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "Примечание";
             // 
             // layoutControlGroup1
             // 
@@ -174,7 +188,8 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(380, 115);
@@ -185,7 +200,7 @@
             this.layoutControlItem1.Control = this.labelControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(65, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(65, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -194,14 +209,14 @@
             this.layoutControlItem2.Control = this.searchLookUpEditBase;
             this.layoutControlItem2.Location = new System.Drawing.Point(65, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(295, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(268, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.labelControl2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(65, 24);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -210,7 +225,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.textEditComment;
-            this.layoutControlItem4.Location = new System.Drawing.Point(65, 24);
+            this.layoutControlItem4.Location = new System.Drawing.Point(65, 26);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(295, 24);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -221,26 +236,35 @@
             this.layoutControlItem5.Control = this.simpleButtonAdd;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 69);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(180, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(181, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.simpleButtonCancel;
-            this.layoutControlItem6.Location = new System.Drawing.Point(180, 69);
+            this.layoutControlItem6.Location = new System.Drawing.Point(181, 69);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(180, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(179, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 48);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 50);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(360, 21);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(360, 19);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.simpleButtonAddBase;
+            this.layoutControlItem7.Location = new System.Drawing.Point(333, 0);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(27, 26);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
             // SelectBaseForm
             // 
@@ -256,11 +280,11 @@
             this.Name = "SelectBaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление базы";
-            ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditBase.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditBase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -269,6 +293,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,5 +317,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonAddBase;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

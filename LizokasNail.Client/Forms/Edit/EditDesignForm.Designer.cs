@@ -30,6 +30,8 @@
         {
             this.textEditName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.numericUpDownPriceVip = new System.Windows.Forms.NumericUpDown();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.textEditComment = new DevExpress.XtraEditors.TextEdit();
@@ -47,13 +49,12 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.numericUpDownPriceVip = new System.Windows.Forms.NumericUpDown();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPriceVip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -67,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPriceVip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +100,33 @@
             this.layoutControl1.TabIndex = 100;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // numericUpDownPriceVip
+            // 
+            this.numericUpDownPriceVip.Location = new System.Drawing.Point(85, 84);
+            this.numericUpDownPriceVip.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDownPriceVip.Minimum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDownPriceVip.Name = "numericUpDownPriceVip";
+            this.numericUpDownPriceVip.Size = new System.Drawing.Size(283, 20);
+            this.numericUpDownPriceVip.TabIndex = 4;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl4.Location = new System.Drawing.Point(12, 84);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(69, 13);
+            this.labelControl4.StyleController = this.layoutControl1;
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Цена VIP";
+            // 
             // numericUpDownPrice
             // 
             this.numericUpDownPrice.Location = new System.Drawing.Point(85, 60);
@@ -108,6 +135,11 @@
             0,
             0,
             0});
+            this.numericUpDownPrice.Minimum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownPrice.Name = "numericUpDownPrice";
             this.numericUpDownPrice.Size = new System.Drawing.Size(283, 20);
             this.numericUpDownPrice.TabIndex = 3;
@@ -273,16 +305,6 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // labelControl4
-            // 
-            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(12, 84);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(69, 13);
-            this.labelControl4.StyleController = this.layoutControl1;
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "Цена VIP";
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.labelControl4;
@@ -291,18 +313,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(73, 24);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
-            // 
-            // numericUpDownPriceVip
-            // 
-            this.numericUpDownPriceVip.Location = new System.Drawing.Point(85, 84);
-            this.numericUpDownPriceVip.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.numericUpDownPriceVip.Name = "numericUpDownPriceVip";
-            this.numericUpDownPriceVip.Size = new System.Drawing.Size(283, 20);
-            this.numericUpDownPriceVip.TabIndex = 4;
             // 
             // layoutControlItem10
             // 
@@ -329,6 +339,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPriceVip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -342,7 +353,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPriceVip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 

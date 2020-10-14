@@ -27,13 +27,13 @@ namespace LizokasNail.Client.Forms.Edit
                 _item = new UserBl();
             }
 
-            textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name));
-            textEditPhone.DataBindings.Add("EditValue", _item, nameof(_item.Phone));
-            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
-            checkEditVip.DataBindings.Add("Checked", _item, nameof(_item.Vip));
+            textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name), true, DataSourceUpdateMode.OnPropertyChanged);
+            textEditPhone.DataBindings.Add("EditValue", _item, nameof(_item.Phone), true, DataSourceUpdateMode.OnPropertyChanged);
+            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
+            checkEditVip.DataBindings.Add("Checked", _item, nameof(_item.Vip), true, DataSourceUpdateMode.OnPropertyChanged);
 
             imageComboBoxEditCommunication.Properties.Items.AddEnum<CommunicationType>();
-            imageComboBoxEditCommunication.DataBindings.Add("EditValue", _item, nameof(_item.CommunicationType));
+            imageComboBoxEditCommunication.DataBindings.Add("EditValue", _item, nameof(_item.CommunicationType), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

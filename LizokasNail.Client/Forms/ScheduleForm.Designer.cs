@@ -47,13 +47,20 @@
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barEditItemDate = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.barButtonItemCurrentWeek = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barEditItemWeekCheckSumm = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemCurrentWeek = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItemSundayCheck = new DevExpress.XtraBars.BarStaticItem();
+            this.barEditItemSundayCheck = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
             this.xtraTabPageWeek.SuspendLayout();
@@ -68,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl
@@ -205,10 +214,17 @@
             this.barButtonItem3,
             this.barEditItemDate,
             this.barStaticItem1,
-            this.barButtonItemCurrentWeek});
-            this.barManager1.MaxItemId = 6;
+            this.barButtonItemCurrentWeek,
+            this.barStaticItem2,
+            this.barEditItemWeekCheckSumm,
+            this.barStaticItem3,
+            this.barStaticItemSundayCheck,
+            this.barEditItemSundayCheck});
+            this.barManager1.MaxItemId = 11;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemDateEdit1});
+            this.repositoryItemDateEdit1,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemTextEdit2});
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -222,7 +238,11 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemDate),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCurrentWeek, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCurrentWeek, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemWeekCheckSumm),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItemSundayCheck),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItemSundayCheck)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -258,6 +278,38 @@
             this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // barButtonItemCurrentWeek
+            // 
+            this.barButtonItemCurrentWeek.Caption = "Текущая неделя";
+            this.barButtonItemCurrentWeek.Id = 5;
+            this.barButtonItemCurrentWeek.Name = "barButtonItemCurrentWeek";
+            this.barButtonItemCurrentWeek.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCurrentWeek_ItemClick);
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "Прибыль за неделю:";
+            this.barStaticItem2.Id = 6;
+            this.barStaticItem2.Name = "barStaticItem2";
+            this.barStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barEditItemWeekCheckSumm
+            // 
+            this.barEditItemWeekCheckSumm.CanOpenEdit = false;
+            this.barEditItemWeekCheckSumm.Edit = this.repositoryItemTextEdit1;
+            this.barEditItemWeekCheckSumm.EditWidth = 89;
+            this.barEditItemWeekCheckSumm.Enabled = false;
+            this.barEditItemWeekCheckSumm.Id = 7;
+            this.barEditItemWeekCheckSumm.Name = "barEditItemWeekCheckSumm";
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.repositoryItemTextEdit1.Appearance.Options.UseFont = true;
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.DisplayFormat.FormatString = "c0";
+            this.repositoryItemTextEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // barDockControlTop
             // 
@@ -299,12 +351,36 @@
             this.barButtonItem3.Id = 2;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // barButtonItemCurrentWeek
+            // barStaticItem3
             // 
-            this.barButtonItemCurrentWeek.Caption = "Текущая неделя";
-            this.barButtonItemCurrentWeek.Id = 5;
-            this.barButtonItemCurrentWeek.Name = "barButtonItemCurrentWeek";
-            this.barButtonItemCurrentWeek.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCurrentWeek_ItemClick);
+            this.barStaticItem3.Id = 8;
+            this.barStaticItem3.Name = "barStaticItem3";
+            this.barStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barStaticItemSundayCheck
+            // 
+            this.barStaticItemSundayCheck.Caption = "За воскресенье:";
+            this.barStaticItemSundayCheck.Id = 9;
+            this.barStaticItemSundayCheck.Name = "barStaticItemSundayCheck";
+            this.barStaticItemSundayCheck.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barEditItemSundayCheck
+            // 
+            this.barEditItemSundayCheck.CanOpenEdit = false;
+            this.barEditItemSundayCheck.Edit = this.repositoryItemTextEdit2;
+            this.barEditItemSundayCheck.EditWidth = 69;
+            this.barEditItemSundayCheck.Enabled = false;
+            this.barEditItemSundayCheck.Id = 10;
+            this.barEditItemSundayCheck.Name = "barEditItemSundayCheck";
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.repositoryItemTextEdit2.Appearance.Options.UseFont = true;
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.DisplayFormat.FormatString = "c0";
+            this.repositoryItemTextEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
             // ScheduleForm
             // 
@@ -333,6 +409,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +443,12 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItemCurrentWeek;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        public DevExpress.XtraBars.BarEditItem barEditItemWeekCheckSumm;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem3;
+        public DevExpress.XtraBars.BarStaticItem barStaticItemSundayCheck;
+        public DevExpress.XtraBars.BarEditItem barEditItemSundayCheck;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
     }
 }

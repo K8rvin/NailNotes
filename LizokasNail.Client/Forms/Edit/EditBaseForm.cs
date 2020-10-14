@@ -9,7 +9,7 @@ namespace LizokasNail.Client.Forms.Edit
     public partial class EditBaseForm : Form
     {
         private readonly IBaseRepo _repo;
-        private BaseBl _item;
+        public BaseBl _item;
 
         public EditBaseForm(IBaseRepo repo, BaseBl item = null)
         {
@@ -27,8 +27,8 @@ namespace LizokasNail.Client.Forms.Edit
                 _item = new BaseBl();
             }
 
-            textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name));
-            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment));
+            textEditName.DataBindings.Add("EditValue", _item, nameof(_item.Name), true, DataSourceUpdateMode.OnPropertyChanged);
+            textEditComment.DataBindings.Add("EditValue", _item, nameof(_item.Comment), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private bool Validation()
@@ -52,7 +52,7 @@ namespace LizokasNail.Client.Forms.Edit
 
             if (_item.Id == 0)
             {
-                _repo.Add(_item);
+                _item = _repo.Add(_item);
             }
             else
             {

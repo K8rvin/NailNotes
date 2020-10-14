@@ -38,12 +38,12 @@ namespace LizokasNail.Client.Forms.Edit
                 _item = new RecordBl();
                 _item.RecordDate = DateTime.Today;
             }
-            dateNavigator1.DataBindings.Add("DateTime", _item, nameof(_item.RecordDate));
+            dateNavigator1.DataBindings.Add("DateTime", _item, nameof(_item.RecordDate), true, DataSourceUpdateMode.OnPropertyChanged);
 
             searchLookUpEditUser.Properties.DataSource = _userRepo.Get();
             searchLookUpEditUser.Properties.ValueMember = "Id";
             searchLookUpEditUser.Properties.DisplayMember = "Name";
-            searchLookUpEditUser.DataBindings.Add("EditValue", _item, nameof(_item.UserId));
+            searchLookUpEditUser.DataBindings.Add("EditValue", _item, nameof(_item.UserId), true, DataSourceUpdateMode.OnPropertyChanged);
 
             var procedures = _procedureRepo.Get();
             SetProcedures(procedures);

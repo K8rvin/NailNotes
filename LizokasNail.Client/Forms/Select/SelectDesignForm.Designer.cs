@@ -36,6 +36,7 @@
             this.gridColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPriceVip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -47,7 +48,8 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumnPriceVip = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButtonAddDesign = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
@@ -61,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -75,6 +78,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.simpleButtonAddDesign);
             this.layoutControl1.Controls.Add(this.numericUpDownCount);
             this.layoutControl1.Controls.Add(this.searchLookUpEditDesign);
             this.layoutControl1.Controls.Add(this.simpleButtonCancel);
@@ -92,7 +96,7 @@
             // 
             // numericUpDownCount
             // 
-            this.numericUpDownCount.Location = new System.Drawing.Point(85, 36);
+            this.numericUpDownCount.Location = new System.Drawing.Point(85, 38);
             this.numericUpDownCount.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -109,7 +113,7 @@
             this.searchLookUpEditDesign.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.searchLookUpEditDesign.Properties.View = this.gridViewBase;
-            this.searchLookUpEditDesign.Size = new System.Drawing.Size(283, 20);
+            this.searchLookUpEditDesign.Size = new System.Drawing.Size(255, 20);
             this.searchLookUpEditDesign.StyleController = this.layoutControl1;
             this.searchLookUpEditDesign.TabIndex = 1;
             this.searchLookUpEditDesign.EditValueChanged += new System.EventHandler(this.searchLookUpEditDesign_EditValueChanged);
@@ -150,6 +154,14 @@
             this.gridColumnPrice.Visible = true;
             this.gridColumnPrice.VisibleIndex = 2;
             // 
+            // gridColumnPriceVip
+            // 
+            this.gridColumnPriceVip.Caption = "Цена (vip)";
+            this.gridColumnPriceVip.FieldName = "PriceVip";
+            this.gridColumnPriceVip.Name = "gridColumnPriceVip";
+            this.gridColumnPriceVip.Visible = true;
+            this.gridColumnPriceVip.VisibleIndex = 3;
+            // 
             // simpleButtonCancel
             // 
             this.simpleButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -173,7 +185,7 @@
             // labelControl2
             // 
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(12, 36);
+            this.labelControl2.Location = new System.Drawing.Point(12, 38);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(69, 13);
             this.labelControl2.StyleController = this.layoutControl1;
@@ -191,7 +203,8 @@
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.emptySpaceItem1,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(380, 115);
@@ -202,7 +215,7 @@
             this.layoutControlItem1.Control = this.labelControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(73, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(73, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -211,14 +224,14 @@
             this.layoutControlItem2.Control = this.searchLookUpEditDesign;
             this.layoutControlItem2.Location = new System.Drawing.Point(73, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(287, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(259, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.labelControl2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(73, 24);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -245,27 +258,38 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 48);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 50);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(360, 21);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(360, 19);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.numericUpDownCount;
-            this.layoutControlItem4.Location = new System.Drawing.Point(73, 24);
+            this.layoutControlItem4.Location = new System.Drawing.Point(73, 26);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(287, 24);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // gridColumnPriceVip
+            // simpleButtonAddDesign
             // 
-            this.gridColumnPriceVip.Caption = "Цена (vip)";
-            this.gridColumnPriceVip.FieldName = "PriceVip";
-            this.gridColumnPriceVip.Name = "gridColumnPriceVip";
-            this.gridColumnPriceVip.Visible = true;
-            this.gridColumnPriceVip.VisibleIndex = 3;
+            this.simpleButtonAddDesign.Location = new System.Drawing.Point(344, 12);
+            this.simpleButtonAddDesign.Name = "simpleButtonAddDesign";
+            this.simpleButtonAddDesign.Size = new System.Drawing.Size(24, 22);
+            this.simpleButtonAddDesign.StyleController = this.layoutControl1;
+            this.simpleButtonAddDesign.TabIndex = 101;
+            this.simpleButtonAddDesign.Text = "+";
+            this.simpleButtonAddDesign.Click += new System.EventHandler(this.simpleButtonAddDesign_Click);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.simpleButtonAddDesign;
+            this.layoutControlItem7.Location = new System.Drawing.Point(332, 0);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(28, 26);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
             // SelectDesignForm
             // 
@@ -294,6 +318,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,5 +344,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnPrice;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnPriceVip;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonAddDesign;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

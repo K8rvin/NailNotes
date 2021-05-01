@@ -41,7 +41,7 @@ namespace LizokasNail.Client.UserControls
         private void GetData()
         {
             var dateStart = new DateTime(int.Parse(barEditItemYear.EditValue.ToString()), (int)barEditItemMonth.EditValue, 1);
-            var dateEnd = dateStart.AddMonths(1).AddDays(-1);
+            var dateEnd = dateStart.AddMonths(1);
             viewModel.Items = _repo.GetMonthReport(dateStart, dateEnd);            
         }
 

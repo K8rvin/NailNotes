@@ -1,14 +1,11 @@
 ﻿using LizokasNail.Site.Models;
-using LizokasNail.Site.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading.Tasks;
 
 namespace LizokasNail.Site.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : MainController
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -17,10 +14,8 @@ namespace LizokasNail.Site.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            List<Base> allBases = await BaseRepo.GetList();
-
             return View();
         }
 

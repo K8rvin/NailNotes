@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Base>
+@{
+    ViewData["Title"] = "Базы";
+}
+
+<h2>Базы</h2>
+<a asp-action="AddBase" class="btn btn-sm btn-primary">Add Base</a>
+<a asp-action="GetBase" class="btn btn-sm btn-secondary">Get Base</a>
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Комментарий</th>
+            <th>Редактирование</th>
+            <th>Удаление</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Id</td>
+                <td>@r.Name</td>
+                <td>@r.Comment</td>
+                <td>
+                    <a asp-action="UpdateBase" asp-route-id="@r.Id">
+                        <img src="/icon/edit.png" />
+                    </a>
+                </td>
+                <td>
+                    <form asp-action="DeleteBase" method="post">
+                        <input type="hidden" value="@r.Id" name="BaseId" />
+                        <input type="image" src="/icon/close.png" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
